@@ -1,0 +1,54 @@
+.languageSwitcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.flagButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+  position: relative;
+}
+
+.flagButton:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.flagButton.active {
+  opacity: 1;
+}
+
+.flagIcon {
+  display: block;
+  border-radius: 2px;
+  transition: transform 0.2s ease;
+  width: 20px;
+  height: 15px;
+}
+
+.flagButton:hover .flagIcon {
+  transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .languageSwitcher {
+    bottom: 15px;
+    right: 15px;
+    gap: 10px;
+  }
+  
+  .flagIcon {
+    width: 18px;
+    height: 13px;
+  }
+}

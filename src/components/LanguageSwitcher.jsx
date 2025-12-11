@@ -52,7 +52,7 @@ const LanguageSwitcher = () => {
         <rect y="16.61" width="24" height="1.38" fill="#B22234"/>
         {/* Campo azul */}
         <rect width="9.6" height="7.38" fill="#3C3B6E"/>
-        Estrelas de 5 pontas (padrão simplificado: 3 linhas)
+        {/* Estrelas de 5 pontas (padrão simplificado: 3 linhas) */}
         <Star cx={1.92} cy={1.23} size={0.35}/>
         <Star cx={4.8} cy={1.23} size={0.35}/>
         <Star cx={7.68} cy={1.23} size={0.35}/>
@@ -94,13 +94,13 @@ const LanguageSwitcher = () => {
         <path d="M12 2L22 9L12 16L2 9L12 2Z" fill="#FEDD00"/>
         {/* Círculo azul */}
         <circle cx="12" cy="9" r="4.5" fill="#012169"/>
-        Faixa branca (curvada representando o equador)
-        {/* <path d="M7.5 9C7.5 7.8 9.2 6.8 12 6.8C14.8 6.8 16.5 7.8 16.5 9C16.5 10.2 14.8 11.2 12 11.2C9.2 11.2 7.5 10.2 7.5 9Z" fill="white"/> */}
+        {/* Faixa branca (curvada representando o equador) */}
+        <path d="M7.5 9C7.5 7.8 9.2 6.8 12 6.8C14.8 6.8 16.5 7.8 16.5 9C16.5 10.2 14.8 11.2 12 11.2C9.2 11.2 7.5 10.2 7.5 9Z" fill="white"/>
         {/* Estrelas principais (representação simplificada) */}
-        {/* <Star cx={12} cy={7.2} size={0.5} rotation={0}/>
+        <Star cx={12} cy={7.2} size={0.5} rotation={0}/>
         <Star cx={10.2} cy={9.2} size={0.4} rotation={0.3}/>
         <Star cx={13.8} cy={9.2} size={0.4} rotation={-0.3}/>
-        <Star cx={12} cy={10.8} size={0.4} rotation={0.6}/> */}
+        <Star cx={12} cy={10.8} size={0.4} rotation={0.6}/>
       </FlagIcon>
     );
   };

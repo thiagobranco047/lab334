@@ -58,11 +58,11 @@ const Nav = () => {
 
       <div className="col">
         <div className="nav-items">
-          <div className="nav-item">
+          {/* <div className="nav-item">
             <Link onClick={handleNavigation("/work")} href={getLocalizedPath("/work")}>
               {t('nav.work')}
             </Link>
-          </div>
+          </div> */}
           <div className="nav-item">
             <Link onClick={handleNavigation("/studio")} href={getLocalizedPath("/studio")}>
               {t('nav.studio')}

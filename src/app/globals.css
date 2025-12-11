@@ -55,6 +55,7 @@ p {
   display: flex;
   gap: 1em;
   z-index: 2;
+  width: 100%;
 }
 
 .nav .col:nth-child(1) {
@@ -123,6 +124,21 @@ p {
 
 .work .projects img {
   aspect-ratio: 4/5;
+}
+
+.work .projects a {
+  display: block;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.work .projects .work-image {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.work .projects a:hover .work-image {
+  filter: grayscale(0%);
 }
 
 .studio,

@@ -51,9 +51,9 @@ const Contact = () => {
             </div>
 
             <div className="socials">
-              <p>{t('contact.instagram')}</p>
-              <p>{t('contact.twitter')}</p>
-              <p>{t('contact.linkedin')}</p>
+              <p><a href="https://www.instagram.com/lab334mkt" target="_blank" rel="noopener noreferrer">{t('contact.instagram')}</a></p>
+              <p><a href="https://www.linkedin.com/company/37267760" target="_blank" rel="noopener noreferrer">{t('contact.linkedin')}</a></p>
+              <p><a href="https://www.behance.net/thiagobranco047" target="_blank" rel="noopener noreferrer">{t('contact.behance_link')}</a></p>
             </div>
           </div>
         </div>

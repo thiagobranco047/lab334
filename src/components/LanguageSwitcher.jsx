@@ -18,24 +18,92 @@ const LanguageSwitcher = () => {
     </svg>
   );
 
-  const EnglishFlag = () => (
-    <FlagIcon locale="en">
-      <rect width="24" height="18" fill="#012169"/>
-      <path d="M0 0L24 18M24 0L0 18" stroke="white" strokeWidth="3"/>
-      <path d="M0 0L24 18M24 0L0 18" stroke="#C8102E" strokeWidth="2"/>
-      <path d="M12 0V18M0 9H24" stroke="white" strokeWidth="5"/>
-      <path d="M12 0V18M0 9H24" stroke="#C8102E" strokeWidth="3"/>
-    </FlagIcon>
-  );
+  const EnglishFlag = () => {
+    // Função para criar estrela de 5 pontas
+    const Star = ({ cx, cy, size = 0.35 }) => {
+      const points = [];
+      const outerRadius = size;
+      const innerRadius = size * 0.4;
+      for (let i = 0; i < 10; i++) {
+        const angle = (i * Math.PI) / 5 - Math.PI / 2;
+        const radius = i % 2 === 0 ? outerRadius : innerRadius;
+        const x = cx + radius * Math.cos(angle);
+        const y = cy + radius * Math.sin(angle);
+        points.push(`${i === 0 ? 'M' : 'L'} ${x} ${y}`);
+      }
+      return <path d={points.join(' ') + ' Z'} fill="white"/>;
+    };
 
-  const BrazilianFlag = () => (
-    <FlagIcon locale="pt-BR">
-      <rect width="24" height="18" fill="#009C3B"/>
-      <path d="M12 9L24 0H0L12 9Z" fill="#FFDF00"/>
-      <circle cx="12" cy="9" r="3" fill="#002776"/>
-      <path d="M12 6L13.5 8.5L12 11L10.5 8.5L12 6Z" fill="white"/>
-    </FlagIcon>
-  );
+    return (
+      <FlagIcon locale="en">
+        {/* 13 listras horizontais (7 vermelhas, 6 brancas) */}
+        <rect width="24" height="18" fill="#B22234"/>
+        <rect y="1.38" width="24" height="1.38" fill="white"/>
+        <rect y="2.76" width="24" height="1.38" fill="#B22234"/>
+        <rect y="4.15" width="24" height="1.38" fill="white"/>
+        <rect y="5.53" width="24" height="1.38" fill="#B22234"/>
+        <rect y="6.92" width="24" height="1.38" fill="white"/>
+        <rect y="8.3" width="24" height="1.38" fill="#B22234"/>
+        <rect y="9.69" width="24" height="1.38" fill="white"/>
+        <rect y="11.07" width="24" height="1.38" fill="#B22234"/>
+        <rect y="12.46" width="24" height="1.38" fill="white"/>
+        <rect y="13.84" width="24" height="1.38" fill="#B22234"/>
+        <rect y="15.23" width="24" height="1.38" fill="white"/>
+        <rect y="16.61" width="24" height="1.38" fill="#B22234"/>
+        {/* Campo azul */}
+        <rect width="9.6" height="7.38" fill="#3C3B6E"/>
+        Estrelas de 5 pontas (padrão simplificado: 3 linhas)
+        <Star cx={1.92} cy={1.23} size={0.35}/>
+        <Star cx={4.8} cy={1.23} size={0.35}/>
+        <Star cx={7.68} cy={1.23} size={0.35}/>
+        <Star cx={3.36} cy={2.46} size={0.35}/>
+        <Star cx={6.24} cy={2.46} size={0.35}/>
+        <Star cx={1.92} cy={3.69} size={0.35}/>
+        <Star cx={4.8} cy={3.69} size={0.35}/>
+        <Star cx={7.68} cy={3.69} size={0.35}/>
+        <Star cx={3.36} cy={4.92} size={0.35}/>
+        <Star cx={6.24} cy={4.92} size={0.35}/>
+        <Star cx={1.92} cy={6.15} size={0.35}/>
+        <Star cx={4.8} cy={6.15} size={0.35}/>
+        <Star cx={7.68} cy={6.15} size={0.35}/>
+      </FlagIcon>
+    );
+  };
+
+  const BrazilianFlag = () => {
+    // Função para criar estrela de 5 pontas
+    const Star = ({ cx, cy, size = 0.5, rotation = 0 }) => {
+      const points = [];
+      const outerRadius = size;
+      const innerRadius = size * 0.4;
+      for (let i = 0; i < 10; i++) {
+        const angle = (i * Math.PI) / 5 - Math.PI / 2 + rotation;
+        const radius = i % 2 === 0 ? outerRadius : innerRadius;
+        const x = cx + radius * Math.cos(angle);
+        const y = cy + radius * Math.sin(angle);
+        points.push(`${i === 0 ? 'M' : 'L'} ${x} ${y}`);
+      }
+      return <path d={points.join(' ') + ' Z'} fill="white"/>;
+    };
+
+    return (
+      <FlagIcon locale="pt-BR">
+        {/* Fundo verde */}
+        <rect width="24" height="18" fill="#009739"/>
+        {/* Losango amarelo */}
+        <path d="M12 2L22 9L12 16L2 9L12 2Z" fill="#FEDD00"/>
+        {/* Círculo azul */}
+        <circle cx="12" cy="9" r="4.5" fill="#012169"/>
+        Faixa branca (curvada representando o equador)
+        {/* <path d="M7.5 9C7.5 7.8 9.2 6.8 12 6.8C14.8 6.8 16.5 7.8 16.5 9C16.5 10.2 14.8 11.2 12 11.2C9.2 11.2 7.5 10.2 7.5 9Z" fill="white"/> */}
+        {/* Estrelas principais (representação simplificada) */}
+        {/* <Star cx={12} cy={7.2} size={0.5} rotation={0}/>
+        <Star cx={10.2} cy={9.2} size={0.4} rotation={0.3}/>
+        <Star cx={13.8} cy={9.2} size={0.4} rotation={-0.3}/>
+        <Star cx={12} cy={10.8} size={0.4} rotation={0.6}/> */}
+      </FlagIcon>
+    );
+  };
 
   return (
     <div className={styles.languageSwitcher}>

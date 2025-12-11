@@ -19,7 +19,7 @@ export const translations = {
     // Studio page
     studio: {
       title: "About Us",
-      description: "At Nuvoro, we believe creativity isn't just a skill, a mindset. Born from a passion for bold ideas and beautifully crafted storytelling, we're a collective of designers, strategists, and dreamers who thrive at the intersection of art and innovation. Today, we collaborate with visionary clients around the world to shape identities,"
+      description: "High-performance marketing studio specialized in strategic design, digital creation, web development, intelligent automation, content production, and advanced media management. Lab. 334 blends creativity, technology and data to build strong brands, accelerate results and scale operations with precision."
     },
     // Contact page
     contact: {
@@ -30,7 +30,8 @@ export const translations = {
       email2: "contato@lab334.com.br",
       instagram: "Instagram",
       twitter: "Twitter",
-      linkedin: "LinkedIn"
+      linkedin: "LinkedIn",
+      behance_link: "Behance"
     }
   },
   "pt-BR": {
@@ -53,7 +54,7 @@ export const translations = {
     // Studio page
     studio: {
       title: "Sobre Nós",
-      description: "Na Nuvoro, acreditamos que a criatividade não é apenas uma habilidade, mas uma mentalidade. Nascidos da paixão por ideias ousadas e narrativas belamente elaboradas, somos um coletivo de designers, estrategistas e sonhadores que prosperam na interseção entre arte e inovação. Hoje, colaboramos com clientes visionários ao redor do mundo para moldar identidades,"
+      description: "Estúdio de marketing de alta performance, especializado em design estratégico, criação digital, desenvolvimento web, automação inteligente, produção de conteúdo e gestão avançada de mídias. A Lab. 334 integra criatividade, tecnologia e dados para construir marcas fortes, acelerar resultados e escalar operações com precisão."
     },
     // Contact page
     contact: {
@@ -64,7 +65,8 @@ export const translations = {
       email2: "contato@lab334.com.br",
       instagram: "Instagram",
       twitter: "Twitter",
-      linkedin: "LinkedIn"
+      linkedin: "LinkedIn",
+      behance_link: "Behance"
     }
   }
 };

@@ -42,12 +42,16 @@ const Contact = () => {
           <div className="col">
             <div className="contact-copy">
               <h2>{t('contact.collaborations')}</h2>
-              <h2>{t('contact.email1')}</h2>
+              <h2>
+                <a href={`mailto:${t('contact.email1')}`}>{t('contact.email1')}</a>
+              </h2>
             </div>
 
             <div className="contact-copy">
               <h2>{t('contact.inquiries')}</h2>
-              <h2>{t('contact.email2')}</h2>
+              <h2>
+                <a href={`mailto:${t('contact.email2')}`}>{t('contact.email2')}</a>
+              </h2>
             </div>
 
             <div className="socials">

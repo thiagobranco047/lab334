@@ -58,14 +58,19 @@ const Nav = () => {
 
       <div className="col">
         <div className="nav-items">
-          {/* <div className="nav-item">
-            <Link onClick={handleNavigation("/work")} href={getLocalizedPath("/work")}>
-              {t('nav.work')}
+          <div className="nav-item">
+            <Link onClick={handleNavigation("/")} href={getLocalizedPath("/")}>
+              {t('nav.home')}
             </Link>
-          </div> */}
+          </div>
           <div className="nav-item">
             <Link onClick={handleNavigation("/studio")} href={getLocalizedPath("/studio")}>
               {t('nav.studio')}
+            </Link>
+          </div>
+          <div className="nav-item">
+            <Link onClick={handleNavigation("/services")} href={getLocalizedPath("/services")}>
+              {t('nav.services')}
             </Link>
           </div>
           <div className="nav-item">

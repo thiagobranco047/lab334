@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { translations } from '@/lib/translations';
+import { setLocaleCookie } from '@/lib/locale';
 
 export const useLanguage = () => {
   const [currentLocale, setCurrentLocale] = useState('en');
@@ -43,6 +44,7 @@ export const useLanguage = () => {
 
   const changeLanguage = (newLocale) => {
     setCurrentLocale(newLocale);
+    setLocaleCookie(newLocale);
     
     // Update the URL to reflect the new locale
     const currentPath = pathname;

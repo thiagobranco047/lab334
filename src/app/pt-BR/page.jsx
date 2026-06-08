@@ -35,7 +35,7 @@ export default function Home() {
       <div className="revealer"></div>
       <div className="home">
         <div className="header">
-          <h1>{t('home.title')}</h1>
+          <h1>{t("home.title")}</h1>
         </div>
 
         <div className="hero-img">

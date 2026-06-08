@@ -11,6 +11,11 @@ function toEnglishPath(pathname) {
 
 export function middleware(request) {
   const { pathname } = request.nextUrl;
+
+  if (pathname.startsWith("/propostas")) {
+    return NextResponse.next();
+  }
+
   const savedLocale = request.cookies.get(LOCALE_COOKIE)?.value;
   const isPtBrPath = pathname === "/pt-BR" || pathname.startsWith("/pt-BR/");
 

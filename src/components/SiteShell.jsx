@@ -9,7 +9,8 @@ import SiteViewTransitions from "@/components/SiteViewTransitions";
 
 export default function SiteShell({ children }) {
   const pathname = usePathname();
-  const isProposalRoute = pathname?.startsWith("/propostas");
+  const isProposalRoute =
+    pathname?.startsWith("/propostas") || pathname?.startsWith("/pt-BR/propostas");
 
   useEffect(() => {
     if (isProposalRoute) return;

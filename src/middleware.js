@@ -9,10 +9,19 @@ function toEnglishPath(pathname) {
   return pathname.replace(/^\/pt-BR/, "") || "/";
 }
 
+function isProposalPath(pathname) {
+  return pathname === "/propostas" || pathname.startsWith("/propostas/");
+}
+
 export function middleware(request) {
   const { pathname } = request.nextUrl;
 
-  if (pathname.startsWith("/propostas")) {
+  if (pathname.startsWith("/pt-BR/propostas")) {
+    const canonicalPath = pathname.replace(/^\/pt-BR/, "") || "/propostas";
+    return NextResponse.redirect(new URL(canonicalPath, request.url));
+  }
+
+  if (isProposalPath(pathname)) {
     return NextResponse.next();
   }
 

@@ -6,7 +6,10 @@ import type { Proposal, ProposalSlide as ProposalSlideType } from "@/data/propos
 type ProposalSlideProps = {
   slide: ProposalSlideType;
   proposal: Proposal;
-  isLastSlide: boolean;
+  showActions?: boolean;
+  onExportPdf?: () => void;
+  isExportingPdf?: boolean;
+  exportMode?: boolean;
 };
 
 function extractPillarNumber(eyebrow?: string): string | null {
@@ -15,25 +18,74 @@ function extractPillarNumber(eyebrow?: string): string | null {
   return match ? match[1].padStart(2, "0") : null;
 }
 
-function SlideBullets({ items, columns = 2 }: { items: string[]; columns?: 1 | 2 }) {
+function SlideBullets({
+  items,
+  columns = 2,
+  exportMode = false,
+}: {
+  items: string[];
+  columns?: 1 | 2;
+  exportMode?: boolean;
+}) {
   return (
     <ul
       className={
         columns === 2
-          ? "mt-8 grid gap-x-10 gap-y-3 sm:grid-cols-2"
+          ? "mt-8 grid grid-cols-2 gap-x-10 gap-y-3"
           : "mt-8 space-y-3"
       }
     >
       {items.map((item) => (
         <li
           key={item}
-          className="flex items-start gap-3 font-body text-base font-light leading-relaxed text-proposal-fg sm:text-lg"
+          className={`flex items-start gap-3 font-body font-light leading-relaxed text-proposal-fg ${
+            exportMode ? "text-xl" : "text-base sm:text-lg"
+          }`}
         >
           <span className="mt-[0.55rem] h-1 w-1 shrink-0 rounded-full bg-proposal-fg" />
           <span>{item}</span>
         </li>
       ))}
     </ul>
+  );
+}
+
+function ProposalActionButton({
+  onClick,
+  disabled,
+  children,
+  variant = "primary",
+}: {
+  onClick: () => void;
+  disabled?: boolean;
+  children: ReactNode;
+  variant?: "primary" | "secondary";
+}) {
+  const base =
+    "inline-flex items-center justify-center px-7 py-4 font-body text-sm font-medium uppercase tracking-[0.14em] transition duration-300 disabled:cursor-not-allowed disabled:opacity-40";
+
+  if (variant === "secondary") {
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        disabled={disabled}
+        className={`${base} border border-proposal-fg/20 text-proposal-fg hover:border-proposal-fg hover:bg-proposal-fg hover:text-proposal-bg disabled:hover:bg-transparent disabled:hover:text-proposal-fg`}
+      >
+        {children}
+      </button>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      className={`${base} border border-proposal-fg bg-proposal-fg text-proposal-bg hover:bg-transparent hover:text-proposal-fg`}
+    >
+      {children}
+    </button>
   );
 }
 
@@ -75,7 +127,10 @@ function ProposalButton({
 export default function ProposalSlide({
   slide,
   proposal,
-  isLastSlide,
+  showActions = false,
+  onExportPdf,
+  isExportingPdf = false,
+  exportMode = false,
 }: ProposalSlideProps) {
   const slideType = slide.type ?? "text";
   const pillarNumber = extractPillarNumber(slide.eyebrow);
@@ -91,7 +146,11 @@ export default function ProposalSlide({
           <p className="font-display text-sm font-light uppercase tracking-[0.28em] text-proposal-muted">
             Proposta Comercial
           </p>
-          <h1 className="mt-4 max-w-[16ch] font-display text-[clamp(3rem,8vw,5.5rem)] font-extralight leading-[0.95] tracking-lab text-proposal-fg">
+          <h1
+            className={`mt-4 max-w-[16ch] font-display font-extralight leading-[0.95] tracking-lab text-proposal-fg ${
+              exportMode ? "text-[5.5rem]" : "text-[clamp(3rem,8vw,5.5rem)]"
+            }`}
+          >
             {slide.title}
           </h1>
         </div>
@@ -119,7 +178,11 @@ export default function ProposalSlide({
         </p>
 
         {slide.subtitle && (
-          <h2 className="mt-5 max-w-[20ch] font-display text-4xl font-extralight leading-[1.05] tracking-lab text-proposal-fg sm:text-6xl">
+          <h2
+            className={`mt-5 max-w-[20ch] font-display font-extralight leading-[1.05] tracking-lab text-proposal-fg ${
+              exportMode ? "text-6xl" : "text-4xl sm:text-6xl"
+            }`}
+          >
             {slide.subtitle}
           </h2>
         )}
@@ -138,7 +201,11 @@ export default function ProposalSlide({
               Investimento
             </p>
             {slide.highlight && (
-              <p className="mt-3 font-display text-4xl font-light tracking-lab text-proposal-fg sm:text-6xl">
+              <p
+                className={`mt-3 font-display font-light tracking-lab text-proposal-fg ${
+                  exportMode ? "text-6xl" : "text-4xl sm:text-6xl"
+                }`}
+              >
                 {slide.highlight}
               </p>
             )}
@@ -151,7 +218,11 @@ export default function ProposalSlide({
   if (slideType === "cta") {
     return (
       <div className="flex min-h-full flex-col justify-center py-6">
-        <h2 className="max-w-[14ch] font-display text-[clamp(2.5rem,6.5vw,4.5rem)] font-extralight leading-[1.02] tracking-lab text-proposal-fg">
+        <h2
+          className={`max-w-[14ch] font-display font-extralight leading-[1.02] tracking-lab text-proposal-fg ${
+            exportMode ? "text-[4.5rem]" : "text-[clamp(2.5rem,6.5vw,4.5rem)]"
+          }`}
+        >
           {slide.title}
         </h2>
 
@@ -167,10 +238,19 @@ export default function ProposalSlide({
           </p>
         )}
 
-        {isLastSlide && (
+        {showActions && (
           <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
             {proposal.approveUrl && (
               <ProposalButton href={proposal.approveUrl}>Aprovar proposta</ProposalButton>
+            )}
+            {onExportPdf && (
+              <ProposalActionButton
+                onClick={onExportPdf}
+                disabled={isExportingPdf}
+                variant="secondary"
+              >
+                {isExportingPdf ? "Gerando PDF..." : "Exportar PDF"}
+              </ProposalActionButton>
             )}
             {proposal.pdfUrl && (
               <ProposalButton href={proposal.pdfUrl} variant="secondary">
@@ -188,13 +268,21 @@ export default function ProposalSlide({
       <div className="flex min-h-full flex-col justify-center py-6">
         <div className="flex items-start gap-6 sm:gap-10">
           {pillarNumber && (
-            <p className="font-display text-[clamp(4.5rem,12vw,7.5rem)] font-extralight leading-none tracking-lab text-proposal-line">
+            <p
+              className={`font-display font-extralight leading-none tracking-lab text-proposal-line ${
+                exportMode ? "text-[7.5rem]" : "text-[clamp(4.5rem,12vw,7.5rem)]"
+              }`}
+            >
               {pillarNumber}
             </p>
           )}
 
           <div className="min-w-0 flex-1">
-            <h2 className="max-w-[18ch] font-display text-[clamp(2.25rem,5vw,3.75rem)] font-extralight leading-[1.05] tracking-lab text-proposal-fg">
+            <h2
+              className={`max-w-[18ch] font-display font-extralight leading-[1.05] tracking-lab text-proposal-fg ${
+                exportMode ? "text-6xl" : "text-[clamp(2.25rem,5vw,3.75rem)]"
+              }`}
+            >
               {slide.title}
             </h2>
 
@@ -205,7 +293,11 @@ export default function ProposalSlide({
             )}
 
             {slide.bullets && slide.bullets.length > 0 && (
-              <SlideBullets items={slide.bullets} columns={slide.bullets.length > 4 ? 2 : 1} />
+              <SlideBullets
+                items={slide.bullets}
+                columns={slide.bullets.length > 4 ? 2 : 1}
+                exportMode={exportMode}
+              />
             )}
 
             {slide.highlight && (
@@ -231,7 +323,11 @@ export default function ProposalSlide({
         </p>
       )}
 
-      <h2 className="max-w-[18ch] font-display text-[clamp(2.25rem,5.5vw,4.25rem)] font-extralight leading-[1.05] tracking-lab text-proposal-fg">
+      <h2
+        className={`max-w-[18ch] font-display font-extralight leading-[1.05] tracking-lab text-proposal-fg ${
+          exportMode ? "text-6xl" : "text-[clamp(2.25rem,5.5vw,4.25rem)]"
+        }`}
+      >
         {slide.title}
       </h2>
 
@@ -249,7 +345,11 @@ export default function ProposalSlide({
 
       {slide.bullets && slide.bullets.length > 0 && (
         <div className="mt-8 border-t border-proposal-line pt-8">
-          <SlideBullets items={slide.bullets} columns={slide.bullets.length > 4 ? 2 : 1} />
+          <SlideBullets
+            items={slide.bullets}
+            columns={slide.bullets.length > 4 ? 2 : 1}
+            exportMode={exportMode}
+          />
         </div>
       )}
 

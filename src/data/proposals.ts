@@ -188,7 +188,7 @@ export const proposals: Record<string, Proposal> = {
         type: "investment",
         title: "Investimento",
         subtitle: "Programa de Presença Digital, Autoridade e Inteligência de Mercado",
-        highlight: "R$ 5.600,00 / mês",
+        highlight: "R$ 5.400,00 / mês",
         body: "Inclui todos os pilares apresentados nesta proposta. Investimento em mídia paga não incluso.",
       },
       {

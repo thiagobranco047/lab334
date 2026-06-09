@@ -25,7 +25,7 @@ export const proposals: Record<string, Proposal> = {
     client: "Azimute Engenharia",
     title: "Programa de Presença Digital, Autoridade e Inteligência de Mercado",
     date: "Junho de 2026",
-    investment: "R$ 4.500,00 / mês",
+    investment: "R$ 5.600,00 / mês",
     approveUrl:
       "mailto:contato@lab334.com.br?subject=Aprovação%20-%20Proposta%20Azimute%20Engenharia",
     slides: [
@@ -87,6 +87,10 @@ export const proposals: Record<string, Proposal> = {
           "Criação de artes",
           "Desenvolvimento de copies",
           "Publicação e monitoramento",
+          "4 conteúdos de blog por mês (publicados no blog e no LinkedIn)",
+          "2 captações mensais de fotos e vídeos",
+          "Elaboração de 4 roteiros mensais de reels + edição",
+          "Cortes do podcast Azimute Engenharia em Ação (material bruto fornecido pelo cliente)",
         ],
       },
       {
@@ -184,7 +188,7 @@ export const proposals: Record<string, Proposal> = {
         type: "investment",
         title: "Investimento",
         subtitle: "Programa de Presença Digital, Autoridade e Inteligência de Mercado",
-        highlight: "R$ 4.500,00 / mês",
+        highlight: "R$ 5.600,00 / mês",
         body: "Inclui todos os pilares apresentados nesta proposta. Investimento em mídia paga não incluso.",
       },
       {

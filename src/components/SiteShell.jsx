@@ -1,19 +1,23 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-import Nav from "@/components/Nav";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
-import SiteViewTransitions from "@/components/SiteViewTransitions";
+const SiteChrome = dynamic(() => import("@/components/SiteChrome"), {
+  ssr: false,
+});
+
+function isProposalRoute(pathname) {
+  return pathname?.startsWith("/propostas") || pathname?.startsWith("/pt-BR/propostas");
+}
 
 export default function SiteShell({ children }) {
   const pathname = usePathname();
-  const isProposalRoute =
-    pathname?.startsWith("/propostas") || pathname?.startsWith("/pt-BR/propostas");
+  const proposalRoute = isProposalRoute(pathname);
 
   useEffect(() => {
-    if (isProposalRoute) return;
+    if (proposalRoute) return;
 
     document.title = "Lab. 334";
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -25,17 +29,11 @@ export default function SiteShell({ children }) {
       meta.content = "Digital Marketing";
       document.head.appendChild(meta);
     }
-  }, [isProposalRoute]);
+  }, [proposalRoute]);
 
-  if (isProposalRoute) {
+  if (proposalRoute) {
     return children;
   }
 
-  return (
-    <SiteViewTransitions>
-      <Nav />
-      {children}
-      <LanguageSwitcher />
-    </SiteViewTransitions>
-  );
+  return <SiteChrome>{children}</SiteChrome>;
 }

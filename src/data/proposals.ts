@@ -33,7 +33,6 @@ export const proposals: Record<string, Proposal> = {
         type: "cover",
         title: "Programa de Presença Digital, Autoridade e Inteligência de Mercado",
         subtitle: "Azimute Engenharia",
-        body: "Julho de 2025",
       },
       {
         type: "text",

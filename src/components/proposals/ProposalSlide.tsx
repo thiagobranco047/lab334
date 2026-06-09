@@ -155,12 +155,6 @@ export default function ProposalSlide({
           </h1>
         </div>
 
-        {slide.body && (
-          <p className="mt-10 max-w-[42ch] font-body text-base font-light leading-relaxed text-proposal-muted sm:text-lg">
-            {slide.body}
-          </p>
-        )}
-
         <div className="mt-auto pt-16">
           <p className="font-body text-sm font-light uppercase tracking-[0.22em] text-proposal-muted">
             {proposal.date}

@@ -16,24 +16,29 @@ function extractPillarNumber(eyebrow?: string): string | null {
 }
 
 function SlideBullets({ items, columns = 2 }: { items: string[]; columns?: 1 | 2 }) {
+  const itemClassName =
+    "flex items-start gap-3 font-body text-base font-light leading-snug text-proposal-fg sm:text-lg";
+
+  const renderItem = (item: string) => (
+    <li key={item} className={itemClassName}>
+      <span className="mt-[0.55rem] h-1 w-1 shrink-0 rounded-full bg-proposal-fg" />
+      <span>{item}</span>
+    </li>
+  );
+
+  if (columns === 1) {
+    return <ul className="mt-8">{items.map(renderItem)}</ul>;
+  }
+
+  const rowsPerColumn = Math.ceil(items.length / 2);
+  const leftColumn = items.slice(0, rowsPerColumn);
+  const rightColumn = items.slice(rowsPerColumn);
+
   return (
-    <ul
-      className={
-        columns === 2
-          ? "mt-8 grid gap-x-10 gap-y-3 sm:grid-cols-2"
-          : "mt-8 space-y-3"
-      }
-    >
-      {items.map((item) => (
-        <li
-          key={item}
-          className="flex items-start gap-3 font-body text-base font-light leading-relaxed text-proposal-fg sm:text-lg"
-        >
-          <span className="mt-[0.55rem] h-1 w-1 shrink-0 rounded-full bg-proposal-fg" />
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
+    <div className="mt-8 flex gap-x-10">
+      <ul className="min-w-0 flex-1">{leftColumn.map(renderItem)}</ul>
+      <ul className="min-w-0 flex-1">{rightColumn.map(renderItem)}</ul>
+    </div>
   );
 }
 
@@ -132,7 +137,7 @@ export default function ProposalSlide({
               Investimento
             </p>
             {slide.highlight && (
-              <p className="mt-3 font-display text-4xl font-light tracking-lab text-proposal-fg sm:text-6xl">
+              <p className="mt-3 font-display text-[3rem] font-light tracking-lab text-proposal-fg">
                 {slide.highlight}
               </p>
             )}
@@ -236,7 +241,7 @@ export default function ProposalSlide({
       )}
 
       {slide.body && (
-        <p className="mt-6 max-w-[48ch] font-body text-base font-light leading-relaxed text-proposal-fg sm:mt-8 sm:text-lg">
+        <p className="mt-6 max-w-[65ch] font-body text-base font-light leading-relaxed text-proposal-fg sm:mt-8 sm:text-lg">
           {slide.body}
         </p>
       )}

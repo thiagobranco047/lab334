@@ -24,7 +24,7 @@ export const proposals: Record<string, Proposal> = {
     slug: "azimute-engenharia",
     client: "Azimute Engenharia",
     title: "Programa de Presença Digital, Autoridade e Inteligência de Mercado",
-    date: "Julho de 2025",
+    date: "Junho de 2026",
     investment: "R$ 4.500,00 / mês",
     approveUrl:
       "mailto:contato@lab334.com.br?subject=Aprovação%20-%20Proposta%20Azimute%20Engenharia",

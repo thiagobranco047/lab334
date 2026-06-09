@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { createPortal, flushSync } from "react-dom";
+import { flushSync } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 import type { Proposal } from "@/data/proposals";
@@ -36,12 +36,6 @@ export default function ProposalDeck({ proposal }: ProposalDeckProps) {
   const [isExporting, setIsExporting] = useState(false);
   const exportFrameRef = useRef<HTMLDivElement>(null);
   const totalSlides = proposal.slides.length;
-
-  const getExportFrameClassName = () => {
-    const root = document.querySelector("[data-proposal-root]");
-    const rootClasses = root instanceof HTMLElement ? root.className : "";
-    return `pointer-events-none fixed top-0 left-0 z-[9997] overflow-hidden bg-proposal-bg text-proposal-fg antialiased ${rootClasses}`;
-  };
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -117,44 +111,39 @@ export default function ProposalDeck({ proposal }: ProposalDeckProps) {
   const currentSlide = proposal.slides[currentIndex];
   const isLastSlide = currentIndex === totalSlides - 1;
 
-  const exportFrame =
-    exportSlideIndex !== null && typeof document !== "undefined"
-      ? createPortal(
-          <div
-            ref={exportFrameRef}
-            aria-hidden={!isExporting}
-            className={getExportFrameClassName()}
-            style={{
-              width: PROPOSAL_PDF_WIDTH,
-              height: PROPOSAL_PDF_HEIGHT,
-            }}
-          >
-            <div className="flex h-full flex-col px-24 pb-16 pt-20">
-              <ProposalBrand />
-              <div className="flex flex-1 flex-col justify-center">
-                <ProposalSlide
-                  slide={proposal.slides[exportSlideIndex]}
-                  proposal={proposal}
-                  showActions={false}
-                  exportMode
-                />
-              </div>
-              <p className="font-body text-sm font-light uppercase tracking-[0.24em] text-proposal-muted">
-                Proposta Comercial — {proposal.client}
-              </p>
-            </div>
-          </div>,
-          document.body
-        )
-      : null;
-
   return (
     <div className="relative min-h-[100dvh] overflow-hidden bg-proposal-bg text-proposal-fg">
       {isExporting && (
-        <div className="fixed inset-0 z-[9998] flex items-center justify-center bg-proposal-bg/90 backdrop-blur-sm">
+        <div className="pointer-events-none fixed inset-0 z-[9998] flex items-center justify-center bg-proposal-bg/95 backdrop-blur-sm">
           <p className="font-display text-sm font-light uppercase tracking-[0.24em] text-proposal-muted">
             Gerando PDF...
           </p>
+        </div>
+      )}
+
+      {exportSlideIndex !== null && (
+        <div
+          ref={exportFrameRef}
+          className="proposal-export-frame pointer-events-none fixed top-0 left-0 z-[10000] overflow-hidden antialiased"
+          style={{
+            width: PROPOSAL_PDF_WIDTH,
+            height: PROPOSAL_PDF_HEIGHT,
+          }}
+        >
+          <div className="flex h-full flex-col px-24 pb-16 pt-20">
+            <ProposalBrand />
+            <div className="flex flex-1 flex-col justify-center">
+              <ProposalSlide
+                slide={proposal.slides[exportSlideIndex]}
+                proposal={proposal}
+                showActions={false}
+                exportMode
+              />
+            </div>
+            <p className="font-body text-sm font-light uppercase tracking-[0.24em] text-proposal-muted">
+              Proposta Comercial — {proposal.client}
+            </p>
+          </div>
         </div>
       )}
 
@@ -163,7 +152,9 @@ export default function ProposalDeck({ proposal }: ProposalDeckProps) {
         className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-[linear-gradient(to_left,rgba(224,224,224,0.35),transparent)]"
       />
 
-      <ProposalProgress current={currentIndex + 1} total={totalSlides} />
+      {!isExporting && (
+        <ProposalProgress current={currentIndex + 1} total={totalSlides} />
+      )}
 
       <main className="relative mx-auto flex min-h-[100dvh] max-w-proposal items-stretch px-5 pb-24 pt-28 sm:px-8 sm:pb-28 sm:pt-32">
         <AnimatePresence mode="wait">
@@ -187,20 +178,22 @@ export default function ProposalDeck({ proposal }: ProposalDeckProps) {
         </AnimatePresence>
       </main>
 
-      <ProposalControls
-        current={currentIndex + 1}
-        total={totalSlides}
-        onPrevious={goPrevious}
-        onNext={goNext}
-      />
+      {!isExporting && (
+        <ProposalControls
+          current={currentIndex + 1}
+          total={totalSlides}
+          onPrevious={goPrevious}
+          onNext={goNext}
+        />
+      )}
 
-      <footer className="pointer-events-none fixed bottom-5 left-5 z-40 hidden sm:block">
-        <p className="font-body text-xs font-light uppercase tracking-[0.24em] text-proposal-muted sm:text-sm">
-          Proposta Comercial — {proposal.client}
-        </p>
-      </footer>
-
-      {exportFrame}
+      {!isExporting && (
+        <footer className="pointer-events-none fixed bottom-5 left-5 z-40 hidden sm:block">
+          <p className="font-body text-xs font-light uppercase tracking-[0.24em] text-proposal-muted sm:text-sm">
+            Proposta Comercial — {proposal.client}
+          </p>
+        </footer>
+      )}
     </div>
   );
 }

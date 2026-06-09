@@ -1,4 +1,4 @@
-import html2canvas from "html2canvas";
+import { toCanvas } from "html-to-image";
 import { jsPDF } from "jspdf";
 
 import type { Proposal } from "@/data/proposals";
@@ -14,38 +14,26 @@ async function waitForPaint() {
   });
 
   await new Promise<void>((resolve) => {
-    setTimeout(resolve, 120);
+    setTimeout(resolve, 200);
   });
 
   if (document.fonts?.ready) {
     await document.fonts.ready;
   }
-}
 
-function prepareCloneForCapture(element: HTMLElement) {
-  element.style.position = "fixed";
-  element.style.left = "0";
-  element.style.top = "0";
-  element.style.opacity = "1";
-  element.style.visibility = "visible";
-  element.style.transform = "none";
-  element.style.pointerEvents = "none";
-  element.style.zIndex = "2147483647";
-
-  let parent = element.parentElement;
-  while (parent) {
-    parent.style.overflow = "visible";
-    parent.style.transform = "none";
-    parent.style.opacity = "1";
-    parent.style.visibility = "visible";
-    parent = parent.parentElement;
-  }
+  await Promise.allSettled([
+    document.fonts.load('300 16px "Roboto"'),
+    document.fonts.load('200 64px "Outfit"'),
+    document.fonts.load('100 64px "Outfit"'),
+  ]);
 }
 
 async function waitForFrame(getFrame: () => HTMLElement | null) {
-  for (let attempt = 0; attempt < 20; attempt += 1) {
+  for (let attempt = 0; attempt < 30; attempt += 1) {
     const frame = getFrame();
-    if (frame) return frame;
+    if (frame && frame.offsetWidth > 0 && frame.offsetHeight > 0) {
+      return frame;
+    }
 
     await new Promise<void>((resolve) => {
       setTimeout(resolve, 50);
@@ -53,6 +41,28 @@ async function waitForFrame(getFrame: () => HTMLElement | null) {
   }
 
   throw new Error("Não foi possível preparar a exportação do PDF.");
+}
+
+function isCanvasBlank(canvas: HTMLCanvasElement) {
+  const context = canvas.getContext("2d");
+  if (!context) return true;
+
+  const sampleWidth = Math.min(canvas.width, 240);
+  const sampleHeight = Math.min(canvas.height, 135);
+  const imageData = context.getImageData(0, 0, sampleWidth, sampleHeight).data;
+
+  for (let index = 0; index < imageData.length; index += 4) {
+    const red = imageData[index];
+    const green = imageData[index + 1];
+    const blue = imageData[index + 2];
+    const alpha = imageData[index + 3];
+
+    if (alpha > 0 && (red < 250 || green < 250 || blue < 250)) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 export async function exportProposalToPdf(
@@ -73,23 +83,18 @@ export async function exportProposalToPdf(
 
     const frame = await waitForFrame(getFrame);
 
-    const canvas = await html2canvas(frame, {
-      backgroundColor: "#ffffff",
-      height: PROPOSAL_PDF_HEIGHT,
+    const canvas = await toCanvas(frame, {
       width: PROPOSAL_PDF_WIDTH,
-      scale: 1,
-      useCORS: true,
-      logging: false,
-      scrollX: 0,
-      scrollY: 0,
-      windowHeight: PROPOSAL_PDF_HEIGHT,
-      windowWidth: PROPOSAL_PDF_WIDTH,
-      onclone: (_document, clonedElement) => {
-        prepareCloneForCapture(clonedElement);
-      },
+      height: PROPOSAL_PDF_HEIGHT,
+      canvasWidth: PROPOSAL_PDF_WIDTH,
+      canvasHeight: PROPOSAL_PDF_HEIGHT,
+      pixelRatio: 1,
+      backgroundColor: "#ffffff",
+      cacheBust: true,
+      skipAutoScale: true,
     });
 
-    if (canvas.width === 0 || canvas.height === 0) {
+    if (isCanvasBlank(canvas)) {
       throw new Error("A captura do slide retornou uma imagem vazia.");
     }
 

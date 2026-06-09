@@ -89,7 +89,7 @@ export const proposals: Record<string, Proposal> = {
           "Publicação e monitoramento",
           "4 conteúdos de blog por mês (publicados no blog e no LinkedIn)",
           "2 captações mensais de fotos e vídeos",
-          "Elaboração de 4 roteiros mensais de reels + edição",
+          "Elaboração de 4 roteiros mensais de reels + edição (inclusos na contagem mensal de publicações)",
           "Cortes do podcast Azimute Engenharia em Ação (material bruto fornecido pelo cliente)",
         ],
       },

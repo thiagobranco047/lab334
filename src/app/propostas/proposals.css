@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .proposals-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 3.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .proposals-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .proposals-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .proposal-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(74, 82, 90, 0.22);
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.3s ease;
+  }
+
+  @media (min-width: 640px) {
+    .proposal-card {
+      padding: 1.75rem;
+    }
+  }
+
+  .proposal-card:hover {
+    border-color: #4a525a;
+  }
+}

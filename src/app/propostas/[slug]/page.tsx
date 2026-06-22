@@ -1,24 +1,24 @@
 import { notFound } from "next/navigation";
 
-import ProposalDeck from "@/components/proposals/ProposalDeck";
-import { getAllProposalSlugs, getProposalBySlug } from "@/data/proposals";
+import PresentationDeck from "@/components/presentations/PresentationDeck";
+import { getAllPresentationSlugs, getPresentationBySlug } from "@/data/presentations";
 
-type ProposalPageProps = {
+type PresentationPageProps = {
   params: {
     slug: string;
   };
 };
 
 export function generateStaticParams() {
-  return getAllProposalSlugs().map((slug) => ({ slug }));
+  return getAllPresentationSlugs().map((slug) => ({ slug }));
 }
 
-export default function ProposalPage({ params }: ProposalPageProps) {
-  const proposal = getProposalBySlug(params.slug);
+export default function PresentationPage({ params }: PresentationPageProps) {
+  const presentation = getPresentationBySlug(params.slug);
 
-  if (!proposal) {
+  if (!presentation) {
     notFound();
   }
 
-  return <ProposalDeck proposal={proposal} />;
+  return <PresentationDeck presentation={presentation} />;
 }

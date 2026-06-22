@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     "./src/app/propostas/**/*.{js,jsx,ts,tsx}",
     "./src/components/proposals/**/*.{js,jsx,ts,tsx}",
+    "./src/components/presentations/**/*.{js,jsx,ts,tsx}",
   ],
   corePlugins: {
     preflight: false,
@@ -24,7 +25,13 @@ const config: Config = {
         body: ["var(--font-roboto)", "Inter", "system-ui", "sans-serif"],
       },
       maxWidth: {
-        proposal: "960px",
+        proposal: "1200px",
+        "slide-body": "72ch",
+        "slide-body-lg": "85ch",
+        "slide-title": "22ch",
+        "slide-title-lg": "30ch",
+        "slide-cta-title": "26ch",
+        "slide-cta-title-lg": "36ch",
       },
       letterSpacing: {
         lab: "-0.04em",

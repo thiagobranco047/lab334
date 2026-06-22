@@ -15,11 +15,11 @@ const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
 });
 
-const proposalRootClassName = `${outfit.variable} ${roboto.variable} min-h-[100dvh] bg-proposal-bg font-body text-proposal-fg antialiased`;
+const presentationRootClassName = `${outfit.variable} ${roboto.variable} min-h-[100dvh] bg-proposal-bg font-body text-proposal-fg antialiased`;
 
 export default function PropostasLayout({ children }: { children: ReactNode }) {
   return (
-    <div data-proposal-root className={proposalRootClassName}>
+    <div data-presentation-root className={presentationRootClassName}>
       {children}
     </div>
   );

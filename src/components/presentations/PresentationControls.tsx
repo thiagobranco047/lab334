@@ -19,12 +19,12 @@ export default function PresentationControls({
   const isLast = current >= total;
 
   const buttonClass =
-    "group flex h-9 w-9 items-center justify-center border border-proposal-fg/25 bg-proposal-bg text-proposal-fg transition hover:border-proposal-fg hover:bg-proposal-fg hover:text-proposal-bg disabled:cursor-not-allowed disabled:border-proposal-line disabled:text-proposal-muted disabled:hover:bg-proposal-bg disabled:hover:text-proposal-muted sm:h-10 sm:w-10";
+    "group flex h-9 w-9 items-center justify-center border border-presentation-fg/25 bg-presentation-bg text-presentation-fg transition hover:border-presentation-fg hover:bg-presentation-fg hover:text-presentation-bg disabled:cursor-not-allowed disabled:border-presentation-line disabled:text-presentation-muted disabled:hover:bg-presentation-bg disabled:hover:text-presentation-muted sm:h-10 sm:w-10";
 
   return (
     <div className="fixed bottom-5 right-5 z-50 flex items-center gap-4 sm:bottom-8 sm:right-8 sm:gap-5">
       {sideLabel && (
-        <p className="hidden font-display text-xs font-light uppercase tracking-[0.35em] text-proposal-muted sm:block">
+        <p className="hidden font-display text-xs font-light uppercase tracking-[0.35em] text-presentation-muted sm:block">
           {sideLabel}
         </p>
       )}

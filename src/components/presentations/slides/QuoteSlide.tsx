@@ -14,7 +14,7 @@ export default function QuoteSlide({ slide }: { slide: PresentationSlide }) {
       {slide.eyebrow && (
         <motion.p
           variants={fadeUpItem}
-          className="mb-6 font-display text-sm font-light uppercase tracking-[0.28em] text-proposal-muted"
+          className="mb-6 font-display text-sm font-light uppercase tracking-[0.28em] text-presentation-muted"
         >
           {slide.eyebrow}
         </motion.p>
@@ -22,7 +22,7 @@ export default function QuoteSlide({ slide }: { slide: PresentationSlide }) {
 
       <motion.blockquote
         variants={fadeUpItem}
-        className="max-w-[22ch] border-l-2 border-proposal-fg pl-6 font-display text-[clamp(2rem,5vw,3.75rem)] font-extralight leading-[1.08] tracking-lab text-proposal-fg"
+        className="max-w-[22ch] border-l-2 border-presentation-fg pl-6 font-display text-[clamp(2rem,5vw,3.75rem)] font-extralight leading-[1.08] tracking-lab text-presentation-fg"
       >
         {slide.title}
       </motion.blockquote>
@@ -30,7 +30,7 @@ export default function QuoteSlide({ slide }: { slide: PresentationSlide }) {
       {slide.body && (
         <motion.p
           variants={fadeUpItem}
-          className="mt-8 max-w-slide-body lg:max-w-slide-body-lg font-body text-base font-light leading-relaxed text-proposal-fg sm:text-lg"
+          className="mt-8 max-w-slide-body lg:max-w-slide-body-lg font-body text-base font-light leading-relaxed text-presentation-fg sm:text-lg"
         >
           {slide.body}
         </motion.p>
@@ -39,7 +39,7 @@ export default function QuoteSlide({ slide }: { slide: PresentationSlide }) {
       {slide.highlight && (
         <motion.p
           variants={fadeUpItem}
-          className="mt-8 font-body text-sm font-light uppercase tracking-[0.2em] text-proposal-muted sm:text-base"
+          className="mt-8 font-body text-sm font-light uppercase tracking-[0.2em] text-presentation-muted sm:text-base"
         >
           {slide.highlight}
         </motion.p>

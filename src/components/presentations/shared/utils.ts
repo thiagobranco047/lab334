@@ -7,3 +7,8 @@ export function extractPillarNumber(eyebrow?: string): string | null {
 export function padSlideNumber(value: number): string {
   return value.toString().padStart(2, "0");
 }
+
+export function formatCreatedAt(isoDate: string): string {
+  const [year, month, day] = isoDate.split("-");
+  return `${day}/${month}/${year}`;
+}

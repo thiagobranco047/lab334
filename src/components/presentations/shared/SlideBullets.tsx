@@ -6,11 +6,11 @@ export default function SlideBullets({
   columns?: 1 | 2;
 }) {
   const itemClassName =
-    "flex items-start gap-3 font-body text-base font-light leading-snug text-proposal-fg sm:text-lg";
+    "flex items-start gap-3 font-body text-base font-light leading-snug text-presentation-fg sm:text-lg";
 
   const renderItem = (item: string) => (
     <li key={item} className={itemClassName}>
-      <span className="mt-[0.55rem] h-1 w-1 shrink-0 rounded-full bg-proposal-fg" />
+      <span className="mt-[0.55rem] h-1 w-1 shrink-0 rounded-full bg-presentation-fg" />
       <span>{item}</span>
     </li>
   );

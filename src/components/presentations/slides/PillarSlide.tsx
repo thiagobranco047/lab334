@@ -19,7 +19,7 @@ export default function PillarSlide({ slide }: { slide: PresentationSlide }) {
         {pillarNumber && (
           <motion.p
             variants={fadeUpItem}
-            className="font-display text-[clamp(4.5rem,12vw,7.5rem)] font-extralight leading-none tracking-lab text-proposal-line"
+            className="font-display text-[clamp(4.5rem,12vw,7.5rem)] font-extralight leading-none tracking-lab text-presentation-line"
           >
             {pillarNumber}
           </motion.p>
@@ -28,7 +28,7 @@ export default function PillarSlide({ slide }: { slide: PresentationSlide }) {
         <div className="min-w-0 flex-1">
           <motion.h2
             variants={fadeUpItem}
-            className="max-w-slide-title lg:max-w-slide-title-lg font-display text-[clamp(2.25rem,5vw,3.75rem)] font-extralight leading-[1.05] tracking-lab text-proposal-fg"
+            className="max-w-slide-title lg:max-w-slide-title-lg font-display text-[clamp(2.25rem,5vw,3.75rem)] font-extralight leading-[1.05] tracking-lab text-presentation-fg"
           >
             {slide.title}
           </motion.h2>
@@ -36,7 +36,7 @@ export default function PillarSlide({ slide }: { slide: PresentationSlide }) {
           {slide.body && (
             <motion.p
               variants={fadeUpItem}
-              className="mt-5 max-w-slide-body lg:max-w-slide-body-lg font-body text-base font-light leading-relaxed text-proposal-fg sm:text-lg"
+              className="mt-5 max-w-slide-body lg:max-w-slide-body-lg font-body text-base font-light leading-relaxed text-presentation-fg sm:text-lg"
             >
               {slide.body}
             </motion.p>
@@ -51,7 +51,7 @@ export default function PillarSlide({ slide }: { slide: PresentationSlide }) {
           {slide.highlight && (
             <motion.p
               variants={fadeUpItem}
-              className="mt-8 border-t border-proposal-line pt-6 font-body text-base font-light italic text-proposal-muted sm:text-lg"
+              className="mt-8 border-t border-presentation-line pt-6 font-body text-base font-light italic text-presentation-muted sm:text-lg"
             >
               {slide.highlight}
             </motion.p>

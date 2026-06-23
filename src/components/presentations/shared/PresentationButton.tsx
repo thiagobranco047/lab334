@@ -18,7 +18,7 @@ export default function PresentationButton({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${base} border border-proposal-fg/20 text-proposal-fg hover:border-proposal-fg hover:bg-proposal-fg hover:text-proposal-bg`}
+        className={`${base} border border-presentation-fg/20 text-presentation-fg hover:border-presentation-fg hover:bg-presentation-fg hover:text-presentation-bg`}
       >
         {children}
       </a>
@@ -28,7 +28,7 @@ export default function PresentationButton({
   return (
     <a
       href={href}
-      className={`${base} border border-proposal-fg bg-proposal-fg text-proposal-bg hover:bg-transparent hover:text-proposal-fg`}
+      className={`${base} border border-presentation-fg bg-presentation-fg text-presentation-bg hover:bg-transparent hover:text-presentation-fg`}
     >
       {children}
     </a>

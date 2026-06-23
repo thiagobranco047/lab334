@@ -5,6 +5,7 @@ export const azimuteEngenharia: Presentation = {
   client: "Azimute Engenharia",
   title: "Programa de Presença Digital, Autoridade e Inteligência de Mercado",
   date: "Junho de 2026",
+  createdAt: "2026-06-02",
   category: "proposal",
   investment: "R$ 5.600,00 / mês",
   approveUrl:

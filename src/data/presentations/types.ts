@@ -38,6 +38,7 @@ export type Presentation = {
   client: string;
   title: string;
   date: string;
+  createdAt: string;
   category: PresentationCategory;
   investment?: string;
   approveUrl?: string;

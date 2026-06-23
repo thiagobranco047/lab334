@@ -3,7 +3,7 @@ type PresentationBrandProps = {
 };
 
 export default function PresentationBrand({ variant = "light" }: PresentationBrandProps) {
-  const tone = variant === "light" ? "text-proposal-fg" : "text-white";
+  const tone = variant === "light" ? "text-presentation-fg" : "text-white";
 
   return (
     <div className={`font-display text-base font-light tracking-[-0.06em] sm:text-lg ${tone}`}>

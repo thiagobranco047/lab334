@@ -2,8 +2,7 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./src/app/propostas/**/*.{js,jsx,ts,tsx}",
-    "./src/app/apresentacoes/**/*.{js,jsx,ts,tsx}",
+    "./src/app/(presentations)/**/*.{js,jsx,ts,tsx}",
     "./src/components/proposals/**/*.{js,jsx,ts,tsx}",
     "./src/components/presentations/**/*.{js,jsx,ts,tsx}",
   ],
@@ -13,7 +12,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        proposal: {
+        presentation: {
           bg: "#FFFFFF",
           fg: "#4A525A",
           muted: "#7A828A",
@@ -26,7 +25,7 @@ const config: Config = {
         body: ["var(--font-roboto)", "Inter", "system-ui", "sans-serif"],
       },
       maxWidth: {
-        proposal: "1200px",
+        presentation: "1200px",
         "slide-body": "72ch",
         "slide-body-lg": "85ch",
         "slide-title": "22ch",

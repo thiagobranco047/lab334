@@ -20,7 +20,7 @@ export default function TableSlide({ slide }: { slide: PresentationSlide }) {
       {slide.eyebrow && (
         <motion.p
           variants={fadeUpItem}
-          className="mb-4 font-display text-sm font-light uppercase tracking-[0.28em] text-proposal-muted"
+          className="mb-4 font-display text-sm font-light uppercase tracking-[0.28em] text-presentation-muted"
         >
           {slide.eyebrow}
         </motion.p>
@@ -28,7 +28,7 @@ export default function TableSlide({ slide }: { slide: PresentationSlide }) {
 
       <motion.h2
         variants={fadeUpItem}
-        className="max-w-slide-title lg:max-w-slide-title-lg font-display text-[clamp(2rem,4.5vw,3.5rem)] font-extralight leading-[1.05] tracking-lab text-proposal-fg"
+        className="max-w-slide-title lg:max-w-slide-title-lg font-display text-[clamp(2rem,4.5vw,3.5rem)] font-extralight leading-[1.05] tracking-lab text-presentation-fg"
       >
         {slide.title}
       </motion.h2>
@@ -36,20 +36,20 @@ export default function TableSlide({ slide }: { slide: PresentationSlide }) {
       {slide.body && (
         <motion.p
           variants={fadeUpItem}
-          className="mt-5 max-w-slide-body lg:max-w-slide-body-lg font-body text-base font-light leading-relaxed text-proposal-fg sm:text-lg"
+          className="mt-5 max-w-slide-body lg:max-w-slide-body-lg font-body text-base font-light leading-relaxed text-presentation-fg sm:text-lg"
         >
           {slide.body}
         </motion.p>
       )}
 
-      <motion.div variants={fadeUpItem} className="mt-8 overflow-x-auto border border-proposal-line">
+      <motion.div variants={fadeUpItem} className="mt-8 overflow-x-auto border border-presentation-line">
         <table className="w-full min-w-[520px] border-collapse text-left">
           <thead>
-            <tr className="border-b border-proposal-line bg-proposal-surface/60">
+            <tr className="border-b border-presentation-line bg-presentation-surface/60">
               {table.headers.map((header) => (
                 <th
                   key={header}
-                  className="px-4 py-3 font-display text-xs font-light uppercase tracking-[0.18em] text-proposal-muted sm:px-6 sm:py-4"
+                  className="px-4 py-3 font-display text-xs font-light uppercase tracking-[0.18em] text-presentation-muted sm:px-6 sm:py-4"
                 >
                   {header}
                 </th>
@@ -61,12 +61,12 @@ export default function TableSlide({ slide }: { slide: PresentationSlide }) {
               <motion.tr
                 key={`${rowIndex}-${row.join("-")}`}
                 variants={staggerItem}
-                className="border-b border-proposal-line last:border-b-0"
+                className="border-b border-presentation-line last:border-b-0"
               >
                 {row.map((cell, cellIndex) => (
                   <td
                     key={`${rowIndex}-${cellIndex}`}
-                    className="px-4 py-3 font-body text-sm font-light leading-relaxed text-proposal-fg sm:px-6 sm:py-4 sm:text-base"
+                    className="px-4 py-3 font-body text-sm font-light leading-relaxed text-presentation-fg sm:px-6 sm:py-4 sm:text-base"
                   >
                     {cell}
                   </td>

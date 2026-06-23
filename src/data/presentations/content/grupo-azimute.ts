@@ -5,6 +5,7 @@ export const grupoAzimute: Presentation = {
   client: "Grupo Azimute",
   title: "Programa de Comunicação, Autoridade e Inteligência Digital",
   date: "Junho de 2026",
+  createdAt: "2026-06-04",
   category: "proposal",
   investment: "R$ 18.100,00 / mês",
   approveUrl:

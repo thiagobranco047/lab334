@@ -72,7 +72,7 @@ export default function PresentationDeck({ presentation }: PresentationDeckProps
       : undefined;
 
   return (
-    <div className="relative min-h-[100dvh] touch-pan-y overflow-hidden bg-proposal-bg text-proposal-fg">
+    <div className="relative min-h-[100dvh] touch-pan-y overflow-hidden bg-presentation-bg text-presentation-fg">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-[linear-gradient(to_left,rgba(224,224,224,0.35),transparent)]"
@@ -81,7 +81,7 @@ export default function PresentationDeck({ presentation }: PresentationDeckProps
       <PresentationProgress current={currentIndex + 1} total={totalSlides} />
 
       <main className="fixed inset-0 z-10 grid place-items-center px-5 sm:px-10 lg:px-12">
-        <div className="mx-auto w-full max-w-proposal">
+        <div className="mx-auto w-full max-w-presentation">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={currentIndex}
@@ -110,7 +110,7 @@ export default function PresentationDeck({ presentation }: PresentationDeckProps
       />
 
       <footer className="pointer-events-none fixed bottom-5 left-5 z-40 hidden sm:block">
-        <p className="font-display text-sm font-light uppercase tracking-[0.18em] text-proposal-muted">
+        <p className="font-display text-sm font-light uppercase tracking-[0.18em] text-presentation-muted">
           {categoryLabel} — {presentation.client}
         </p>
       </footer>

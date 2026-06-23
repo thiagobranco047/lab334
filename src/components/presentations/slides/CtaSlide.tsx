@@ -20,7 +20,7 @@ export default function CtaSlide({ slide, presentation, showActions = false }: C
     >
       <motion.h2
         variants={fadeUpItem}
-        className="max-w-slide-cta-title lg:max-w-slide-cta-title-lg font-display text-[clamp(2.5rem,6.5vw,4.5rem)] font-extralight leading-[1.02] tracking-lab text-proposal-fg"
+        className="max-w-slide-cta-title lg:max-w-slide-cta-title-lg font-display text-[clamp(2.5rem,6.5vw,4.5rem)] font-extralight leading-[1.02] tracking-lab text-presentation-fg"
       >
         {slide.title}
       </motion.h2>
@@ -28,7 +28,7 @@ export default function CtaSlide({ slide, presentation, showActions = false }: C
       {slide.body && (
         <motion.p
           variants={fadeUpItem}
-          className="mt-8 max-w-slide-body lg:max-w-slide-body-lg font-body text-base font-light leading-relaxed text-proposal-fg sm:text-lg"
+          className="mt-8 max-w-slide-body lg:max-w-slide-body-lg font-body text-base font-light leading-relaxed text-presentation-fg sm:text-lg"
         >
           {slide.body}
         </motion.p>
@@ -37,7 +37,7 @@ export default function CtaSlide({ slide, presentation, showActions = false }: C
       {slide.highlight && (
         <motion.p
           variants={fadeUpItem}
-          className="mt-8 max-w-slide-body border-l-2 border-proposal-fg pl-5 font-display text-xl font-light leading-snug tracking-lab text-proposal-fg sm:text-3xl"
+          className="mt-8 max-w-slide-body border-l-2 border-presentation-fg pl-5 font-display text-xl font-light leading-snug tracking-lab text-presentation-fg sm:text-3xl"
         >
           {slide.highlight}
         </motion.p>

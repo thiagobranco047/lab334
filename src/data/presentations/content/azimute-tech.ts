@@ -5,6 +5,7 @@ export const azimuteTech: Presentation = {
   client: "Azimute Tech",
   title: "Programa de Autoridade Técnica e Posicionamento Estratégico",
   date: "Junho de 2026",
+  createdAt: "2026-06-05",
   category: "proposal",
   investment: "R$ 4.000,00 / mês",
   approveUrl:
@@ -127,7 +128,7 @@ export const azimuteTech: Presentation = {
       type: "pillar",
       eyebrow: "Pilar 07",
       title: "Inteligência Digital Compartilhada",
-      body: "Acesso à mesma estrutura de inteligência digital implementada para as demais empresas do Grupo Azimute.",
+      body: "Acesso a recursos de inteligência digital.",
       bullets: [
         "Dashboard executivo",
         "Monitoramento de presença digital",

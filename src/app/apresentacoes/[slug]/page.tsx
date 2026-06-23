@@ -1,7 +1,10 @@
 import { notFound } from "next/navigation";
 
 import PresentationDeck from "@/components/presentations/PresentationDeck";
-import { getPresentationBySlug, getPresentationsByCategory } from "@/data/presentations";
+import {
+  getPresentationBySlug,
+  getPresentationsExceptCategory,
+} from "@/data/presentations";
 
 type PresentationPageProps = {
   params: {
@@ -10,7 +13,7 @@ type PresentationPageProps = {
 };
 
 export function generateStaticParams() {
-  return getPresentationsByCategory("proposal").map((presentation) => ({
+  return getPresentationsExceptCategory("proposal").map((presentation) => ({
     slug: presentation.slug,
   }));
 }
@@ -18,7 +21,7 @@ export function generateStaticParams() {
 export default function PresentationPage({ params }: PresentationPageProps) {
   const presentation = getPresentationBySlug(params.slug);
 
-  if (!presentation || presentation.category !== "proposal") {
+  if (!presentation || presentation.category === "proposal") {
     notFound();
   }
 

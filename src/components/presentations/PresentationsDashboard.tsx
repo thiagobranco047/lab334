@@ -2,14 +2,16 @@ import Link from "next/link";
 
 import PresentationBrand from "@/components/presentations/PresentationBrand";
 import { padSlideNumber } from "@/components/presentations/shared/utils";
-import { getCategoryLabel } from "@/data/presentations/categories";
 import {
-  getPresentationsByCategory,
+  getPresentationsExceptCategory,
   sortPresentationsByClient,
 } from "@/data/presentations";
+import { getCategoryLabel } from "@/data/presentations/categories";
 
-export default function ProposalsDashboard() {
-  const proposals = sortPresentationsByClient(getPresentationsByCategory("proposal"));
+export default function PresentationsDashboard() {
+  const presentations = sortPresentationsByClient(
+    getPresentationsExceptCategory("proposal")
+  );
 
   return (
     <div className="relative min-h-[100dvh] bg-proposal-bg text-proposal-fg">
@@ -22,7 +24,8 @@ export default function ProposalsDashboard() {
         <div className="mx-auto flex max-w-proposal items-center justify-between px-5 py-5 sm:px-8 sm:py-6">
           <PresentationBrand />
           <p className="font-display text-sm font-light tracking-[0.18em] text-proposal-muted">
-            {String(proposals.length).padStart(2, "0")} propostas
+            {String(presentations.length).padStart(2, "0")}{" "}
+            {presentations.length === 1 ? "apresentação" : "apresentações"}
           </p>
         </div>
       </header>
@@ -30,21 +33,21 @@ export default function ProposalsDashboard() {
       <main className="mx-auto w-full max-w-proposal px-5 py-12 sm:px-8 sm:py-16">
         <div className="max-w-slide-body lg:max-w-slide-body-lg">
           <p className="font-display text-sm font-light uppercase tracking-[0.28em] text-proposal-muted">
-            {getCategoryLabel("proposal")}
+            Apresentações
           </p>
           <h1 className="mt-4 font-display text-[clamp(2.5rem,6vw,4rem)] font-extralight leading-[1.02] tracking-lab text-proposal-fg">
-            Propostas por cliente
+            Apresentações por cliente
           </h1>
           <p className="mt-5 font-body text-base font-light leading-relaxed text-proposal-muted sm:text-lg">
-            Acesse as apresentações comerciais organizadas por cliente.
+            Acesse as apresentações consultivas organizadas por cliente.
           </p>
         </div>
 
         <div className="proposals-grid">
-          {proposals.map((proposal, index) => (
+          {presentations.map((presentation, index) => (
             <Link
-              key={proposal.slug}
-              href={`/propostas/${proposal.slug}`}
+              key={presentation.slug}
+              href={`/apresentacoes/${presentation.slug}`}
               target="_blank"
               rel="noopener noreferrer"
               className="proposal-card group"
@@ -53,19 +56,17 @@ export default function ProposalsDashboard() {
                 {padSlideNumber(index + 1)}
               </p>
               <p className="mt-4 font-display text-xs font-light uppercase tracking-[0.22em] text-proposal-muted">
-                {proposal.client}
+                {presentation.client}
               </p>
               <p className="mt-3 font-display text-xs font-light uppercase tracking-[0.22em] text-proposal-muted">
-                {proposal.date}
+                {presentation.date}
               </p>
               <h2 className="mt-4 font-display text-xl font-extralight leading-snug tracking-lab text-proposal-fg sm:text-2xl">
-                {proposal.title}
+                {presentation.title}
               </h2>
-              {proposal.investment && (
-                <p className="mt-4 font-body text-sm font-light text-proposal-muted">
-                  {proposal.investment}
-                </p>
-              )}
+              <p className="mt-4 font-body text-sm font-light text-proposal-muted">
+                {getCategoryLabel(presentation.category)}
+              </p>
               <p className="mt-auto pt-6 font-body text-xs font-medium uppercase tracking-[0.14em] text-proposal-fg">
                 Abrir apresentação →
               </p>

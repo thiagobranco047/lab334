@@ -9,8 +9,13 @@ function toEnglishPath(pathname) {
   return pathname.replace(/^\/pt-BR/, "") || "/";
 }
 
-function isProposalPath(pathname) {
-  return pathname === "/propostas" || pathname.startsWith("/propostas/");
+function isPresentationRoute(pathname) {
+  return (
+    pathname === "/propostas" ||
+    pathname.startsWith("/propostas/") ||
+    pathname === "/apresentacoes" ||
+    pathname.startsWith("/apresentacoes/")
+  );
 }
 
 export function middleware(request) {
@@ -21,7 +26,12 @@ export function middleware(request) {
     return NextResponse.redirect(new URL(canonicalPath, request.url));
   }
 
-  if (isProposalPath(pathname)) {
+  if (pathname.startsWith("/pt-BR/apresentacoes")) {
+    const canonicalPath = pathname.replace(/^\/pt-BR/, "") || "/apresentacoes";
+    return NextResponse.redirect(new URL(canonicalPath, request.url));
+  }
+
+  if (isPresentationRoute(pathname)) {
     return NextResponse.next();
   }
 

@@ -64,6 +64,12 @@ export default function PresentationDeck({ presentation }: PresentationDeckProps
   const slideMotion = getSlideMotion(slideType);
   const isLastSlide = currentIndex === totalSlides - 1;
   const categoryLabel = getCategoryLabel(presentation.category);
+  const pillarSideLabel =
+    slideType === "pillar"
+      ? currentSlide.eyebrow?.startsWith("Oportunidade")
+        ? "Oportunidades"
+        : "Pilares"
+      : undefined;
 
   return (
     <div className="relative min-h-[100dvh] touch-pan-y overflow-hidden bg-proposal-bg text-proposal-fg">
@@ -100,7 +106,7 @@ export default function PresentationDeck({ presentation }: PresentationDeckProps
         total={totalSlides}
         onPrevious={goPrevious}
         onNext={goNext}
-        sideLabel={slideType === "pillar" ? "Pilares" : undefined}
+        sideLabel={pillarSideLabel}
       />
 
       <footer className="pointer-events-none fixed bottom-5 left-5 z-40 hidden sm:block">

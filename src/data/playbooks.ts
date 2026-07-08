@@ -59,7 +59,7 @@ const grupoAzimutePlaybook: Playbook = {
   subtitle: "Ecossistema multidisciplinar de soluções integradas",
   description:
     "O Grupo Azimute é um ecossistema de empresas que conecta engenharia, saneamento, tecnologia, geotecnologia e mercado imobiliário para desenvolver soluções completas para cidades, empresas, indústrias, prefeituras, construtoras e investidores.",
-  status: "Planejamento Editorial 2026",
+  status: "Planejamento Editorial",
   tags: ["Ecossistema", "Infraestrutura", "ESG", "Inovação", "Cidades"],
   accentColor: "#2D5A7B",
   positioning:
@@ -133,7 +133,7 @@ const azimuteEngenharia: Playbook = {
   subtitle: "A engenharia que reduz riscos antes da obra começar",
   description:
     "A Azimute Engenharia é a primeira empresa do Grupo Azimute, com quase 40 anos de história. Atua com projetos de engenharia, infraestrutura, transporte, topografia, urbanismo, estudos de viabilidade, aprovações, fiscalização e supervisão de obras.",
-  status: "Planejamento Editorial 2026",
+  status: "Planejamento Editorial",
   tags: ["Engenharia", "Infraestrutura", "Supervisão", "Consultoria"],
   accentColor: "#3D6B4F",
   positioning: "A engenharia que reduz riscos antes da obra começar.",
@@ -201,7 +201,7 @@ const azimuteImoveis: Playbook = {
   subtitle: "A imobiliária que une mercado imobiliário e inteligência técnica de engenharia",
   description:
     "A Azimute Imóveis atua em Joinville e região com compra, venda, intermediação e consultoria imobiliária. Trabalha com imóveis residenciais, apartamentos, terrenos, áreas industriais, loteamentos e oportunidades de investimento.",
-  status: "Planejamento Editorial 2026",
+  status: "Planejamento Editorial",
   tags: ["Imobiliário", "Investimento", "Joinville", "Consultoria"],
   accentColor: "#8B6914",
   positioning:
@@ -272,7 +272,7 @@ const azimuteTech: Playbook = {
   subtitle: "A empresa que transforma redes subterrâneas em inteligência para tomada de decisão",
   description:
     "A Azimute Tech atua com inspeção e mapeamento de redes subterrâneas por métodos não destrutivos, usando Georadar, Vídeo Inspeção Robotizada, As-Built, relatórios técnicos, plantas georreferenciadas e diagnósticos para indústrias, construtoras, companhias de saneamento e prefeituras.",
-  status: "Planejamento Editorial 2026",
+  status: "Planejamento Editorial",
   tags: ["Georadar", "Inspeção", "Subterrâneo", "Dados", "NDT"],
   accentColor: "#4A3D8F",
   positioning:
@@ -345,7 +345,7 @@ const azimuteSan: Playbook = {
   subtitle: "Especialistas em infraestrutura de saneamento para cidades mais eficientes, sustentáveis e resilientes",
   description:
     "A Azimute San atua em saneamento básico, meio ambiente, planos municipais, gestão integrada de resíduos, abastecimento de água, esgotamento sanitário, drenagem urbana, manejo de águas pluviais, concessões, PPPs, estudos e projetos.",
-  status: "Planejamento Editorial 2026",
+  status: "Planejamento Editorial",
   tags: ["Saneamento", "Água", "Sustentabilidade", "Cidades", "PPP"],
   accentColor: "#1B6B7A",
   positioning:
@@ -417,7 +417,7 @@ const aria: Playbook = {
   subtitle: "Inteligência geoespacial aplicada a projetos, obras e ativos",
   description:
     "A Aria Imagem e Tecnologia atua com aerolevantamentos, drones, topografia georreferenciada, LiDAR, RTK, escaneamento 3D, modelagem, termografia aérea, inspeções, mapeamento de precisão e monitoramento inteligente.",
-  status: "Planejamento Editorial 2026",
+  status: "Planejamento Editorial",
   tags: ["Geoespacial", "Drones", "LiDAR", "3D", "Monitoramento"],
   accentColor: "#6B3D5C",
   positioning: "Inteligência geoespacial aplicada a projetos, obras e ativos.",

@@ -12,8 +12,10 @@ function isPresentationRoute(pathname) {
   return (
     pathname?.startsWith("/propostas") ||
     pathname?.startsWith("/apresentacoes") ||
+    pathname?.startsWith("/playbooks") ||
     pathname?.startsWith("/pt-BR/propostas") ||
-    pathname?.startsWith("/pt-BR/apresentacoes")
+    pathname?.startsWith("/pt-BR/apresentacoes") ||
+    pathname?.startsWith("/pt-BR/playbooks")
   );
 }
 

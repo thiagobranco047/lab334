@@ -5,6 +5,7 @@ const config: Config = {
     "./src/app/(presentations)/**/*.{js,jsx,ts,tsx}",
     "./src/components/proposals/**/*.{js,jsx,ts,tsx}",
     "./src/components/presentations/**/*.{js,jsx,ts,tsx}",
+    "./src/components/playbooks/**/*.{js,jsx,ts,tsx}",
   ],
   corePlugins: {
     preflight: false,

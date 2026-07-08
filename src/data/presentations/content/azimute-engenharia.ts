@@ -1,7 +1,7 @@
 import type { Presentation } from "../types";
 
 export const azimuteEngenharia: Presentation = {
-  slug: "azimute-engenharia",
+  slug: "azimute-engenharia-02062026",
   client: "Azimute Engenharia",
   title: "Programa de Presença Digital, Autoridade e Inteligência de Mercado",
   date: "Junho de 2026",

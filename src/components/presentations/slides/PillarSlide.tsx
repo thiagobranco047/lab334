@@ -26,6 +26,15 @@ export default function PillarSlide({ slide }: { slide: PresentationSlide }) {
         )}
 
         <div className="min-w-0 flex-1">
+          {slide.eyebrow && !pillarNumber && (
+            <motion.p
+              variants={fadeUpItem}
+              className="mb-4 font-display text-sm font-light uppercase tracking-[0.28em] text-presentation-muted"
+            >
+              {slide.eyebrow}
+            </motion.p>
+          )}
+
           <motion.h2
             variants={fadeUpItem}
             className="max-w-slide-title lg:max-w-slide-title-lg font-display text-[clamp(2.25rem,5vw,3.75rem)] font-extralight leading-[1.05] tracking-lab text-presentation-fg"

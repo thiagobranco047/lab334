@@ -14,7 +14,9 @@ function isPresentationRoute(pathname) {
     pathname === "/propostas" ||
     pathname.startsWith("/propostas/") ||
     pathname === "/apresentacoes" ||
-    pathname.startsWith("/apresentacoes/")
+    pathname.startsWith("/apresentacoes/") ||
+    pathname === "/playbooks" ||
+    pathname.startsWith("/playbooks/")
   );
 }
 
@@ -28,6 +30,11 @@ export function middleware(request) {
 
   if (pathname.startsWith("/pt-BR/apresentacoes")) {
     const canonicalPath = pathname.replace(/^\/pt-BR/, "") || "/apresentacoes";
+    return NextResponse.redirect(new URL(canonicalPath, request.url));
+  }
+
+  if (pathname.startsWith("/pt-BR/playbooks")) {
+    const canonicalPath = pathname.replace(/^\/pt-BR/, "") || "/playbooks";
     return NextResponse.redirect(new URL(canonicalPath, request.url));
   }
 

@@ -41,16 +41,16 @@ export type Playbook = {
 
 import {
   antunesComercio,
-  bridgeAgency,
+  // bridgeAgency,
   dutex,
   fenap,
-  gmex,
+  // gmex,
   injepol,
   joinsul,
   massterPlasticos,
   moramoBrasil,
   saraRapouso,
-  tudocnc,
+  // tudocnc,
 } from "./playbooks/content/lab-clients";
 
 const grupoAzimutePlaybook: Playbook = {
@@ -493,13 +493,13 @@ export const playbooks: Playbook[] = [
   massterPlasticos,
   dutex,
   saraRapouso,
-  bridgeAgency,
+  // bridgeAgency,
   injepol,
   fenap,
   moramoBrasil,
   joinsul,
-  gmex,
-  tudocnc,
+  // gmex,
+  // tudocnc,
   antunesComercio,
 ];
 

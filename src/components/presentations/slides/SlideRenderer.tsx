@@ -2,7 +2,10 @@ import type { Presentation, PresentationSlide } from "@/data/presentations/types
 
 import CoverSlide from "./CoverSlide";
 import CtaSlide from "./CtaSlide";
+import DeliverableSlide from "./DeliverableSlide";
 import InvestmentSlide from "./InvestmentSlide";
+import InvestmentTableSlide from "./InvestmentTableSlide";
+import PackageSlide from "./PackageSlide";
 import PillarSlide from "./PillarSlide";
 import QuoteSlide from "./QuoteSlide";
 import StatsSlide from "./StatsSlide";
@@ -37,6 +40,12 @@ export default function SlideRenderer({
       return <QuoteSlide slide={slide} />;
     case "stats":
       return <StatsSlide slide={slide} />;
+    case "deliverable":
+      return <DeliverableSlide slide={slide} />;
+    case "investmentTable":
+      return <InvestmentTableSlide slide={slide} />;
+    case "package":
+      return <PackageSlide slide={slide} />;
     case "text":
     default:
       return <TextSlide slide={slide} />;

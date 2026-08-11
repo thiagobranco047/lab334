@@ -6,7 +6,10 @@ export type SlideType =
   | "cta"
   | "table"
   | "quote"
-  | "stats";
+  | "stats"
+  | "deliverable"
+  | "investmentTable"
+  | "package";
 
 export type PresentationCategory =
   | "proposal"
@@ -14,6 +17,12 @@ export type PresentationCategory =
   | "report"
   | "branding"
   | "dashboard";
+
+export type InvestmentTableItem = {
+  name: string;
+  price: string;
+  description?: string;
+};
 
 export type PresentationSlide = {
   eyebrow?: string;
@@ -23,6 +32,7 @@ export type PresentationSlide = {
   bullets?: string[];
   highlight?: string;
   type?: SlideType;
+  investment?: string;
   table?: {
     headers: string[];
     rows: string[][];
@@ -31,6 +41,7 @@ export type PresentationSlide = {
     label: string;
     value: string;
   }[];
+  investmentItems?: InvestmentTableItem[];
 };
 
 export type Presentation = {

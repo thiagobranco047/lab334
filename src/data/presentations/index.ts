@@ -2,6 +2,7 @@ import { azimuteEngenharia } from "./content/azimute-engenharia";
 import { azimuteSan } from "./content/azimute-san";
 import { azimuteTech } from "./content/azimute-tech";
 import { grupoAzimute } from "./content/grupo-azimute";
+import { schmalzCondominio } from "./content/schmalz-condominio";
 import type { Presentation, PresentationCategory } from "./types";
 
 export type {
@@ -18,6 +19,7 @@ export const presentations: Record<string, Presentation> = {
   [azimuteSan.slug]: azimuteSan,
   [azimuteTech.slug]: azimuteTech,
   [grupoAzimute.slug]: grupoAzimute,
+  [schmalzCondominio.slug]: schmalzCondominio,
 };
 
 export function getPresentationBySlug(slug: string): Presentation | undefined {

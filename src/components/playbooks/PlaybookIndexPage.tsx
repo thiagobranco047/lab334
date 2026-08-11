@@ -40,11 +40,11 @@ export default function PlaybookIndexPage() {
             <Link
               key={playbook.slug}
               href={`/playbooks/${playbook.slug}`}
-              className="presentation-card group"
+              className={`presentation-card group ${playbook.enabled ? "" : "opacity-70"}`}
             >
               <div className="presentation-card-content">
                 <p className="font-display text-xs font-light uppercase tracking-[0.22em] text-presentation-muted">
-                  {playbook.status}
+                  {playbook.enabled ? playbook.status : "Indisponível"}
                 </p>
                 <h2 className="font-display text-xl font-extralight leading-snug tracking-lab text-presentation-fg sm:text-2xl">
                   {playbook.name}
@@ -57,7 +57,7 @@ export default function PlaybookIndexPage() {
                 </p>
               </div>
               <p className="presentation-card-action font-body text-xs font-medium uppercase tracking-[0.14em] text-presentation-fg">
-                Abrir playbook →
+                {playbook.enabled ? "Abrir playbook →" : "Ver aviso →"}
               </p>
             </Link>
           ))}

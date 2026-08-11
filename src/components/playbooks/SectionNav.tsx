@@ -1,13 +1,19 @@
-import { PLAYBOOK_SECTIONS } from "@/data/playbooks";
+import type { PlaybookSection } from "@/data/playbooks";
 
-export default function SectionNav() {
+type SectionNavProps = {
+  sections?: readonly PlaybookSection[];
+};
+
+export default function SectionNav({ sections }: SectionNavProps) {
+  const items = sections ?? [];
+
   return (
     <nav aria-label="Seções do playbook">
       <p className="mb-3 font-display text-xs font-light uppercase tracking-[0.22em] text-presentation-muted">
         Seções
       </p>
       <ul className="m-0 list-none space-y-0.5 p-0">
-        {PLAYBOOK_SECTIONS.map((section) => (
+        {items.map((section) => (
           <li key={section.id}>
             <a
               href={`#${section.id}`}

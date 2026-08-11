@@ -36,6 +36,7 @@ export type Playbook = {
   keyMessages: KeyMessage[];
   contentIdeas: ContentIdea[];
   cta: string;
+  enabled: boolean;
   group?: string;
 };
 
@@ -56,74 +57,85 @@ import {
 const grupoAzimutePlaybook: Playbook = {
   slug: "grupo-azimute",
   name: "Grupo Azimute",
-  subtitle: "Ecossistema multidisciplinar de soluções integradas",
+  subtitle: "Estrutura institucional que conecta competências especializadas",
   description:
-    "O Grupo Azimute é um ecossistema de empresas que conecta engenharia, saneamento, tecnologia, geotecnologia e mercado imobiliário para desenvolver soluções completas para cidades, empresas, indústrias, prefeituras, construtoras e investidores.",
+    "O Grupo Azimute é a estrutura institucional que conecta empresas especializadas em engenharia, saneamento, tecnologia, captura da realidade e mercado imobiliário. Sua comunicação mostra como essas competências atuam separadamente ou se complementam diante de desafios reais.",
   status: "Planejamento Editorial",
-  tags: ["Ecossistema", "Infraestrutura", "ESG", "Inovação", "Cidades"],
+  tags: ["Institucional", "Integração", "Infraestrutura", "Editorial"],
   accentColor: "#2D5A7B",
   positioning:
-    "O Grupo Azimute deve ser comunicado como um ecossistema multidisciplinar de soluções integradas, não apenas como um conjunto de empresas. A marca vende capacidade técnica, integração, confiança, inovação, pessoas, cultura e impacto.",
+    "O Grupo Azimute é a estrutura institucional que conecta empresas especializadas em engenharia, saneamento, tecnologia, captura da realidade e mercado imobiliário. Sua comunicação mostra como essas competências atuam separadamente ou se complementam diante de desafios reais.",
   editorialObjective:
-    "Posicionar o Grupo Azimute como referência em soluções integradas de engenharia, saneamento, tecnologia, geotecnologia e desenvolvimento urbano.",
+    "Tornar claro quem faz o quê dentro do Grupo e mostrar como as competências se complementam em situações reais.",
   editorialMission:
-    "Produzir conteúdos que eduquem, demonstrem autoridade técnica e fortaleçam a reputação do grupo, gerando confiança e oportunidades comerciais.",
+    "Tornar visível como as competências das empresas se complementam diante de problemas reais.",
   priorityAudiences: [
     "Prefeituras e órgãos públicos",
     "Construtoras e incorporadoras",
     "Indústrias e utilities",
-    "Investidores e fundos",
+    "Investidores e proprietários",
     "Empresas de infraestrutura",
-    "Comunidade técnica e acadêmica",
+    "Comunidade técnica",
   ],
   contentPillars: [
-    { label: "Pessoas e cultura", icon: "👥" },
-    { label: "Grandes projetos", icon: "🏗️" },
-    { label: "Soluções integradas", icon: "🔗" },
-    { label: "Desenvolvimento urbano", icon: "🏙️" },
-    { label: "Inovação e tecnologia", icon: "💡" },
-    { label: "ESG e sustentabilidade", icon: "🌱" },
-    { label: "Bastidores e eventos", icon: "🎬" },
-    { label: "Treinamentos e capacitações", icon: "📚" },
-    { label: "Datas institucionais", icon: "📅" },
+    { label: "Problemas reais, soluções especializadas" },
+    { label: "Competências conectadas" },
+    { label: "Projetos, processos e resultados" },
+    { label: "Pessoas, história e cultura técnica" },
+    { label: "Visão de futuro" },
   ],
-  toneOfVoice: "Profissional, acolhedor, técnico, inspirador e confiável.",
+  toneOfVoice: "Profissional, claro, técnico, direto e confiável.",
   recurringThemes: [
-    "Integração entre especialidades",
-    "Transformação de cidades",
-    "Segurança e sustentabilidade",
-    "Pessoas como centro do ecossistema",
-    "Inovação aplicada à infraestrutura",
+    "Quem atua em cada etapa?",
+    "Antes de começar uma obra",
+    "Competências que se conectam",
+    "Por dentro de um projeto",
+    "Decisões apoiadas por dados",
   ],
   contentTypes: [
-    "Posts institucionais e cultura",
-    "Cases e grandes projetos",
-    "Carrosséis educativos",
-    "Vídeos de bastidores",
-    "Stories de equipe e eventos",
-    "Artigos de autoridade técnica",
+    "Carrossel",
+    "Vídeo curto",
+    "Publicação estática",
+    "Artigo",
+    "Case",
+    "Entrevista",
+    "Infográfico",
   ],
   distribution: [
-    { label: "Institucional e cultura", percentage: 30 },
-    { label: "Soluções integradas", percentage: 25 },
-    { label: "Autoridade técnica", percentage: 20 },
-    { label: "Cases e projetos", percentage: 15 },
-    { label: "Datas e eventos", percentage: 10 },
+    { label: "Problemas reais, soluções especializadas", percentage: 30 },
+    { label: "Competências conectadas", percentage: 25 },
+    { label: "Projetos, processos e resultados", percentage: 25 },
+    { label: "Pessoas, história e cultura técnica", percentage: 15 },
+    { label: "Visão de futuro", percentage: 5 },
   ],
   keyMessages: [
-    { text: "Engenharia, tecnologia e propósito conectados." },
-    { text: "Soluções completas para transformar cidades e negócios." },
-    { text: "Desenvolvimento com inteligência, segurança e sustentabilidade." },
-    { text: "Um grupo, múltiplas especialidades, um só propósito." },
+    { text: "Empresas especializadas, competências que se complementam." },
+    { text: "Cada desafio exige a especialidade certa." },
+    { text: "Engenharia, dados e tecnologia aplicados a decisões reais." },
+    { text: "A solução é executada por especialistas e fortalecida pela integração." },
   ],
   contentIdeas: [
-    { title: "Como um ecossistema integrado reduz riscos em grandes projetos" },
-    { title: "O papel da engenharia consultiva no desenvolvimento urbano" },
-    { title: "Pessoas por trás dos maiores projetos do grupo" },
-    { title: "Sustentabilidade como pilar de decisão em infraestrutura" },
-    { title: "Inovação que conecta engenharia, tech e saneamento" },
+    {
+      title:
+        "Uma rede não cadastrada pode paralisar uma obra: onde entram Tech, Aria e Engenharia?",
+    },
+    {
+      title: "O que precisa ser conhecido antes de ampliar um sistema de drenagem urbana?",
+    },
+    {
+      title:
+        "Como aerolevantamento e projeto de engenharia trabalham sobre a mesma base de dados?",
+    },
+    {
+      title: "Da inspeção ao diagnóstico: o caminho da informação antes de uma intervenção.",
+    },
+    {
+      title:
+        "Como diferentes empresas do Grupo participam do desenvolvimento de um empreendimento.",
+    },
   ],
-  cta: "Conheça o ecossistema Azimute e descubra como soluções integradas transformam cidades e negócios.",
+  cta: "Conheça as empresas do Grupo Azimute e identifique as competências adequadas ao seu projeto.",
+  enabled: true,
   group: "grupo-azimute",
 };
 
@@ -192,77 +204,83 @@ const azimuteEngenharia: Playbook = {
     { title: "Topografia e dados técnicos na tomada de decisão." },
   ],
   cta: "Planeje com segurança. Conheça a engenharia consultiva Azimute.",
+  enabled: false,
   group: "grupo-azimute",
 };
 
 const azimuteImoveis: Playbook = {
   slug: "azimute-imoveis",
   name: "Azimute Imóveis",
-  subtitle: "A imobiliária que une mercado imobiliário e inteligência técnica de engenharia",
+  subtitle: "Decisões imobiliárias com orientação, clareza e segurança",
   description:
-    "A Azimute Imóveis atua em Joinville e região com compra, venda, intermediação e consultoria imobiliária. Trabalha com imóveis residenciais, apartamentos, terrenos, áreas industriais, loteamentos e oportunidades de investimento.",
+    "A Azimute Imóveis atua de forma consultiva na compra, venda, avaliação e desenvolvimento de oportunidades imobiliárias em Joinville e região, unindo conhecimento de mercado, atendimento próximo e segurança em cada decisão.",
   status: "Planejamento Editorial",
-  tags: ["Imobiliário", "Investimento", "Joinville", "Consultoria"],
+  tags: ["Imobiliário", "Consultoria", "Joinville", "Negociação"],
   accentColor: "#8B6914",
   positioning:
-    "A imobiliária que une mercado imobiliário e inteligência técnica de engenharia.",
+    "A Azimute Imóveis atua de forma consultiva na compra, venda, avaliação e desenvolvimento de oportunidades imobiliárias, unindo conhecimento de mercado, atendimento próximo e segurança em cada decisão.",
   editorialObjective:
-    "Ser percebida como uma imobiliária consultiva, segura e estratégica, capaz de orientar decisões patrimoniais com transparência e conhecimento técnico.",
+    "Fortalecer a percepção da Azimute Imóveis como imobiliária consultiva e ajudar compradores e vendedores a tomar decisões mais informadas.",
   editorialMission:
-    "Educar o mercado imobiliário e construir confiança nas decisões patrimoniais dos clientes.",
+    "Transformar decisões imobiliárias complexas em processos mais claros, seguros e bem orientados.",
   priorityAudiences: [
-    "Compradores de imóveis",
+    "Compradores da casa própria",
     "Vendedores e proprietários",
     "Investidores imobiliários",
-    "Empresas em busca de áreas industriais",
-    "Famílias em busca da casa própria",
+    "Empresas e indústrias",
+    "Proprietários de terrenos e grandes áreas",
+    "Incorporadores e parceiros",
+    "Famílias em mudança",
   ],
   contentPillars: [
-    { label: "Compra segura", icon: "🏠" },
-    { label: "Venda de imóveis", icon: "🔑" },
-    { label: "Investimento imobiliário", icon: "📈" },
-    { label: "Valorização patrimonial", icon: "💰" },
-    { label: "Terrenos e grandes áreas", icon: "🌿" },
-    { label: "Loteamentos", icon: "🏘️" },
-    { label: "Imóveis no litoral", icon: "🌊" },
-    { label: "Mercado imobiliário de Joinville e região", icon: "📍" },
-    { label: "Permuta imobiliária", icon: "🔄" },
-    { label: "Casa própria", icon: "❤️" },
+    { label: "Decisões imobiliárias seguras" },
+    { label: "Mercado, localização e oportunidades" },
+    { label: "Imóveis e soluções para diferentes necessidades" },
+    { label: "Processos, atendimento e resultados" },
+    { label: "Investimento e desenvolvimento imobiliário" },
   ],
-  toneOfVoice: "Acolhedor, seguro, próximo, consultivo e inspirador.",
+  toneOfVoice:
+    "Próximo, consultivo, claro, seguro, transparente, conhecedor do mercado e acolhedor sem ser excessivamente emocional.",
   recurringThemes: [
-    "Decisões patrimoniais conscientes",
-    "Segurança na negociação",
-    "Mercado local de Joinville",
-    "Valorização e investimento",
+    "Antes de comprar",
+    "Antes de vender",
+    "O olhar da avaliação",
+    "Oportunidades em Joinville",
+    "Decisão imobiliária sem complicação",
   ],
   contentTypes: [
-    "Dicas de compra e venda",
-    "Tour de imóveis",
-    "Análises de mercado",
-    "Stories de conquistas",
-    "Carrosséis educativos",
+    "Carrossel",
+    "Vídeo curto",
+    "Tour",
+    "Publicação estática",
+    "Artigo",
+    "Depoimento",
+    "Case",
+    "Stories",
+    "Infográfico",
   ],
   distribution: [
-    { label: "Educação imobiliária", percentage: 35 },
-    { label: "Oportunidades e imóveis", percentage: 25 },
-    { label: "Mercado e investimento", percentage: 20 },
-    { label: "Institucional e relacionamento", percentage: 20 },
+    { label: "Decisões imobiliárias seguras", percentage: 30 },
+    { label: "Mercado, localização e oportunidades", percentage: 25 },
+    { label: "Imóveis e soluções para diferentes necessidades", percentage: 20 },
+    { label: "Processos, atendimento e resultados", percentage: 15 },
+    { label: "Investimento e desenvolvimento imobiliário", percentage: 10 },
   ],
   keyMessages: [
-    { text: "Seu imóvel como decisão de futuro." },
-    { text: "Comprar bem é comprar com orientação." },
-    { text: "Segurança, transparência e estratégia em cada negociação." },
-    { text: "O imóvel certo transforma planos em conquistas." },
+    { text: "Decisões imobiliárias começam com informação." },
+    { text: "Comprar ou vender exige orientação, transparência e conhecimento." },
+    { text: "O imóvel certo precisa fazer sentido para a sua realidade." },
+    { text: "Avaliar bem é o primeiro passo para negociar com segurança." },
   ],
   contentIdeas: [
-    { title: "Como saber se um imóvel tem bom potencial de valorização?" },
-    { title: "Vale a pena investir em terrenos?" },
-    { title: "Como vender um imóvel com mais segurança?" },
-    { title: "O que é permuta imobiliária?" },
-    { title: "Por que comprar com uma imobiliária consultiva?" },
+    { title: "O que avaliar antes de visitar um imóvel?" },
+    { title: "Quais informações ajudam a definir o preço de venda?" },
+    { title: "Como preparar um imóvel para divulgação?" },
+    { title: "Documentos que precisam ser verificados antes da compra." },
+    { title: "Como funciona o atendimento consultivo da Azimute Imóveis?" },
   ],
-  cta: "Tome decisões patrimoniais com segurança. Fale com a Azimute Imóveis.",
+  cta: "Fale com a Azimute Imóveis e encontre a orientação adequada para sua decisão imobiliária.",
+  enabled: true,
   group: "grupo-azimute",
 };
 
@@ -336,78 +354,82 @@ const azimuteTech: Playbook = {
     { title: "Como prefeituras reduzem custos com inspeção preventiva?" },
   ],
   cta: "Antes de escavar, conheça o subsolo. Solicite um diagnóstico Azimute Tech.",
+  enabled: false,
   group: "grupo-azimute",
 };
 
 const azimuteSan: Playbook = {
   slug: "azimute-san",
-  name: "Azimute San",
-  subtitle: "Especialistas em infraestrutura de saneamento para cidades mais eficientes, sustentáveis e resilientes",
+  name: "Azimute SAN",
+  subtitle: "Consultoria, estudos e projetos para o saneamento básico",
   description:
-    "A Azimute San atua em saneamento básico, meio ambiente, planos municipais, gestão integrada de resíduos, abastecimento de água, esgotamento sanitário, drenagem urbana, manejo de águas pluviais, concessões, PPPs, estudos e projetos.",
+    "A Azimute SAN desenvolve consultoria, estudos, projetos e serviços especializados para abastecimento de água, esgotamento sanitário, limpeza urbana e manejo de resíduos sólidos, drenagem urbana e manejo de águas pluviais.",
   status: "Planejamento Editorial",
-  tags: ["Saneamento", "Água", "Sustentabilidade", "Cidades", "PPP"],
+  tags: ["Saneamento", "Água", "Esgoto", "Resíduos", "Drenagem"],
   accentColor: "#1B6B7A",
   positioning:
-    "Especialistas em infraestrutura de saneamento para cidades mais eficientes, sustentáveis e resilientes.",
+    "A Azimute SAN desenvolve consultoria, estudos, projetos e serviços especializados para os sistemas de abastecimento de água, esgotamento sanitário, limpeza urbana e manejo de resíduos sólidos, drenagem urbana e manejo de águas pluviais.",
   editorialObjective:
-    "Ser lembrada como empresa técnica e estratégica para o desenvolvimento do saneamento, apoiando prefeituras, órgãos públicos e empresas com soluções sustentáveis.",
+    "Fortalecer a autoridade técnica da Azimute SAN e tornar compreensíveis os desafios e componentes do saneamento básico.",
   editorialMission:
-    "Educar sobre a importância do saneamento e posicionar a Azimute San como parceira técnica de transformação urbana.",
+    "Ajudar o mercado a compreender, planejar e aprimorar os sistemas que sustentam o saneamento básico das cidades.",
   priorityAudiences: [
     "Prefeituras e gestores públicos",
-    "Companhias de saneamento",
-    "Órgãos ambientais",
-    "Investidores em PPPs",
-    "Comunidade técnica",
+    "Autarquias e companhias de saneamento",
+    "Consórcios e estruturas regionais",
+    "Equipes técnicas e de fiscalização",
+    "Empresas de infraestrutura",
+    "Gestores de limpeza urbana e resíduos",
+    "Comunidade técnica e acadêmica",
   ],
   contentPillars: [
-    { label: "Abastecimento de água", icon: "💧" },
-    { label: "Esgotamento sanitário", icon: "🚿" },
-    { label: "Drenagem urbana", icon: "🌧️" },
-    { label: "Manejo de águas pluviais", icon: "☔" },
-    { label: "Resíduos sólidos", icon: "♻️" },
-    { label: "Planos de saneamento", icon: "📋" },
-    { label: "Concessões e PPPs", icon: "🤝" },
-    { label: "Redução de perdas", icon: "📉" },
-    { label: "Segurança hídrica", icon: "🛡️" },
-    { label: "Sustentabilidade e meio ambiente", icon: "🌱" },
-    { label: "Marco Legal do Saneamento", icon: "⚖️" },
+    { label: "Desafios do saneamento e decisões técnicas" },
+    { label: "Planejamento, estudos e projetos" },
+    { label: "Sistemas de saneamento explicados" },
+    { label: "Projetos, processos e resultados" },
+    { label: "Políticas públicas, regulação e futuro do saneamento" },
   ],
-  toneOfVoice: "Técnico, responsável, sustentável, educativo e institucional.",
+  toneOfVoice:
+    "Técnico, claro, responsável, didático, institucional, seguro e orientado à realidade pública.",
   recurringThemes: [
-    "Qualidade de vida urbana",
-    "Sustentabilidade hídrica",
-    "Planejamento municipal",
-    "Marco legal e compliance",
+    "Saneamento explicado",
+    "Antes de elaborar um projeto",
+    "O diagnóstico revela",
+    "Quatro componentes, uma cidade",
+    "Decisões apoiadas por dados",
   ],
   contentTypes: [
-    "Conteúdo educativo sobre saneamento",
-    "Cases de projetos municipais",
-    "Análises de marco legal",
-    "Infográficos de impacto",
-    "Posts institucionais",
+    "Carrossel",
+    "Vídeo curto",
+    "Artigo",
+    "Case",
+    "Infográfico",
+    "Publicação estática",
+    "Entrevista",
+    "Bastidores",
   ],
   distribution: [
-    { label: "Educação", percentage: 45 },
-    { label: "Projetos e soluções", percentage: 20 },
-    { label: "Sustentabilidade e impacto", percentage: 20 },
-    { label: "Institucional", percentage: 15 },
+    { label: "Desafios do saneamento e decisões técnicas", percentage: 30 },
+    { label: "Planejamento, estudos e projetos", percentage: 25 },
+    { label: "Sistemas de saneamento explicados", percentage: 20 },
+    { label: "Projetos, processos e resultados", percentage: 15 },
+    { label: "Políticas públicas, regulação e futuro do saneamento", percentage: 10 },
   ],
   keyMessages: [
-    { text: "Saneamento é qualidade de vida." },
-    { text: "Cuidar da água é cuidar do futuro." },
-    { text: "Planejamento técnico para cidades mais preparadas." },
-    { text: "Soluções sustentáveis para transformar realidades." },
+    { text: "Planejamento técnico para decisões mais seguras no saneamento." },
+    { text: "Conhecer o sistema é o primeiro passo para aprimorá-lo." },
+    { text: "Água, esgoto, resíduos e drenagem exigem planejamento especializado." },
+    { text: "Saneamento básico começa com diagnóstico e planejamento." },
   ],
   contentIdeas: [
-    { title: "Por que cidades precisam de Planos de Saneamento?" },
-    { title: "Como reduzir perdas no abastecimento de água?" },
-    { title: "Drenagem urbana e prevenção de alagamentos." },
-    { title: "Gestão integrada de resíduos sólidos." },
-    { title: "Saneamento como infraestrutura essencial." },
+    { title: "Quais são os quatro componentes do saneamento básico?" },
+    { title: "Como estudos e projetos orientam investimentos em saneamento?" },
+    { title: "O que diferencia diagnóstico, plano, projeto, obra e operação?" },
+    { title: "O que um município precisa conhecer sobre sua drenagem urbana?" },
+    { title: "O que o Marco Legal representa para o planejamento do saneamento?" },
   ],
-  cta: "Planeje o saneamento da sua cidade com quem entende de infraestrutura. Fale com a Azimute San.",
+  cta: "Converse com a Azimute SAN sobre os desafios e necessidades de saneamento do seu município ou organização.",
+  enabled: true,
   group: "grupo-azimute",
 };
 
@@ -480,6 +502,7 @@ const aria: Playbook = {
     { title: "Como a inteligência geoespacial apoia cidades inteligentes?" },
   ],
   cta: "Transforme imagens em inteligência. Conheça a Aria Imagem e Tecnologia.",
+  enabled: false,
   group: "grupo-azimute",
 };
 
@@ -517,7 +540,12 @@ export function getPlaybooksByGroup(group: string): Playbook[] {
   return playbooks.filter((playbook) => playbook.group === group);
 }
 
-export const PLAYBOOK_SECTIONS = [
+export type PlaybookSection = {
+  id: string;
+  label: string;
+};
+
+export const PLAYBOOK_SECTIONS: readonly PlaybookSection[] = [
   { id: "posicionamento", label: "Posicionamento" },
   { id: "objetivos-editoriais", label: "Objetivos editoriais" },
   { id: "publicos-prioritarios", label: "Públicos prioritários" },
@@ -528,4 +556,4 @@ export const PLAYBOOK_SECTIONS = [
   { id: "distribuicao-sugerida", label: "Distribuição sugerida" },
   { id: "ideias-iniciais", label: "Ideias iniciais" },
   { id: "cta-mensagens-chave", label: "CTA e mensagens-chave" },
-] as const;
+];

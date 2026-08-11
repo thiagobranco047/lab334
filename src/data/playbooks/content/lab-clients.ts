@@ -70,6 +70,7 @@ export const massterPlasticos = {
     { title: "Q1: Lançamentos e educação técnica para distribuidores." },
     { title: "Roadmap 2026: autoridade, produtos e presença em feiras do setor." },
   ],
+  enabled: true,
   cta: "Conheça as soluções Masster para infraestrutura elétrica. Fale com nosso time comercial.",
 };
 
@@ -139,6 +140,7 @@ export const dutex = {
     { title: "Calendário macro: feiras industriais e lançamentos 2026." },
     { title: "Roadmap editorial: educação técnica + cases trimestrais." },
   ],
+  enabled: true,
   cta: "Proteja sua operação industrial com soluções Dutex. Solicite uma consultoria técnica.",
 };
 
@@ -207,6 +209,7 @@ export const saraRapouso= {
     { title: "Calendário macro: publicações mensais de autoridade." },
     { title: "Roadmap 2026: SEO jurídico + presença em eventos do setor." },
   ],
+  enabled: true,
   cta: "Precisa de clareza técnica em um processo? Agende uma conversa com Sara Rapouso.",
 };
 
@@ -279,6 +282,7 @@ export const bridgeAgency= {
     { title: "Q1–Q4 calendar: case studies + webinars trimestrais." },
     { title: "Roadmap 2026: autoridade SEO + AEO para agências digitais." },
   ],
+  enabled: true,
   cta: "Ready to grow? Bridge Agency connects Brazilian creativity with American execution.",
 };
 
@@ -347,6 +351,7 @@ export const injepol= {
     { title: "Calendário macro: feiras industriais 2026." },
     { title: "Roadmap editorial: cases trimestrais por segmento." },
   ],
+  enabled: true,
   cta: "Precisa de peças técnicas em PU? Fale com a Injepol.",
 };
 
@@ -413,6 +418,7 @@ export const fenap= {
     { title: "Calendário macro: eventos de construção e indústria 2026." },
     { title: "Roadmap editorial: autoridade técnica + cases semestrais." },
   ],
+  enabled: true,
   cta: "Conheça as soluções estruturais em PU da Fenap. Solicite uma consultoria técnica.",
 };
 
@@ -481,6 +487,7 @@ export const moramoBrasil= {
     { title: "Calendário macro: campanhas sazonais de bem-estar." },
     { title: "Roadmap 2026: SEO e-commerce + conteúdo educativo." },
   ],
+  enabled: true,
   cta: "Durma melhor. Conheça os travesseiros Moramo Brasil.",
 };
 
@@ -549,6 +556,7 @@ export const joinsul= {
     { title: "Calendário macro: lançamentos + eventos do setor." },
     { title: "Roadmap editorial: comunidade ativa + SEO B2B." },
   ],
+  enabled: true,
   cta: "Seja um instalador parceiro Joinsul. Acesse treinamentos e condições especiais.",
 };
 
@@ -617,6 +625,7 @@ export const gmex= {
     { title: "Calendário macro: workshops e webinars trimestrais." },
     { title: "Roadmap 2026: autoridade LinkedIn + cases semestrais." },
   ],
+  enabled: true,
   cta: "Sua equipe comercial pode vender mais. Conheça a consultoria GMEX.",
 };
 
@@ -684,6 +693,7 @@ export const tudocnc= {
     { title: "Calendário macro: feiras industriais e lançamentos 2026." },
     { title: "Roadmap editorial: autoridade técnica + SEO industrial." },
   ],
+  enabled: true,
   cta: "Precisão para sua usinagem. Conheça os componentes Tudocnc.",
 };
 
@@ -750,5 +760,6 @@ export const antunesComercio= {
     { title: "Calendário macro: promoções sazonais e eventos." },
     { title: "Roadmap editorial: SEO local + engajamento no showroom." },
   ],
+  enabled: true,
   cta: "Visite nosso showroom. Antunes Comércio — materiais com atendimento de excelência.",
 };

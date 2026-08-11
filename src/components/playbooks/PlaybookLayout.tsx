@@ -2,17 +2,20 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 import PresentationBrand from "@/components/presentations/PresentationBrand";
+import { PLAYBOOK_SECTIONS, type PlaybookSection } from "@/data/playbooks";
 
 import SectionNav from "./SectionNav";
 
 type PlaybookLayoutProps = {
   children: ReactNode;
   showBackLink?: boolean;
+  sections?: readonly PlaybookSection[];
 };
 
 export default function PlaybookLayout({
   children,
   showBackLink = true,
+  sections = PLAYBOOK_SECTIONS,
 }: PlaybookLayoutProps) {
   return (
     <div className="relative min-h-[100dvh] bg-presentation-bg text-presentation-fg">
@@ -44,8 +47,8 @@ export default function PlaybookLayout({
 
       <div className="mx-auto w-full max-w-presentation px-5 py-8 sm:px-8 sm:py-12">
         <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
-          <aside className="hidden lg:block lg:sticky lg:top-28 lg:self-start">
-            <SectionNav />
+          <aside className="hidden lg:block lg:sticky lg:top-28 lg:self-start lg:max-h-[calc(100dvh-8rem)] lg:overflow-y-auto">
+            <SectionNav sections={sections} />
           </aside>
 
           <main className="min-w-0 space-y-8 pb-24">{children}</main>

@@ -1,7 +1,7 @@
 import { azimuteEngenharia } from "./content/azimute-engenharia";
 import { azimuteSan } from "./content/azimute-san";
 import { azimuteTech } from "./content/azimute-tech";
-import { grupoAzimute } from "./content/grupo-azimute";
+import { grupoAzimuteVersions } from "./content/grupo-azimute/versions";
 import { schmalzCondominio } from "./content/schmalz-condominio";
 import type { Presentation, PresentationCategory } from "./types";
 
@@ -13,12 +13,18 @@ export type {
 } from "./types";
 
 export { getCategoryLabel, PRESENTATION_CATEGORY_LABELS } from "./categories";
+export {
+  getLatestGrupoAzimute,
+  grupoAzimuteVersions,
+} from "./content/grupo-azimute/versions";
 
 export const presentations: Record<string, Presentation> = {
   [azimuteEngenharia.slug]: azimuteEngenharia,
   [azimuteSan.slug]: azimuteSan,
   [azimuteTech.slug]: azimuteTech,
-  [grupoAzimute.slug]: grupoAzimute,
+  ...Object.fromEntries(
+    grupoAzimuteVersions.map((presentation) => [presentation.slug, presentation])
+  ),
   [schmalzCondominio.slug]: schmalzCondominio,
 };
 
@@ -51,7 +57,12 @@ export function sortPresentationsByClient(
 ): Presentation[] {
   return [...items].sort((a, b) => {
     const byClient = a.client.localeCompare(b.client, "pt-BR");
-    return byClient !== 0 ? byClient : a.title.localeCompare(b.title, "pt-BR");
+    if (byClient !== 0) return byClient;
+
+    const byDate = b.createdAt.localeCompare(a.createdAt);
+    if (byDate !== 0) return byDate;
+
+    return a.title.localeCompare(b.title, "pt-BR");
   });
 }
 
@@ -75,6 +86,9 @@ export function getProposalsGroupedByClient(): ClientProposalGroup[] {
     .sort(([clientA], [clientB]) => clientA.localeCompare(clientB, "pt-BR"))
     .map(([client, clientProposals]) => ({
       client,
-      proposals: clientProposals.sort((a, b) => a.title.localeCompare(b.title, "pt-BR")),
+      proposals: clientProposals.sort((a, b) => {
+        const byDate = b.createdAt.localeCompare(a.createdAt);
+        return byDate !== 0 ? byDate : a.title.localeCompare(b.title, "pt-BR");
+      }),
     }));
 }

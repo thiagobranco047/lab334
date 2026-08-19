@@ -3,13 +3,11 @@ import Link from "next/link";
 import PresentationBrand from "@/components/presentations/PresentationBrand";
 import { formatCreatedAt, padSlideNumber } from "@/components/presentations/shared/utils";
 import { getCategoryLabel } from "@/data/presentations/categories";
-import {
-  getPresentationsByCategory,
-  sortPresentationsByClient,
-} from "@/data/presentations";
+import { getProposalsGroupedByClient } from "@/data/presentations";
 
 export default function ProposalsDashboard() {
-  const proposals = sortPresentationsByClient(getPresentationsByCategory("proposal"));
+  const groups = getProposalsGroupedByClient();
+  const proposalsCount = groups.reduce((total, group) => total + group.proposals.length, 0);
 
   return (
     <div className="relative min-h-[100dvh] bg-presentation-bg text-presentation-fg">
@@ -22,7 +20,7 @@ export default function ProposalsDashboard() {
         <div className="mx-auto flex max-w-presentation items-center justify-between px-5 py-5 sm:px-8 sm:py-6">
           <PresentationBrand />
           <p className="font-display text-sm font-light tracking-[0.18em] text-presentation-muted">
-            {String(proposals.length).padStart(2, "0")} propostas
+            {String(proposalsCount).padStart(2, "0")} propostas
           </p>
         </div>
       </header>
@@ -36,45 +34,70 @@ export default function ProposalsDashboard() {
             Propostas por cliente
           </h1>
           <p className="mt-5 font-body text-base font-light leading-relaxed text-presentation-muted sm:text-lg">
-            Acesse as apresentações comerciais organizadas por cliente.
+            Acesse as apresentações comerciais organizadas por cliente, incluindo versões anteriores quando existirem.
           </p>
         </div>
 
-        <div className="presentations-grid">
-          {proposals.map((proposal, index) => (
-            <Link
-              key={proposal.slug}
-              href={`/propostas/${proposal.slug}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="presentation-card group"
-            >
-              <div className="presentation-card-header">
-                <p className="presentation-card-number font-display text-4xl font-extralight leading-none tracking-lab text-presentation-line sm:text-5xl">
-                  {padSlideNumber(index + 1)}
-                </p>
-                <time
-                  dateTime={proposal.createdAt}
-                  className="shrink-0 font-display text-xs font-light tracking-[0.18em] text-presentation-muted"
-                >
-                  {formatCreatedAt(proposal.createdAt)}
-                </time>
-              </div>
-              <div className="presentation-card-content">
-                <p className="font-display text-xs font-light uppercase tracking-[0.22em] text-presentation-muted">
-                  {proposal.client}
-                </p>
-                <h2 className="font-display text-xl font-extralight leading-snug tracking-lab text-presentation-fg sm:text-2xl">
-                  {proposal.title}
+        <div className="mt-14 space-y-14">
+          {groups.map((group) => (
+            <section key={group.client}>
+              <div className="flex flex-wrap items-baseline justify-between gap-3">
+                <h2 className="font-display text-xl font-extralight tracking-lab text-presentation-fg sm:text-2xl">
+                  {group.client}
                 </h2>
-                <p className="font-body text-sm font-light text-presentation-muted">
-                  Proposta de Fee Mensal de Marketing
+                <p className="font-display text-xs font-light uppercase tracking-[0.18em] text-presentation-muted">
+                  {String(group.proposals.length).padStart(2, "0")}{" "}
+                  {group.proposals.length === 1 ? "proposta" : "propostas"}
                 </p>
               </div>
-              <p className="presentation-card-action font-body text-xs font-medium uppercase tracking-[0.14em] text-presentation-fg">
-                Abrir apresentação →
-              </p>
-            </Link>
+
+              <div className="presentations-grid !mt-6">
+                {group.proposals.map((proposal, index) => {
+                  const isVersioned = group.proposals.length > 1;
+                  const isLatest = isVersioned && index === 0;
+
+                  return (
+                    <Link
+                      key={proposal.slug}
+                      href={`/propostas/${proposal.slug}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="presentation-card group"
+                    >
+                      <div className="presentation-card-header">
+                        <p className="presentation-card-number font-display text-4xl font-extralight leading-none tracking-lab text-presentation-line sm:text-5xl">
+                          {padSlideNumber(index + 1)}
+                        </p>
+                        <time
+                          dateTime={proposal.createdAt}
+                          className="shrink-0 font-display text-xs font-light tracking-[0.18em] text-presentation-muted"
+                        >
+                          {formatCreatedAt(proposal.createdAt)}
+                        </time>
+                      </div>
+                      <div className="presentation-card-content">
+                        <p className="font-display text-xs font-light uppercase tracking-[0.22em] text-presentation-muted">
+                          {isVersioned
+                            ? isLatest
+                              ? "Versão atual"
+                              : "Versão anterior"
+                            : proposal.client}
+                        </p>
+                        <h2 className="font-display text-xl font-extralight leading-snug tracking-lab text-presentation-fg sm:text-2xl">
+                          {proposal.title}
+                        </h2>
+                        <p className="font-body text-sm font-light text-presentation-muted">
+                          {proposal.investment ?? "Proposta comercial"}
+                        </p>
+                      </div>
+                      <p className="presentation-card-action font-body text-xs font-medium uppercase tracking-[0.14em] text-presentation-fg">
+                        Abrir apresentação →
+                      </p>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
           ))}
         </div>
       </main>

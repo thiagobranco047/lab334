@@ -1,0 +1,577 @@
+import type { CompanyScopeData, PresentationSlide, ScopeStatus } from "../../types";
+
+const included: ScopeStatus = "included";
+const partial: ScopeStatus = "partial";
+const excluded: ScopeStatus = "excluded";
+
+function scope(
+  company: string,
+  program: string,
+  investment: string,
+  objective: string,
+  channels: string[],
+  blocks: CompanyScopeData["blocks"],
+  exclusions?: string[]
+): PresentationSlide {
+  return {
+    type: "companyScope",
+    title: company,
+    subtitle: "Anexo de escopo",
+    companyScope: {
+      company,
+      program,
+      objective,
+      investment,
+      channels,
+      blocks,
+      exclusions,
+    },
+  };
+}
+
+const channelsAll = ["Instagram", "Facebook", "LinkedIn", "Google Meu Negócio"];
+
+const planningGrupo = {
+  title: "Planejamento Estratégico",
+  items: [
+    "Reunião mensal de alinhamento",
+    "Planejamento editorial",
+    "Definição de pautas",
+    "Priorização das ações do mês",
+    "Organização do calendário de publicações",
+    "Identificação de oportunidades de comunicação",
+    "Coordenação entre as empresas do Grupo",
+  ],
+};
+
+const planningEngenharia = {
+  title: "Planejamento Estratégico",
+  items: [
+    "Reunião mensal de alinhamento",
+    "Planejamento editorial",
+    "Definição de pautas",
+    "Priorização das ações do mês",
+    "Organização do calendário de publicações",
+    "Identificação de oportunidades de comunicação",
+  ],
+};
+
+const planningEssential = {
+  title: "Planejamento Estratégico",
+  items: [
+    "Planejamento mensal",
+    "Calendário editorial",
+    "Reunião de alinhamento",
+    "Organização das pautas",
+  ],
+};
+
+const socialFull = {
+  title: "Comunicação e Redes Sociais",
+  items: [
+    "Desenvolvimento das pautas",
+    "Pesquisa de referências",
+    "Copywriting",
+    "Direção criativa",
+    "Criação das artes",
+    "Adaptação dos formatos por rede",
+    "Agendamento",
+    "Publicação",
+    "Monitoramento das publicações",
+  ],
+};
+
+const socialEssential = {
+  title: "Comunicação e Redes Sociais",
+  items: [
+    "Produção contínua de conteúdo",
+    "Desenvolvimento das pautas",
+    "Pesquisa de referências",
+    "Copywriting",
+    "Direção criativa",
+    "Criação das artes",
+    "Adaptação para Instagram, Facebook, LinkedIn e Google Meu Negócio",
+    "Publicação",
+    "Monitoramento",
+  ],
+};
+
+const audiovisualGrupo = {
+  title: "Conteúdo Audiovisual",
+  items: [
+    "Captação mensal de fotos institucionais",
+    "Captação mensal de vídeos institucionais",
+    "Organização do banco de imagens",
+    "Edição de vídeos para redes sociais",
+    "Adequação para formatos horizontal, quadrado e vertical",
+    "Inserção de legendas quando necessário",
+    "Ajustes básicos de áudio",
+    "Organização dos arquivos produzidos",
+  ],
+  note: "Não inclui motion graphics avançado, modelagem 3D, VFX ou produções audiovisuais especiais.",
+};
+
+const audiovisualEngenharia = {
+  title: "Conteúdo Audiovisual",
+  items: [
+    "Edição de vídeos para redes sociais",
+    "Adequação para formatos horizontal, quadrado e vertical",
+    "Inserção de legendas quando necessário",
+    "Cortes de vídeos longos",
+    "Ajustes básicos de áudio",
+    "Thumbnails simples",
+  ],
+  note: "Não inclui motion graphics avançado, modelagem 3D, VFX ou produções audiovisuais especiais.",
+};
+
+const audiovisualEssential = {
+  title: "Conteúdo Audiovisual",
+  items: [
+    "Edição básica de vídeos para redes sociais",
+    "Adequação para diferentes formatos",
+    "Inserção de legendas quando necessário",
+    "Pequenos cortes",
+  ],
+  note: "Não inclui motion graphics avançado, VFX, modelagem 3D ou produções audiovisuais especiais.",
+};
+
+const youtubeGrupo = {
+  title: "Canal do YouTube",
+  items: [
+    "Upload dos vídeos",
+    "Configuração de títulos",
+    "Configuração de descrições",
+    "Organização das playlists",
+    "Inserção de thumbnails",
+    "Organização geral do canal",
+    "Publicação",
+    "Atualizações quando necessárias",
+  ],
+};
+
+const youtubeEngenharia = {
+  title: "Canal do YouTube",
+  items: [
+    "Organização do canal",
+    "Upload dos vídeos",
+    "Configuração de títulos",
+    "Configuração de descrições",
+    "Tags",
+    "Inserção de thumbnails",
+    "Organização das playlists",
+    "Publicação",
+  ],
+};
+
+const podcastGrupo = {
+  title: "Podcast Corporativo",
+  items: [
+    "1 episódio por mês",
+    "Rodízio entre as empresas do Grupo",
+    "Desenvolvimento da pauta",
+    "Desenvolvimento do roteiro",
+    "Organização da gravação",
+    "Interface com o estúdio",
+    "Acompanhamento da produção",
+    "Publicação do episódio",
+    "Desenvolvimento de cortes para redes sociais",
+  ],
+};
+
+const blogGrupo = {
+  title: "Blog Institucional",
+  items: [
+    "Gestão do blog institucional",
+    "Produção de artigos institucionais",
+    "Conteúdo de comunicação corporativa do Grupo",
+  ],
+};
+
+const blogEngenharia = {
+  title: "Blog Institucional",
+  items: [
+    "Gestão do blog institucional",
+    "Produção de artigos técnicos",
+    "Conteúdo de posicionamento em infraestrutura",
+  ],
+};
+
+const websiteBlock = {
+  title: "Website",
+  items: [
+    "Atualizações",
+    "Correções",
+    "Inclusão de novos conteúdos",
+    "Criação de páginas institucionais simples",
+  ],
+  note: "Não inclui desenvolvimento de sistemas, reformulação completa do website ou integrações complexas.",
+};
+
+const seoBlock = {
+  title: "SEO e AEO",
+  items: [
+    "Otimização contínua de páginas",
+    "Otimização de artigos",
+    "Estruturação de headings",
+    "Meta Titles",
+    "Meta Descriptions",
+    "Links internos",
+    "Melhorias de performance relacionadas ao SEO",
+    "Estruturação de conteúdo para mecanismos de IA",
+  ],
+};
+
+const trafficBlock = {
+  title: "Gestão de Tráfego Pago",
+  items: [
+    "Planejamento das campanhas",
+    "Configuração das campanhas",
+    "Meta Ads",
+    "Google Ads",
+    "Segmentações",
+    "Remarketing",
+    "Otimizações",
+    "Relatórios",
+  ],
+  note: "O investimento em mídia não está incluso e será definido pelo cliente.",
+};
+
+const creativeBlock = {
+  title: "Suporte Criativo",
+  items: [
+    "Convites",
+    "Certificados",
+    "Comunicados",
+    "Materiais institucionais",
+    "Peças promocionais",
+    "Apresentações simples",
+    "Adaptações de campanhas",
+  ],
+  note: "Não inclui branding, identidade visual, catálogos ou projetos gráficos complexos.",
+};
+
+const serviceBlock = {
+  title: "Atendimento",
+  items: [
+    "Atendimento recorrente",
+    "Organização das demandas",
+    "Reuniões de alinhamento",
+    "Acompanhamento das ações do mês",
+  ],
+};
+
+const essentialBlocks: CompanyScopeData["blocks"] = [
+  planningEssential,
+  socialEssential,
+  audiovisualEssential,
+  creativeBlock,
+  serviceBlock,
+];
+
+const essentialExclusions = [
+  "Manutenção de website",
+  "SEO e AEO (podem ser contratados futuramente conforme a evolução da estratégia)",
+  "Gestão de tráfego pago (pode ser contratada futuramente conforme campanhas específicas)",
+  "Gestão do canal do YouTube",
+  "Captação mensal de fotos e vídeos",
+  "Podcast corporativo",
+];
+
+export const grupoAzimute20260824ScopeAnnex: PresentationSlide[] = [
+  {
+    type: "text",
+    title: "Escopo Comparativo dos Programas",
+    body: "Anexo executivo para leitura rápida e comparação entre empresas. O Grupo concentra a infraestrutura estratégica; a Engenharia acelera a presença digital; Imóveis, Tech, SAN e Aria compartilham o mesmo Programa Essencial, diferenciando-se apenas pela linha editorial.",
+    showScopeLegend: true,
+  },
+  scope(
+    "Grupo Azimute",
+    "Corporativo",
+    "R$ 5.000,00",
+    "Concentrar a infraestrutura estratégica de comunicação do Grupo: conteúdo audiovisual, YouTube, podcast, blog institucional, SEO, AEO e gestão de tráfego, com coordenação entre as marcas.",
+    channelsAll,
+    [
+      planningGrupo,
+      socialFull,
+      audiovisualGrupo,
+      youtubeGrupo,
+      podcastGrupo,
+      blogGrupo,
+      websiteBlock,
+      seoBlock,
+      trafficBlock,
+      creativeBlock,
+      serviceBlock,
+    ]
+  ),
+  scope(
+    "Azimute Engenharia",
+    "Estratégico",
+    "R$ 3.750,00",
+    "Acelerar a presença digital da Azimute Engenharia com produção de conteúdo técnico, blog institucional e geração de oportunidades.",
+    channelsAll,
+    [
+      planningEngenharia,
+      socialFull,
+      blogEngenharia,
+      audiovisualEngenharia,
+      youtubeEngenharia,
+      websiteBlock,
+      seoBlock,
+      trafficBlock,
+      creativeBlock,
+      serviceBlock,
+    ]
+  ),
+  scope(
+    "Azimute Imóveis",
+    "Essencial",
+    "R$ 2.250,00",
+    "Presença digital contínua voltada ao mercado imobiliário, com apoio a campanhas comerciais e o mesmo escopo operacional do Programa Essencial.",
+    channelsAll,
+    essentialBlocks,
+    essentialExclusions
+  ),
+  scope(
+    "Azimute Tech",
+    "Essencial",
+    "R$ 2.250,00",
+    "Presença digital contínua com conteúdo técnico adequado ao segmento de tecnologia, mantendo o mesmo escopo operacional do Programa Essencial.",
+    channelsAll,
+    essentialBlocks,
+    essentialExclusions
+  ),
+  scope(
+    "Azimute SAN",
+    "Essencial",
+    "R$ 2.250,00",
+    "Presença digital contínua com conteúdo técnico sobre saneamento e materiais institucionais, no mesmo escopo operacional do Programa Essencial.",
+    channelsAll,
+    essentialBlocks,
+    essentialExclusions
+  ),
+  scope(
+    "Aria",
+    "Essencial",
+    "R$ 2.250,00",
+    "Presença digital contínua com conteúdo técnico sobre captura da realidade, topografia, Laser Scanner, LiDAR, BIM e drones, no mesmo escopo operacional do Programa Essencial.",
+    channelsAll,
+    essentialBlocks,
+    essentialExclusions
+  ),
+  {
+    type: "programComparison",
+    title: "Matriz comparativa dos programas",
+    body: "Imóveis, Tech, SAN e Aria compartilham exatamente o mesmo conjunto de serviços. O Grupo concentra os diferenciais corporativos; a Engenharia é o único programa empresarial com blog técnico, SEO, AEO e tráfego.",
+    programComparison: {
+      columns: [
+        { key: "grupo", label: "Grupo" },
+        { key: "engenharia", label: "Engenharia" },
+        { key: "imoveis", label: "Imóveis" },
+        { key: "tech", label: "Tech" },
+        { key: "san", label: "SAN" },
+        { key: "aria", label: "Aria" },
+      ],
+      rows: [
+        {
+          service: "Planejamento Estratégico",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: included,
+            tech: included,
+            san: included,
+            aria: included,
+          },
+        },
+        {
+          service: "Calendário Editorial",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: included,
+            tech: included,
+            san: included,
+            aria: included,
+          },
+        },
+        {
+          service: "Instagram",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: included,
+            tech: included,
+            san: included,
+            aria: included,
+          },
+        },
+        {
+          service: "Facebook",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: included,
+            tech: included,
+            san: included,
+            aria: included,
+          },
+        },
+        {
+          service: "LinkedIn",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: included,
+            tech: included,
+            san: included,
+            aria: included,
+          },
+        },
+        {
+          service: "Google Meu Negócio",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: included,
+            tech: included,
+            san: included,
+            aria: included,
+          },
+        },
+        {
+          service: "Copywriting",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: included,
+            tech: included,
+            san: included,
+            aria: included,
+          },
+        },
+        {
+          service: "Criação das Artes",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: included,
+            tech: included,
+            san: included,
+            aria: included,
+          },
+        },
+        {
+          service: "Edição de Vídeos",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: partial,
+            tech: partial,
+            san: partial,
+            aria: partial,
+          },
+        },
+        {
+          service: "Gestão do YouTube",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: excluded,
+            tech: excluded,
+            san: excluded,
+            aria: excluded,
+          },
+        },
+        {
+          service: "Captação Mensal de Fotos e Vídeos",
+          values: {
+            grupo: included,
+            engenharia: excluded,
+            imoveis: excluded,
+            tech: excluded,
+            san: excluded,
+            aria: excluded,
+          },
+        },
+        {
+          service: "Podcast Corporativo",
+          values: {
+            grupo: included,
+            engenharia: excluded,
+            imoveis: excluded,
+            tech: excluded,
+            san: excluded,
+            aria: excluded,
+          },
+        },
+        {
+          service: "Blog Institucional",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: excluded,
+            tech: excluded,
+            san: excluded,
+            aria: excluded,
+          },
+        },
+        {
+          service: "Website",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: excluded,
+            tech: excluded,
+            san: excluded,
+            aria: excluded,
+          },
+        },
+        {
+          service: "SEO",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: excluded,
+            tech: excluded,
+            san: excluded,
+            aria: excluded,
+          },
+        },
+        {
+          service: "AEO",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: excluded,
+            tech: excluded,
+            san: excluded,
+            aria: excluded,
+          },
+        },
+        {
+          service: "Gestão de Tráfego Pago",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: excluded,
+            tech: excluded,
+            san: excluded,
+            aria: excluded,
+          },
+        },
+        {
+          service: "Suporte Criativo",
+          values: {
+            grupo: included,
+            engenharia: included,
+            imoveis: included,
+            tech: included,
+            san: included,
+            aria: included,
+          },
+        },
+      ],
+    },
+  },
+];

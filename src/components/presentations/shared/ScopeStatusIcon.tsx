@@ -5,11 +5,13 @@ type ScopeStatusIconProps = {
   className?: string;
 };
 
-export function ScopeStatusIcon({ status, className = "h-4 w-4" }: ScopeStatusIconProps) {
+export function ScopeStatusIcon({ status, className = "" }: ScopeStatusIconProps) {
+  const classes = ["h-4 w-4 shrink-0", className].filter(Boolean).join(" ");
+
   if (status === "included") {
     return (
       <svg
-        className={className}
+        className={classes}
         viewBox="0 0 16 16"
         fill="none"
         aria-hidden="true"
@@ -29,7 +31,7 @@ export function ScopeStatusIcon({ status, className = "h-4 w-4" }: ScopeStatusIc
   if (status === "partial") {
     return (
       <svg
-        className={className}
+        className={classes}
         viewBox="0 0 16 16"
         fill="none"
         aria-hidden="true"
@@ -42,7 +44,7 @@ export function ScopeStatusIcon({ status, className = "h-4 w-4" }: ScopeStatusIc
 
   return (
     <svg
-      className={className}
+      className={classes}
       viewBox="0 0 16 16"
       fill="none"
       aria-hidden="true"

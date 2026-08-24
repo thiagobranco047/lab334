@@ -34,13 +34,13 @@ export default function ProgramComparisonSlide({
         <table className="w-full min-w-[52rem] border-collapse text-left print:min-w-0">
           <thead>
             <tr className="border-b border-presentation-line bg-presentation-surface/70">
-              <th className="sticky left-0 z-10 bg-presentation-surface/95 px-3 py-3 font-display text-[11px] font-light uppercase tracking-[0.14em] text-presentation-muted sm:px-4 print:static print:px-2 print:py-1.5 print:text-[9px]">
+              <th className="sticky left-0 z-10 bg-presentation-surface/95 px-3 py-2 font-display text-[11px] font-light uppercase tracking-[0.14em] text-presentation-muted sm:px-4 print:static print:px-2 print:py-1.5 print:text-[9px]">
                 Serviço
               </th>
               {data.columns.map((column) => (
                 <th
                   key={column.key}
-                  className="px-2 py-3 text-center font-display text-[11px] font-light uppercase tracking-[0.12em] text-presentation-muted sm:px-3 print:px-1 print:py-1.5 print:text-[9px]"
+                  className="px-2 py-2 text-center font-display text-[11px] font-light uppercase tracking-[0.12em] text-presentation-muted sm:px-3 print:px-1 print:py-1.5 print:text-[9px]"
                 >
                   {column.label}
                 </th>
@@ -57,7 +57,7 @@ export default function ProgramComparisonSlide({
                     : "border-b border-presentation-line bg-presentation-surface/30"
                 }
               >
-                <td className="sticky left-0 z-10 bg-inherit px-3 py-2.5 font-body text-sm font-light text-presentation-fg sm:px-4 print:static print:px-2 print:py-1 print:text-[10px]">
+                <td className="sticky left-0 z-10 bg-inherit px-3 py-1.5 font-body text-sm font-light text-presentation-fg sm:px-4 print:static print:px-2 print:py-1 print:text-[10px]">
                   {row.service}
                 </td>
                 {data.columns.map((column) => {
@@ -65,12 +65,12 @@ export default function ProgramComparisonSlide({
                   return (
                     <td
                       key={`${row.service}-${column.key}`}
-                      className="px-2 py-2.5 text-center sm:px-3 print:px-1 print:py-1"
+                      className="px-2 py-1.5 text-center sm:px-3 print:px-1 print:py-1"
                       title={scopeStatusLabel(status)}
                       aria-label={`${row.service} - ${column.label}: ${scopeStatusLabel(status)}`}
                     >
                       <span className="inline-flex items-center justify-center">
-                        <ScopeStatusIcon status={status} className="print:h-3 print:w-3" />
+                        <ScopeStatusIcon status={status} className="h-4 w-4 shrink-0 print:h-3 print:w-3" />
                       </span>
                     </td>
                   );

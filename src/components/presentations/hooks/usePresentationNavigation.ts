@@ -7,10 +7,25 @@ type UsePresentationNavigationOptions = {
   goNext: () => void;
   goPrevious: () => void;
   enabled?: boolean;
+  allowContentScroll?: boolean;
+  getScrollContainer?: () => HTMLElement | null;
 };
 
 const WHEEL_COOLDOWN_MS = 650;
 const SWIPE_THRESHOLD = 56;
+
+function canScrollContainer(
+  container: HTMLElement,
+  deltaY: number
+): boolean {
+  const atTop = container.scrollTop <= 0;
+  const atBottom =
+    container.scrollTop + container.clientHeight >= container.scrollHeight - 2;
+
+  if (deltaY < 0 && !atTop) return true;
+  if (deltaY > 0 && !atBottom) return true;
+  return false;
+}
 
 export function usePresentationNavigation({
   currentIndex,
@@ -19,9 +34,16 @@ export function usePresentationNavigation({
   goNext,
   goPrevious,
   enabled = true,
+  allowContentScroll = false,
+  getScrollContainer,
 }: UsePresentationNavigationOptions) {
   const wheelLocked = useRef(false);
   const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const allowContentScrollRef = useRef(allowContentScroll);
+  const getScrollContainerRef = useRef(getScrollContainer);
+
+  allowContentScrollRef.current = allowContentScroll;
+  getScrollContainerRef.current = getScrollContainer;
 
   const canGoNext = currentIndex < totalSlides - 1;
   const canGoPrevious = currentIndex > 0;
@@ -43,19 +65,35 @@ export function usePresentationNavigation({
 
       switch (event.key) {
         case "ArrowRight":
-        case "ArrowDown":
         case "PageDown":
         case " ":
           event.preventDefault();
           handleNext();
           break;
+        case "ArrowDown": {
+          if (allowContentScrollRef.current) {
+            const container = getScrollContainerRef.current?.();
+            if (container && canScrollContainer(container, 1)) return;
+          }
+          event.preventDefault();
+          handleNext();
+          break;
+        }
         case "ArrowLeft":
-        case "ArrowUp":
         case "PageUp":
         case "Backspace":
           event.preventDefault();
           handlePrevious();
           break;
+        case "ArrowUp": {
+          if (allowContentScrollRef.current) {
+            const container = getScrollContainerRef.current?.();
+            if (container && canScrollContainer(container, -1)) return;
+          }
+          event.preventDefault();
+          handlePrevious();
+          break;
+        }
         case "Home":
           event.preventDefault();
           goToSlide(0);
@@ -70,8 +108,16 @@ export function usePresentationNavigation({
     };
 
     const handleWheel = (event: WheelEvent) => {
-      if (wheelLocked.current) return;
       if (Math.abs(event.deltaY) < 24) return;
+
+      if (allowContentScrollRef.current) {
+        const container = getScrollContainerRef.current?.();
+        if (container && canScrollContainer(container, event.deltaY)) {
+          return;
+        }
+      }
+
+      if (wheelLocked.current) return;
 
       event.preventDefault();
       wheelLocked.current = true;
@@ -122,11 +168,5 @@ export function usePresentationNavigation({
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [
-    enabled,
-    goToSlide,
-    handleNext,
-    handlePrevious,
-    totalSlides,
-  ]);
+  }, [enabled, goToSlide, handleNext, handlePrevious, totalSlides]);
 }

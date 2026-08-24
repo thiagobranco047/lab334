@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 import type { PresentationSlide } from "@/data/presentations/types";
 import { fadeUpItem, staggerContainer } from "../animations/slideVariants";
+import ScopeLegend from "../shared/ScopeLegend";
 import SlideBullets from "../shared/SlideBullets";
 
 export default function TextSlide({ slide }: { slide: PresentationSlide }) {
@@ -49,7 +50,16 @@ export default function TextSlide({ slide }: { slide: PresentationSlide }) {
         </motion.div>
       )}
 
-      {slide.highlight && (
+      {slide.showScopeLegend && (
+        <motion.div
+          variants={fadeUpItem}
+          className="mt-8 max-w-slide-body border-l-2 border-presentation-line pl-5"
+        >
+          <ScopeLegend />
+        </motion.div>
+      )}
+
+      {slide.highlight && !slide.showScopeLegend && (
         <motion.p
           variants={fadeUpItem}
           className="mt-8 max-w-slide-body border-l-2 border-presentation-line pl-5 font-body text-base font-light italic text-presentation-muted sm:text-lg"

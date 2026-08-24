@@ -76,6 +76,18 @@ export const slideMotionByType: Record<SlideType, SlideMotionVariants> = {
     exit: { opacity: 0, scale: 1.01, y: -16 },
     transition: { duration: 0.55, ease },
   },
+  companyScope: {
+    enter: { opacity: 0 },
+    center: { opacity: 1 },
+    exit: { opacity: 0 },
+    transition: { duration: 0.25, ease },
+  },
+  programComparison: {
+    enter: { opacity: 0 },
+    center: { opacity: 1 },
+    exit: { opacity: 0 },
+    transition: { duration: 0.25, ease },
+  },
 };
 
 export function getSlideMotion(type: SlideType = "text"): SlideMotionVariants {

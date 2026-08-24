@@ -9,7 +9,9 @@ export type SlideType =
   | "stats"
   | "deliverable"
   | "investmentTable"
-  | "package";
+  | "package"
+  | "companyScope"
+  | "programComparison";
 
 export type PresentationCategory =
   | "proposal"
@@ -22,6 +24,39 @@ export type InvestmentTableItem = {
   name: string;
   price: string;
   description?: string;
+};
+
+export type ScopeStatus = "included" | "partial" | "excluded";
+
+export type ScopeBlock = {
+  title: string;
+  items: string[];
+  note?: string;
+};
+
+export type CompanyScopeData = {
+  company: string;
+  program: string;
+  objective: string;
+  investment: string;
+  channels?: string[];
+  blocks: ScopeBlock[];
+  exclusions?: string[];
+};
+
+export type ComparisonColumn = {
+  key: string;
+  label: string;
+};
+
+export type ComparisonRow = {
+  service: string;
+  values: Record<string, ScopeStatus>;
+};
+
+export type ProgramComparisonData = {
+  columns: ComparisonColumn[];
+  rows: ComparisonRow[];
 };
 
 export type PresentationSlide = {
@@ -42,6 +77,9 @@ export type PresentationSlide = {
     value: string;
   }[];
   investmentItems?: InvestmentTableItem[];
+  companyScope?: CompanyScopeData;
+  programComparison?: ProgramComparisonData;
+  showScopeLegend?: boolean;
 };
 
 export type Presentation = {

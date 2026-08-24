@@ -1,5 +1,6 @@
 import type { Presentation, PresentationSlide } from "@/data/presentations/types";
 
+import CompanyScopeSlide from "./CompanyScopeSlide";
 import CoverSlide from "./CoverSlide";
 import CtaSlide from "./CtaSlide";
 import DeliverableSlide from "./DeliverableSlide";
@@ -7,6 +8,7 @@ import InvestmentSlide from "./InvestmentSlide";
 import InvestmentTableSlide from "./InvestmentTableSlide";
 import PackageSlide from "./PackageSlide";
 import PillarSlide from "./PillarSlide";
+import ProgramComparisonSlide from "./ProgramComparisonSlide";
 import QuoteSlide from "./QuoteSlide";
 import StatsSlide from "./StatsSlide";
 import TableSlide from "./TableSlide";
@@ -46,6 +48,18 @@ export default function SlideRenderer({
       return <InvestmentTableSlide slide={slide} />;
     case "package":
       return <PackageSlide slide={slide} />;
+    case "companyScope":
+      return slide.companyScope ? (
+        <CompanyScopeSlide data={slide.companyScope} title={slide.subtitle} />
+      ) : null;
+    case "programComparison":
+      return slide.programComparison ? (
+        <ProgramComparisonSlide
+          title={slide.title}
+          body={slide.body}
+          data={slide.programComparison}
+        />
+      ) : null;
     case "text":
     default:
       return <TextSlide slide={slide} />;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { getCategoryLabel } from "@/data/presentations/categories";
@@ -17,6 +17,7 @@ type PresentationDeckProps = {
 
 export default function PresentationDeck({ presentation }: PresentationDeckProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollContainerRef = useRef<HTMLElement | null>(null);
   const totalSlides = presentation.slides.length;
 
   const goToSlide = useCallback(
@@ -35,12 +36,18 @@ export default function PresentationDeck({ presentation }: PresentationDeckProps
     goToSlide(currentIndex - 1);
   }, [currentIndex, goToSlide]);
 
+  const currentSlide = presentation.slides[currentIndex];
+  const slideType = currentSlide.type ?? "text";
+  const isAnnexSlide = slideType === "companyScope" || slideType === "programComparison";
+
   usePresentationNavigation({
     currentIndex,
     totalSlides,
     goToSlide,
     goNext,
     goPrevious,
+    allowContentScroll: isAnnexSlide,
+    getScrollContainer: () => scrollContainerRef.current,
   });
 
   useEffect(() => {
@@ -59,10 +66,14 @@ export default function PresentationDeck({ presentation }: PresentationDeckProps
     };
   }, []);
 
-  const currentSlide = presentation.slides[currentIndex];
-  const slideType = currentSlide.type ?? "text";
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0;
+    }
+  }, [currentIndex]);
+
   const slideMotion = getSlideMotion(slideType);
-  const isLastSlide = currentIndex === totalSlides - 1;
+  const isCtaSlide = slideType === "cta";
   const categoryLabel = getCategoryLabel(presentation.category);
   const pillarSideLabel =
     slideType === "pillar"
@@ -80,25 +91,55 @@ export default function PresentationDeck({ presentation }: PresentationDeckProps
 
       <PresentationProgress current={currentIndex + 1} total={totalSlides} />
 
-      <main className="fixed inset-0 z-10 grid place-items-center px-5 sm:px-10 lg:px-12">
-        <div className="mx-auto w-full max-w-presentation">
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              key={currentIndex}
-              initial={slideMotion.enter}
-              animate={slideMotion.center}
-              exit={slideMotion.exit}
-              transition={slideMotion.transition}
-              className="w-full"
-            >
-              <SlideRenderer
-                slide={currentSlide}
-                presentation={presentation}
-                showActions={isLastSlide}
-              />
-            </motion.div>
-          </AnimatePresence>
-        </div>
+      <main
+        ref={scrollContainerRef}
+        className={
+          isAnnexSlide
+            ? "fixed inset-x-0 top-[4.75rem] bottom-[5.5rem] z-10 overflow-y-auto overscroll-contain bg-presentation-bg sm:top-[5.25rem] sm:bottom-24"
+            : "fixed inset-0 z-10 grid place-items-center overflow-hidden px-5 sm:px-10 lg:px-12"
+        }
+      >
+        {isAnnexSlide ? (
+          <div className="mx-auto grid w-full grid-cols-1 px-5 py-6 sm:grid-cols-[1fr_minmax(0,1200px)_1fr] sm:gap-x-6 sm:px-8 sm:py-8">
+            <div className="min-w-0 pb-6 sm:col-start-2 sm:pb-8">
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={currentIndex}
+                  initial={slideMotion.enter}
+                  animate={slideMotion.center}
+                  exit={slideMotion.exit}
+                  transition={slideMotion.transition}
+                  className="w-full"
+                >
+                  <SlideRenderer
+                    slide={currentSlide}
+                    presentation={presentation}
+                    showActions={isCtaSlide}
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+        ) : (
+          <div className="mx-auto w-full max-w-presentation">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={currentIndex}
+                initial={slideMotion.enter}
+                animate={slideMotion.center}
+                exit={slideMotion.exit}
+                transition={slideMotion.transition}
+                className="w-full"
+              >
+                <SlideRenderer
+                  slide={currentSlide}
+                  presentation={presentation}
+                  showActions={isCtaSlide}
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        )}
       </main>
 
       <PresentationControls

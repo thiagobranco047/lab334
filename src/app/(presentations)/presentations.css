@@ -62,4 +62,106 @@
   .presentation-card:hover {
     border-color: #4a525a;
   }
+
+  .print-slide {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(74, 82, 90, 0.18);
+  }
+
+  .print-slide:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .print-proposal-pages {
+    max-width: 1280px;
+  }
+
+  @media print {
+    @page {
+      size: A4 landscape;
+      margin: 8mm 10mm;
+    }
+
+    html,
+    body {
+      background: #fff !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    [data-presentation-root] {
+      min-height: auto !important;
+      background: #fff !important;
+    }
+
+    .print-proposal {
+      background: #fff !important;
+    }
+
+    .print-proposal-pages {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* One slide = one landscape page */
+    .print-slide {
+      box-sizing: border-box;
+      width: 100%;
+      height: 194mm;
+      max-height: 194mm;
+      margin: 0;
+      padding: 0;
+      border: none;
+      overflow: hidden;
+      break-after: page;
+      page-break-after: always;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .print-slide:last-child {
+      break-after: auto;
+      page-break-after: auto;
+    }
+
+    .print-slide-header {
+      margin-bottom: 0.35rem !important;
+      flex-shrink: 0;
+    }
+
+    .print-slide-annex .print-slide-header {
+      margin-bottom: 0.15rem !important;
+    }
+
+    .print-slide-body {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .print-slide-annex .overflow-x-auto {
+      overflow: visible !important;
+    }
+
+    .print-slide-annex .company-scope-slide > .grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+
+    .print-proposal table {
+      min-width: 0 !important;
+    }
+
+    /* Framer Motion starts hidden; force visible for print/PDF */
+    .print-proposal [style*="opacity: 0"],
+    .print-proposal [style*="opacity:0"] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
 }

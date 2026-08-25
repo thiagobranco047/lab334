@@ -260,19 +260,41 @@ const serviceBlock = {
   ],
 };
 
+const youtubeEssential = {
+  title: "Canal do YouTube",
+  items: [
+    "Suporte pontual de publicação",
+    "Ajustes básicos de título e descrição",
+    "Orientações para organização do canal",
+  ],
+  note: "Incluso parcialmente. A gestão completa do canal não faz parte do Programa Essencial.",
+};
+
+const seoEssential = {
+  title: "SEO e AEO",
+  items: [
+    "Recomendações básicas de otimização",
+    "Ajustes pontuais em títulos e descrições",
+    "Orientações para estruturação de conteúdo",
+  ],
+  note: "Incluso parcialmente. A gestão contínua de SEO e AEO não faz parte do Programa Essencial e pode ser ampliada futuramente.",
+};
+
 const essentialBlocks: CompanyScopeData["blocks"] = [
   planningEssential,
   socialEssential,
   audiovisualEssential,
+  youtubeEssential,
+  seoEssential,
   creativeBlock,
   serviceBlock,
 ];
 
 const essentialExclusions = [
   "Manutenção de website",
-  "SEO e AEO (podem ser contratados futuramente conforme a evolução da estratégia)",
+  "Gestão contínua de SEO e AEO",
   "Gestão de tráfego pago (pode ser contratada futuramente conforme campanhas específicas)",
-  "Gestão do canal do YouTube",
+  "Gestão completa do canal do YouTube",
   "Captação mensal de fotos e vídeos",
   "Podcast corporativo",
 ];
@@ -362,7 +384,7 @@ export const grupoAzimute20260824ScopeAnnex: PresentationSlide[] = [
   {
     type: "programComparison",
     title: "Matriz comparativa dos programas",
-    body: "Imóveis, Tech, SAN e Aria compartilham exatamente o mesmo conjunto de serviços. O Grupo concentra os diferenciais corporativos; a Engenharia é o único programa empresarial com blog técnico, SEO, AEO e tráfego.",
+    body: "Imóveis, Tech, SAN e Aria compartilham o mesmo conjunto essencial de serviços. YouTube, SEO e AEO entram de forma parcial nessas empresas; a gestão completa permanece no Grupo e na Engenharia.",
     programComparison: {
       columns: [
         { key: "grupo", label: "Grupo" },
@@ -477,10 +499,10 @@ export const grupoAzimute20260824ScopeAnnex: PresentationSlide[] = [
           values: {
             grupo: included,
             engenharia: included,
-            imoveis: excluded,
-            tech: excluded,
-            san: excluded,
-            aria: excluded,
+            imoveis: partial,
+            tech: partial,
+            san: partial,
+            aria: partial,
           },
         },
         {
@@ -532,10 +554,10 @@ export const grupoAzimute20260824ScopeAnnex: PresentationSlide[] = [
           values: {
             grupo: included,
             engenharia: included,
-            imoveis: excluded,
-            tech: excluded,
-            san: excluded,
-            aria: excluded,
+            imoveis: partial,
+            tech: partial,
+            san: partial,
+            aria: partial,
           },
         },
         {
@@ -543,10 +565,10 @@ export const grupoAzimute20260824ScopeAnnex: PresentationSlide[] = [
           values: {
             grupo: included,
             engenharia: included,
-            imoveis: excluded,
-            tech: excluded,
-            san: excluded,
-            aria: excluded,
+            imoveis: partial,
+            tech: partial,
+            san: partial,
+            aria: partial,
           },
         },
         {

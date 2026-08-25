@@ -47,7 +47,7 @@ export default function PresentationPrintView({
                 key={`${slide.title}-${index}`}
                 className={`print-slide ${isAnnex ? "print-slide-annex" : "print-slide-standard"}`}
               >
-                <div className="print-slide-header mb-4 flex items-baseline justify-between gap-4">
+                <div className="print-slide-header mb-8 flex items-baseline justify-between gap-4 print:mb-6">
                   <p className="font-display text-[11px] font-light uppercase tracking-[0.18em] text-presentation-muted">
                     {presentation.client}
                   </p>

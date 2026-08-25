@@ -131,18 +131,22 @@
     }
 
     .print-slide-header {
-      margin-bottom: 0.35rem !important;
+      margin-bottom: 1.15rem !important;
+      padding-bottom: 0.55rem;
+      border-bottom: 1px solid rgba(74, 82, 90, 0.14);
       flex-shrink: 0;
     }
 
     .print-slide-annex .print-slide-header {
-      margin-bottom: 0.15rem !important;
+      margin-bottom: 0.75rem !important;
+      padding-bottom: 0.4rem;
     }
 
     .print-slide-body {
       flex: 1 1 auto;
       min-height: 0;
       overflow: hidden;
+      padding-top: 0.35rem;
     }
 
     .print-slide-annex .overflow-x-auto {

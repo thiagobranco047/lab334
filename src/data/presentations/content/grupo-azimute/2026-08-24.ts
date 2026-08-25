@@ -5,6 +5,8 @@ const essentialScopeBullets = [
   "Planejamento estratégico: planejamento mensal, calendário editorial, reunião de alinhamento e organização das pautas.",
   "Comunicação e redes sociais: produção contínua de conteúdo, desenvolvimento de pautas, pesquisa de referências, copywriting, direção criativa, criação de artes, adaptação para Instagram, Facebook, LinkedIn e Google Meu Negócio, publicação e monitoramento.",
   "Conteúdo audiovisual: edição básica de vídeos para redes sociais, adequação para diferentes formatos, legendas quando necessário e pequenos cortes. Não inclui motion graphics avançado, VFX, modelagem 3D ou produções audiovisuais especiais.",
+  "YouTube (parcial): suporte pontual de publicação e ajustes básicos — sem gestão completa do canal.",
+  "SEO e AEO (parcial): recomendações e ajustes pontuais — sem gestão contínua.",
   "Suporte criativo e atendimento: convites, certificados, comunicados, materiais institucionais, peças promocionais, apresentações simples, adaptações de campanhas, atendimento recorrente, organização das demandas e acompanhamento das ações do mês. Não inclui branding, identidade visual, catálogos ou projetos gráficos complexos.",
 ];
 
@@ -18,6 +20,7 @@ export const grupoAzimute20260824: Presentation = {
   investment: "R$ 17.750,00 / mês",
   approveUrl:
     "mailto:contato@lab334.com.br?subject=Aprovação%20-%20Proposta%20Grupo%20Azimute%20-%2024/08/2026",
+  pdfUrl: "/propostas/grupo-azimute-24082026.pdf",
   slides: [
     {
       type: "cover",
@@ -183,7 +186,7 @@ export const grupoAzimute20260824: Presentation = {
         "Mesmo checklist de serviços para as quatro empresas",
         "Mesmo investimento mensal: R$ 2.250,00",
         "Diferenciação apenas pelo conteúdo adequado a cada segmento",
-        "Website, SEO, AEO e tráfego pago não inclusos — podem ser contratados futuramente",
+        "Website e tráfego pago não inclusos; YouTube, SEO e AEO inclusos parcialmente",
       ],
       highlight: "Uma operação padronizada. Quatro linhas editoriais.",
     },
@@ -193,7 +196,7 @@ export const grupoAzimute20260824: Presentation = {
       title: "Escopo operacional padronizado",
       bullets: essentialScopeBullets,
       highlight:
-        "Website, SEO, AEO e gestão de tráfego pago não fazem parte deste programa e poderão ser contratados futuramente conforme a evolução da estratégia ou campanhas específicas.",
+        "YouTube, SEO e AEO entram de forma parcial. Website e gestão de tráfego pago não fazem parte deste programa e poderão ser contratados ou ampliados futuramente.",
     },
     {
       type: "package",
@@ -208,7 +211,7 @@ export const grupoAzimute20260824: Presentation = {
       ],
       investment: "R$ 2.250,00 / mês",
       highlight:
-        "Não incluso: website, SEO, AEO, gestão de tráfego pago, YouTube, captação mensal e podcast. Podem ser contratados futuramente conforme a evolução da estratégia.",
+        "Parcial: YouTube, SEO e AEO. Não incluso: website, gestão de tráfego pago, captação mensal e podcast.",
     },
     {
       type: "package",
@@ -223,7 +226,7 @@ export const grupoAzimute20260824: Presentation = {
       ],
       investment: "R$ 2.250,00 / mês",
       highlight:
-        "Não incluso: website, SEO, AEO, gestão de tráfego pago, YouTube, captação mensal e podcast. Podem ser contratados futuramente conforme a evolução da estratégia.",
+        "Parcial: YouTube, SEO e AEO. Não incluso: website, gestão de tráfego pago, captação mensal e podcast.",
     },
     {
       type: "package",
@@ -238,7 +241,7 @@ export const grupoAzimute20260824: Presentation = {
       ],
       investment: "R$ 2.250,00 / mês",
       highlight:
-        "Não incluso: website, SEO, AEO, gestão de tráfego pago, YouTube, captação mensal e podcast. Podem ser contratados futuramente conforme a evolução da estratégia.",
+        "Parcial: YouTube, SEO e AEO. Não incluso: website, gestão de tráfego pago, captação mensal e podcast.",
     },
     {
       type: "package",
@@ -253,7 +256,7 @@ export const grupoAzimute20260824: Presentation = {
       ],
       investment: "R$ 2.250,00 / mês",
       highlight:
-        "Não incluso: website, SEO, AEO, gestão de tráfego pago, YouTube, captação mensal e podcast. Podem ser contratados futuramente conforme a evolução da estratégia.",
+        "Parcial: YouTube, SEO e AEO. Não incluso: website, gestão de tráfego pago, captação mensal e podcast.",
     },
 
     {

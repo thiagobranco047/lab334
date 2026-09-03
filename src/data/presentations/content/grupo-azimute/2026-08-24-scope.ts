@@ -299,11 +299,29 @@ const essentialExclusions = [
   "Podcast corporativo",
 ];
 
+/** Imóveis e Aria: sem edição de vídeos, YouTube, SEO e AEO. */
+const essentialLiteBlocks: CompanyScopeData["blocks"] = [
+  planningEssential,
+  socialEssential,
+  creativeBlock,
+  serviceBlock,
+];
+
+const essentialLiteExclusions = [
+  "Edição de vídeos",
+  "Gestão do canal do YouTube",
+  "SEO e AEO",
+  "Manutenção de website",
+  "Gestão de tráfego pago (pode ser contratada futuramente conforme campanhas específicas)",
+  "Captação mensal de fotos e vídeos",
+  "Podcast corporativo",
+];
+
 export const grupoAzimute20260824ScopeAnnex: PresentationSlide[] = [
   {
     type: "text",
     title: "Escopo Comparativo dos Programas",
-    body: "Anexo executivo para leitura rápida e comparação entre empresas. O Grupo concentra a infraestrutura estratégica; a Engenharia acelera a presença digital; Imóveis, Tech, SAN e Aria compartilham o mesmo Programa Essencial, diferenciando-se apenas pela linha editorial.",
+    body: "Anexo executivo para leitura rápida e comparação entre empresas. O Grupo e a Engenharia concentram a infraestrutura estratégica. No Essencial, Tech e SAN incluem YouTube, SEO, AEO e edição de vídeos de forma parcial; Imóveis e Aria operam sem esses itens.",
     showScopeLegend: true,
   },
   scope(
@@ -348,11 +366,11 @@ export const grupoAzimute20260824ScopeAnnex: PresentationSlide[] = [
   scope(
     "Azimute Imóveis",
     "Essencial",
-    "R$ 2.250,00",
-    "Presença digital contínua voltada ao mercado imobiliário, com apoio a campanhas comerciais e o mesmo escopo operacional do Programa Essencial.",
+    "R$ 1.850,00",
+    "Presença digital contínua voltada ao mercado imobiliário, com apoio a campanhas comerciais. Escopo enxuto, sem edição de vídeos, YouTube, SEO e AEO.",
     channelsAll,
-    essentialBlocks,
-    essentialExclusions
+    essentialLiteBlocks,
+    essentialLiteExclusions
   ),
   scope(
     "Azimute Tech",
@@ -375,16 +393,16 @@ export const grupoAzimute20260824ScopeAnnex: PresentationSlide[] = [
   scope(
     "Aria",
     "Essencial",
-    "R$ 2.250,00",
-    "Presença digital contínua com conteúdo técnico sobre captura da realidade, topografia, Laser Scanner, LiDAR, BIM e drones, no mesmo escopo operacional do Programa Essencial.",
+    "R$ 1.850,00",
+    "Presença digital contínua com conteúdo técnico sobre captura da realidade, topografia, Laser Scanner, LiDAR, BIM e drones. Escopo enxuto, sem edição de vídeos, YouTube, SEO e AEO.",
     channelsAll,
-    essentialBlocks,
-    essentialExclusions
+    essentialLiteBlocks,
+    essentialLiteExclusions
   ),
   {
     type: "programComparison",
     title: "Matriz comparativa dos programas",
-    body: "Imóveis, Tech, SAN e Aria compartilham o mesmo conjunto essencial de serviços. YouTube, SEO e AEO entram de forma parcial nessas empresas; a gestão completa permanece no Grupo e na Engenharia.",
+    body: "Tech e SAN mantêm YouTube, SEO, AEO e edição de vídeos de forma parcial. Imóveis e Aria não contemplam esses itens. A gestão completa permanece no Grupo e na Engenharia.",
     programComparison: {
       columns: [
         { key: "grupo", label: "Grupo" },
@@ -488,10 +506,10 @@ export const grupoAzimute20260824ScopeAnnex: PresentationSlide[] = [
           values: {
             grupo: included,
             engenharia: included,
-            imoveis: partial,
+            imoveis: excluded,
             tech: partial,
             san: partial,
-            aria: partial,
+            aria: excluded,
           },
         },
         {
@@ -499,10 +517,10 @@ export const grupoAzimute20260824ScopeAnnex: PresentationSlide[] = [
           values: {
             grupo: included,
             engenharia: included,
-            imoveis: partial,
+            imoveis: excluded,
             tech: partial,
             san: partial,
-            aria: partial,
+            aria: excluded,
           },
         },
         {
@@ -554,10 +572,10 @@ export const grupoAzimute20260824ScopeAnnex: PresentationSlide[] = [
           values: {
             grupo: included,
             engenharia: included,
-            imoveis: partial,
+            imoveis: excluded,
             tech: partial,
             san: partial,
-            aria: partial,
+            aria: excluded,
           },
         },
         {
@@ -565,10 +583,10 @@ export const grupoAzimute20260824ScopeAnnex: PresentationSlide[] = [
           values: {
             grupo: included,
             engenharia: included,
-            imoveis: partial,
+            imoveis: excluded,
             tech: partial,
             san: partial,
-            aria: partial,
+            aria: excluded,
           },
         },
         {

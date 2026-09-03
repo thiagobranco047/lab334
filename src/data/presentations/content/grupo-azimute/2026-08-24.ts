@@ -17,7 +17,7 @@ export const grupoAzimute20260824: Presentation = {
   date: "Agosto de 2026",
   createdAt: "2026-08-24",
   category: "proposal",
-  investment: "R$ 17.750,00 / mês",
+  investment: "R$ 16.950,00 / mês",
   approveUrl:
     "mailto:contato@lab334.com.br?subject=Aprovação%20-%20Proposta%20Grupo%20Azimute%20-%2024/08/2026",
   pdfUrl: "/propostas/grupo-azimute-24082026.pdf",
@@ -55,7 +55,7 @@ export const grupoAzimute20260824: Presentation = {
         "Programa Essencial: escopo operacional padronizado para Imóveis, Tech, SAN e Aria",
       ],
       highlight:
-        "Imóveis, Tech, SAN e Aria compartilham o mesmo programa. O diferencial entre elas é apenas a linha editorial dos conteúdos.",
+        "Imóveis e Aria operam em escopo enxuto; Tech e SAN incluem YouTube, SEO, AEO e edição de vídeos de forma parcial.",
     },
 
     {
@@ -181,14 +181,14 @@ export const grupoAzimute20260824: Presentation = {
     {
       type: "text",
       title: "Programa Essencial",
-      body: "Azimute Imóveis, Azimute Tech, Azimute SAN e Aria compartilham exatamente o mesmo escopo operacional. O que muda entre elas é apenas o objetivo e a linha editorial dos conteúdos produzidos.",
+      body: "Azimute Tech e Azimute SAN compartilham o escopo essencial completo (com YouTube, SEO, AEO e edição de vídeos parciais). Azimute Imóveis e Aria operam em versão enxuta, sem esses itens — o diferencial editorial permanece em todas.",
       bullets: [
-        "Mesmo checklist de serviços para as quatro empresas",
-        "Mesmo investimento mensal: R$ 2.250,00",
-        "Diferenciação apenas pelo conteúdo adequado a cada segmento",
-        "Website e tráfego pago não inclusos; YouTube, SEO e AEO inclusos parcialmente",
+        "Base comum: planejamento, redes sociais, suporte criativo e atendimento",
+        "Tech e SAN: YouTube, SEO, AEO e edição de vídeos inclusos parcialmente",
+        "Imóveis e Aria: sem edição de vídeos, YouTube, SEO e AEO",
+        "Investimento de R$ 1.850 (Imóveis e Aria) ou R$ 2.250 (Tech e SAN)",
       ],
-      highlight: "Uma operação padronizada. Quatro linhas editoriais.",
+      highlight: "Mesmo programa. Dois níveis de escopo no Essencial.",
     },
     {
       type: "text",
@@ -196,28 +196,27 @@ export const grupoAzimute20260824: Presentation = {
       title: "Escopo operacional padronizado",
       bullets: essentialScopeBullets,
       highlight:
-        "YouTube, SEO e AEO entram de forma parcial. Website e gestão de tráfego pago não fazem parte deste programa e poderão ser contratados ou ampliados futuramente.",
+        "YouTube, SEO, AEO e edição de vídeos aplicam-se parcialmente a Tech e SAN. Em Imóveis e Aria esses itens não estão inclusos. Website e gestão de tráfego pago não fazem parte do Essencial.",
     },
     {
       type: "package",
       eyebrow: "Programa Essencial",
       title: "Azimute Imóveis",
-      body: "Presença digital contínua voltada ao mercado imobiliário, com apoio a campanhas comerciais. Opera com o mesmo escopo do Programa Essencial — o diferencial é a linha editorial.",
+      body: "Presença digital contínua voltada ao mercado imobiliário, com apoio a campanhas comerciais. Escopo enxuto do Programa Essencial — o diferencial é a linha editorial.",
       bullets: [
         "Planejamento mensal e calendário editorial",
         "Produção contínua de conteúdo imobiliário",
-        "Edição básica de vídeos para redes sociais",
         "Materiais institucionais, suporte criativo e atendimento",
       ],
-      investment: "R$ 2.250,00 / mês",
+      investment: "R$ 1.850,00 / mês",
       highlight:
-        "Parcial: YouTube, SEO e AEO. Não incluso: website, gestão de tráfego pago, captação mensal e podcast.",
+        "Não incluso: edição de vídeos, YouTube, SEO, AEO, website, gestão de tráfego pago, captação mensal e podcast.",
     },
     {
       type: "package",
       eyebrow: "Programa Essencial",
       title: "Azimute Tech",
-      body: "Presença digital contínua com conteúdo técnico adequado ao segmento de tecnologia. Opera com o mesmo escopo do Programa Essencial — o diferencial é a linha editorial.",
+      body: "Presença digital contínua com conteúdo técnico adequado ao segmento de tecnologia. Opera com o escopo essencial completo — o diferencial é a linha editorial.",
       bullets: [
         "Planejamento mensal e calendário editorial",
         "Produção contínua de conteúdo técnico",
@@ -232,7 +231,7 @@ export const grupoAzimute20260824: Presentation = {
       type: "package",
       eyebrow: "Programa Essencial",
       title: "Azimute SAN",
-      body: "Presença digital contínua com conteúdo técnico sobre saneamento e materiais institucionais. Opera com o mesmo escopo do Programa Essencial — o diferencial é a linha editorial.",
+      body: "Presença digital contínua com conteúdo técnico sobre saneamento e materiais institucionais. Opera com o escopo essencial completo — o diferencial é a linha editorial.",
       bullets: [
         "Planejamento mensal e calendário editorial",
         "Conteúdo técnico sobre saneamento",
@@ -247,16 +246,15 @@ export const grupoAzimute20260824: Presentation = {
       type: "package",
       eyebrow: "Programa Essencial",
       title: "Aria",
-      body: "Presença digital contínua com conteúdo técnico sobre captura da realidade, topografia, Laser Scanner, LiDAR, BIM e drones. Opera com o mesmo escopo do Programa Essencial — o diferencial é a linha editorial.",
+      body: "Presença digital contínua com conteúdo técnico sobre captura da realidade, topografia, Laser Scanner, LiDAR, BIM e drones. Escopo enxuto do Programa Essencial — o diferencial é a linha editorial.",
       bullets: [
         "Planejamento mensal e calendário editorial",
         "Conteúdo técnico sobre captura da realidade",
-        "Edição básica de vídeos para redes sociais",
         "Materiais institucionais, suporte criativo e atendimento",
       ],
-      investment: "R$ 2.250,00 / mês",
+      investment: "R$ 1.850,00 / mês",
       highlight:
-        "Parcial: YouTube, SEO e AEO. Não incluso: website, gestão de tráfego pago, captação mensal e podcast.",
+        "Não incluso: edição de vídeos, YouTube, SEO, AEO, website, gestão de tráfego pago, captação mensal e podcast.",
     },
 
     {
@@ -279,7 +277,7 @@ export const grupoAzimute20260824: Presentation = {
           [
             "Essencial",
             "Imóveis, Tech, SAN e Aria",
-            "Escopo operacional idêntico; diferenciação só na linha editorial",
+            "Escopo compartilhado; Imóveis e Aria sem vídeo/YouTube/SEO/AEO",
           ],
         ],
       },
@@ -293,10 +291,10 @@ export const grupoAzimute20260824: Presentation = {
         rows: [
           ["Grupo Azimute", "Corporativo", "R$ 5.000"],
           ["Azimute Engenharia", "Estratégico", "R$ 3.750"],
-          ["Azimute Imóveis", "Essencial", "R$ 2.250"],
+          ["Azimute Imóveis", "Essencial", "R$ 1.850"],
           ["Azimute Tech", "Essencial", "R$ 2.250"],
           ["Azimute SAN", "Essencial", "R$ 2.250"],
-          ["Aria", "Essencial", "R$ 2.250"],
+          ["Aria", "Essencial", "R$ 1.850"],
         ],
       },
     },
@@ -318,7 +316,7 @@ export const grupoAzimute20260824: Presentation = {
       type: "investment",
       title: "Investimento consolidado",
       subtitle: "Programa Corporativo de Comunicação",
-      highlight: "R$ 17.750,00 / mês",
+      highlight: "R$ 16.950,00 / mês",
       body: "Valor consolidado para o Grupo Azimute e suas empresas. Investimento em mídia paga não incluso. Projetos especiais e demandas extraordinárias podem ser orçados separadamente.",
     },
     {

@@ -19,9 +19,13 @@ function isPresentationRoute(pathname) {
   );
 }
 
+function isStandaloneAppRoute(pathname) {
+  return pathname?.startsWith("/clientes") || pathname?.startsWith("/entrar");
+}
+
 export default function SiteShell({ children }) {
   const pathname = usePathname();
-  const presentationRoute = isPresentationRoute(pathname);
+  const presentationRoute = isPresentationRoute(pathname) || isStandaloneAppRoute(pathname);
 
   useEffect(() => {
     if (presentationRoute) return;

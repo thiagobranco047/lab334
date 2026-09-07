@@ -7,17 +7,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "pdf:proposal": "node scripts/generate-proposal-pdf.mjs"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.39.6",
     "@fancyapps/ui": "^6.1.6",
     "@gsap/react": "^2.1.2",
     "autoprefixer": "^10.5.0",
     "framer-motion": "^12.40.0",
     "gsap": "^3.13.0",
     "lenis": "^1.3.1",
-    "next": "14.2.5",
+    "next": "^14.2.25",
     "next-view-transitions": "^0.3.4",
     "postcss": "^8.5.15",
     "react": "^18.3.1",
@@ -29,6 +32,9 @@
     "@types/node": "^25.9.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "playwright": "^1.62.1"
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.25",
+    "playwright": "^1.62.1",
+    "vitest": "^3.2.4"
   }
 }

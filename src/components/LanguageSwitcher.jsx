@@ -5,7 +5,7 @@ import styles from './LanguageSwitcher.module.css';
 const LanguageSwitcher = () => {
   const { currentLocale, changeLanguage } = useLanguage();
 
-  const FlagIcon = ({ locale, children }) => (
+  const FlagIcon = ({ children }) => (
     <svg
       width="20"
       height="15"
@@ -35,7 +35,7 @@ const LanguageSwitcher = () => {
     };
 
     return (
-      <FlagIcon locale="en">
+      <FlagIcon>
         {/* 13 listras horizontais (7 vermelhas, 6 brancas) */}
         <rect width="24" height="18" fill="#B22234"/>
         <rect y="1.38" width="24" height="1.38" fill="white"/>
@@ -87,7 +87,7 @@ const LanguageSwitcher = () => {
     };
 
     return (
-      <FlagIcon locale="pt-BR">
+      <FlagIcon>
         {/* Fundo verde */}
         <rect width="24" height="18" fill="#009739"/>
         {/* Losango amarelo */}

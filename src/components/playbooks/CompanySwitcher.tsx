@@ -10,7 +10,7 @@ type CompanySwitcherProps = {
   currentPlaybook: Playbook;
 };
 
-export default function CompanySwitcher({ playbooks, currentPlaybook }: CompanySwitcherProps) {
+export default function CompanySwitcher({ playbooks }: CompanySwitcherProps) {
   const pathname = usePathname();
 
   return (

@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This repository contains the LAB 334 public site and the first Client OS web/BFF foundation.
+
+The Client OS uses Clerk for identity, sessions and Organization memberships while LAB domain IDs remain canonical. See [Client OS foundation](docs/client-os-foundation.md) for configuration, route boundaries and authorization invariants.
 
 ## Getting Started
 

@@ -44,6 +44,16 @@ describe("Drizzle Business Unit grant repository", () => {
     await expect(repository.listActiveByPrincipalAndOrganization("user_1", "grupo-azimute")).resolves.toMatchObject({ ok: false, error: { code: "UNAVAILABLE" } });
   });
 
+  it.each(["UND_ERR_CONNECT_TIMEOUT", "UND_ERR_HEADERS_TIMEOUT", "UND_ERR_SOCKET"])("classifies nested Undici %s as unavailable", async (code) => {
+    const repository = createDrizzleGrantRepository(async () => { throw Object.assign(new Error("fetch failed"), { cause: Object.assign(new Error(code), { code }) }); });
+    await expect(repository.listActiveByPrincipalAndOrganization("user_1", "grupo-azimute")).resolves.toMatchObject({ ok: false, error: { code: "UNAVAILABLE" } });
+  });
+
+  it("classifies transient Neon HTTP failures as unavailable", async () => {
+    const repository = createDrizzleGrantRepository(async () => { throw new Error("Server error (HTTP status 503): unavailable"); });
+    await expect(repository.listActiveByPrincipalAndOrganization("user_1", "grupo-azimute")).resolves.toMatchObject({ ok: false, error: { code: "UNAVAILABLE" } });
+  });
+
   it("rejects all rows when any row is invalid", async () => {
     const repository = createDrizzleGrantRepository(async () => [activeRow, { ...activeRow, id: "other", capabilities: ["invented.read"] }]);
     const result = await repository.listActiveByPrincipalAndOrganization("user_1", "grupo-azimute");

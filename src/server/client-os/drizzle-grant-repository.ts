@@ -23,7 +23,11 @@ function validateRow(value: unknown, principalId: string, organizationId: string
 
 function classifyError(error: unknown): GrantRepositoryErrorCode {
   if (error instanceof DatabaseConfigurationError || (error && typeof error === "object" && "code" in error && error.code === "NOT_CONFIGURED")) return "NOT_CONFIGURED";
-  const unavailableCodes = new Set(["ECONNREFUSED", "ECONNRESET", "ETIMEDOUT", "ENOTFOUND", "EAI_AGAIN"]);
+  const unavailableCodes = new Set([
+    "ECONNREFUSED", "ECONNRESET", "ETIMEDOUT", "ENOTFOUND", "EAI_AGAIN",
+    "UND_ERR_CONNECT_TIMEOUT", "UND_ERR_HEADERS_TIMEOUT", "UND_ERR_SOCKET",
+  ]);
+  const transientHttpStatus = /(?:HTTP status|status(?: code)?)\s*[:(]?\s*(408|429|5\d\d)\b/i;
   const pending: unknown[] = [error];
   const visited = new Set<unknown>();
   while (pending.length) {
@@ -31,6 +35,7 @@ function classifyError(error: unknown): GrantRepositoryErrorCode {
     if (!current || typeof current !== "object" || visited.has(current)) continue;
     visited.add(current);
     if ("code" in current && unavailableCodes.has(String(current.code))) return "UNAVAILABLE";
+    if ("message" in current && typeof current.message === "string" && transientHttpStatus.test(current.message)) return "UNAVAILABLE";
     if ("sourceError" in current) pending.push(current.sourceError);
     if ("cause" in current) pending.push(current.cause);
   }

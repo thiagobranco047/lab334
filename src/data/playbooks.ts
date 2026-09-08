@@ -209,6 +209,8 @@ const azimuteEngenharia: Playbook = {
   cta: "Planeje com segurança. Conheça a engenharia consultiva Azimute.",
   enabled: true,
   group: "grupo-azimute",
+  calendarUrl:
+    "https://drive.google.com/drive/folders/1krfSP8PyDfqk4yCEqGDYx6duBg4SEiDI?usp=drive_link",
 };
 
 const azimuteImoveis: Playbook = {
@@ -361,6 +363,8 @@ const azimuteTech: Playbook = {
   cta: "Antes de escavar, conheça o subsolo. Solicite um diagnóstico Azimute Tech.",
   enabled: true,
   group: "grupo-azimute",
+  calendarUrl:
+    "https://drive.google.com/drive/folders/1K2ld7IwPZdcp0hU8CwC2ZyjD-_7dmVXU?usp=drive_link",
 };
 
 const azimuteSan: Playbook = {
@@ -511,6 +515,8 @@ const aria: Playbook = {
   cta: "Transforme imagens em inteligência. Conheça a Aria Imagem e Tecnologia.",
   enabled: true,
   group: "grupo-azimute",
+  calendarUrl:
+    "https://drive.google.com/drive/folders/1k73Z3ZR9OX3T3uGxnjE9P-j5RdzXrm80?usp=drive_link",
 };
 
 export const playbooks: Playbook[] = [

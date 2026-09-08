@@ -12,6 +12,7 @@ describe("Business Unit grant schema", () => {
     expect(config.columns.map((column) => column.name)).toEqual(expect.arrayContaining(["id", "principal_id", "organization_id", "business_unit_id", "permissions", "capabilities", "status", "created_at", "updated_at", "created_by", "revoked_at", "revoked_by"]));
     expect(config.indexes.map((index) => index.config.name)).toEqual(expect.arrayContaining(["business_unit_grants_active_principal_org_idx", "business_unit_grants_active_scope_idx"]));
     expect(config.uniqueConstraints.map((constraint) => constraint.name)).toContain("business_unit_grants_principal_scope_unique");
+    expect(config.checks.map((constraint) => constraint.name)).toContain("business_unit_grants_permissions_allowed");
   });
 
   it("distinguishes missing server configuration", () => {

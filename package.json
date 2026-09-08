@@ -20,7 +20,7 @@
     "@clerk/nextjs": "^6.39.6",
     "@fancyapps/ui": "^6.1.6",
     "@gsap/react": "^2.1.2",
-    "@lab334/contracts": "file:vendor/contracts/lab334-contracts-0.1.3.tgz",
+    "@lab334/contracts": "file:vendor/contracts/lab334-contracts-0.1.4.tgz",
     "@neondatabase/serverless": "1.1.0",
     "autoprefixer": "^10.5.0",
     "drizzle-orm": "0.45.2",

@@ -1,0 +1,1 @@
+ALTER TABLE "business_unit_grants" ADD CONSTRAINT "business_unit_grants_permissions_allowed" CHECK ("business_unit_grants"."permissions" <@ ARRAY['read', 'draft', 'execute']::text[]);

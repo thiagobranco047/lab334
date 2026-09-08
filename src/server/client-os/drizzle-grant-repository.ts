@@ -23,8 +23,18 @@ function validateRow(value: unknown, principalId: string, organizationId: string
 
 function classifyError(error: unknown): GrantRepositoryErrorCode {
   if (error instanceof DatabaseConfigurationError || (error && typeof error === "object" && "code" in error && error.code === "NOT_CONFIGURED")) return "NOT_CONFIGURED";
-  const code = error && typeof error === "object" && "code" in error ? String(error.code) : "";
-  return ["ECONNREFUSED", "ECONNRESET", "ETIMEDOUT", "ENOTFOUND", "EAI_AGAIN"].includes(code) ? "UNAVAILABLE" : "QUERY_FAILED";
+  const unavailableCodes = new Set(["ECONNREFUSED", "ECONNRESET", "ETIMEDOUT", "ENOTFOUND", "EAI_AGAIN"]);
+  const pending: unknown[] = [error];
+  const visited = new Set<unknown>();
+  while (pending.length) {
+    const current = pending.shift();
+    if (!current || typeof current !== "object" || visited.has(current)) continue;
+    visited.add(current);
+    if ("code" in current && unavailableCodes.has(String(current.code))) return "UNAVAILABLE";
+    if ("sourceError" in current) pending.push(current.sourceError);
+    if ("cause" in current) pending.push(current.cause);
+  }
+  return "QUERY_FAILED";
 }
 
 async function executeQuery(principalId: string, organizationId: string) {

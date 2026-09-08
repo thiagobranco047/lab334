@@ -5,7 +5,7 @@ import { migrate } from "drizzle-orm/neon-http/migrator";
 import { eq } from "drizzle-orm";
 import { describe, expect, it } from "vitest";
 import { businessUnitGrants } from "@/server/db/schema";
-import { createDrizzleGrantRepository } from "./drizzle-grant-repository";
+import { businessUnitGrantRepository } from "./grants";
 
 const testUrl = process.env.TEST_DATABASE_URL;
 
@@ -15,12 +15,18 @@ describe.skipIf(!testUrl)("Business Unit grant repository integration", () => {
     const db = drizzle(neon(testUrl));
     await migrate(db, { migrationsFolder: "drizzle" });
     const principalId = `integration_${randomUUID()}`;
-    await db.insert(businessUnitGrants).values({ principalId, organizationId: "grupo-azimute", businessUnitId: "azimute-san", permissions: ["read"], capabilities: ["playbooks.read"], createdBy: principalId });
+    await db.insert(businessUnitGrants).values([
+      { principalId, organizationId: "grupo-azimute", businessUnitId: "azimute-san", permissions: ["read"], capabilities: ["playbooks.read"], createdBy: principalId },
+      { principalId, organizationId: "joinsul", businessUnitId: "joinsul", permissions: ["read"], capabilities: ["playbooks.read"], createdBy: principalId },
+      { principalId, organizationId: "grupo-azimute", businessUnitId: "azimute-tech", permissions: ["read"], capabilities: ["playbooks.read"], status: "revoked", createdBy: principalId, revokedAt: new Date(), revokedBy: principalId },
+    ]);
     try {
-      const repository = createDrizzleGrantRepository(async (principal, organization) => db.select().from(businessUnitGrants).where(eq(businessUnitGrants.principalId, principal)));
-      const result = await repository.listActiveByPrincipalAndOrganization(principalId, "grupo-azimute");
+      process.env.DATABASE_URL = testUrl;
+      const result = await businessUnitGrantRepository.listActiveByPrincipalAndOrganization(principalId, "grupo-azimute");
       expect(result).toMatchObject({ ok: true, grants: [{ businessUnitId: "azimute-san" }] });
+      if (result.ok) expect(result.grants).toHaveLength(1);
     } finally {
+      delete process.env.DATABASE_URL;
       await db.delete(businessUnitGrants).where(eq(businessUnitGrants.principalId, principalId));
     }
   });

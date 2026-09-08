@@ -21,6 +21,7 @@ export const businessUnitGrants = pgTable("business_unit_grants", {
   index("business_unit_grants_active_principal_org_idx").on(table.principalId, table.organizationId).where(sql`${table.status} = 'active'`),
   index("business_unit_grants_active_scope_idx").on(table.organizationId, table.businessUnitId).where(sql`${table.status} = 'active'`),
   check("business_unit_grants_permissions_nonempty", sql`cardinality(${table.permissions}) > 0`),
+  check("business_unit_grants_permissions_allowed", sql`${table.permissions} <@ ARRAY['read', 'draft', 'execute']::text[]`),
   check("business_unit_grants_revocation_audit", sql`(${table.status} = 'active' AND ${table.revokedAt} IS NULL AND ${table.revokedBy} IS NULL) OR (${table.status} = 'revoked' AND ${table.revokedAt} IS NOT NULL AND ${table.revokedBy} IS NOT NULL)`),
 ]);
 

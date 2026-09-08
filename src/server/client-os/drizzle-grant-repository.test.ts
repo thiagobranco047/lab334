@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { createDrizzleGrantRepository } from "./drizzle-grant-repository";
 
 const activeRow = {
@@ -36,6 +36,12 @@ describe("Drizzle Business Unit grant repository", () => {
     const repository = createDrizzleGrantRepository(async () => { throw failure; });
     const result = await repository.listActiveByPrincipalAndOrganization("user_1", "grupo-azimute");
     expect(result).toMatchObject({ ok: false, error: { code } });
+  });
+
+  it("classifies Neon sourceError network failures as unavailable", async () => {
+    const failure = Object.assign(new Error("NeonDbError"), { sourceError: Object.assign(new Error("fetch failed"), { cause: Object.assign(new Error("connect"), { code: "ETIMEDOUT" }) }) });
+    const repository = createDrizzleGrantRepository(async () => { throw failure; });
+    await expect(repository.listActiveByPrincipalAndOrganization("user_1", "grupo-azimute")).resolves.toMatchObject({ ok: false, error: { code: "UNAVAILABLE" } });
   });
 
   it("rejects all rows when any row is invalid", async () => {

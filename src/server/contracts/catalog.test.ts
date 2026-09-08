@@ -7,7 +7,7 @@ import { getBusinessUnit, getOrganization, isApplicationCapability } from "./cat
 
 describe("vendored LAB contracts", () => {
   it("matches the committed SHA-256", () => {
-    const archive = path.resolve("vendor/contracts/lab334-contracts-0.1.2.tgz");
+    const archive = path.resolve("vendor/contracts/lab334-contracts-0.1.3.tgz");
     const expected = readFileSync(`${archive}.sha256`, "utf8").trim().split(/\s+/)[0];
     expect(createHash("sha256").update(readFileSync(archive)).digest("hex")).toBe(expected);
   });

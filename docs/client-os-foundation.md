@@ -47,6 +47,26 @@ Canonical modes are `public`, `authenticated`, `restricted`, and the future `sha
 
 Public routes must only use their existing public datasets. They do not call the Client OS server authorization or private resource layer.
 
+### Public compatibility invariant
+
+During this migration phase, `/playbooks/*`, `/propostas/*`, and `/apresentacoes/*` are public compatibility invariants. Their existing URLs and sharing behavior must remain available without Clerk, Client OS authentication, or persistent grants. The current playbooks must not be redirected to `/clientes/*` or made dependent on the private Client OS before equivalent functionality exists and a migration is explicitly approved.
+
+The canonical future destinations remain `/clientes/{organization}/playbooks` and `/clientes/{organization}/calendarios`, but adoption must be gradual. Keeping those private surfaces available does not authorize moving, removing, or restricting the current public materials.
+
+### Priority next increment: share links
+
+Implement `share_link` before any definitive migration of playbooks or editorial calendars to authenticated-only access. The planned public entry points are:
+
+```text
+/share/playbook/{token}
+/share/calendario/{token}
+/share/relatorio/{token}
+```
+
+A share token must be opaque and revocable; a resource slug is never an authorization credential. The persistence contract must be ready to support optional expiration in a later increment. Resolving a valid token may authorize only the explicitly linked resource and must not establish a Client OS session, reveal Organization or Business Unit data outside that resource, grant navigation capabilities, or provide access to `/clientes/*`.
+
+The transition from current public URLs to private resources with controlled sharing requires explicit approval. Until functional equivalence, revocation, isolation, and compatibility have been validated, the existing public routes remain unchanged.
+
 ## Intentional limits
 
 This stage contains no fictional metrics, CRM, score, ingestion, integrations, grant administration UI or data platform. Database provisioning remains an operator task. See [grant storage operations](grant-storage-operations.md) for environment, migration, testing, and recovery procedures.

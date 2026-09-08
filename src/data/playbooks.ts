@@ -38,6 +38,7 @@ export type Playbook = {
   cta: string;
   enabled: boolean;
   group?: string;
+  calendarUrl?: string;
 };
 
 import {
@@ -137,6 +138,8 @@ const grupoAzimutePlaybook: Playbook = {
   cta: "Conheça as empresas do Grupo Azimute e identifique as competências adequadas ao seu projeto.",
   enabled: true,
   group: "grupo-azimute",
+  calendarUrl:
+    "https://drive.google.com/drive/folders/1MJqEP2PKc0pdNmEhX1ksk-QrNWaEcX7M?usp=drive_link",
 };
 
 const azimuteEngenharia: Playbook = {
@@ -204,7 +207,7 @@ const azimuteEngenharia: Playbook = {
     { title: "Topografia e dados técnicos na tomada de decisão." },
   ],
   cta: "Planeje com segurança. Conheça a engenharia consultiva Azimute.",
-  enabled: false,
+  enabled: true,
   group: "grupo-azimute",
 };
 
@@ -282,6 +285,8 @@ const azimuteImoveis: Playbook = {
   cta: "Fale com a Azimute Imóveis e encontre a orientação adequada para sua decisão imobiliária.",
   enabled: true,
   group: "grupo-azimute",
+  calendarUrl:
+    "https://drive.google.com/drive/folders/1BmeEK4D6kjL3gibnn6NAEx36AocW0Vg8?usp=drive_link",
 };
 
 const azimuteTech: Playbook = {
@@ -354,7 +359,7 @@ const azimuteTech: Playbook = {
     { title: "Como prefeituras reduzem custos com inspeção preventiva?" },
   ],
   cta: "Antes de escavar, conheça o subsolo. Solicite um diagnóstico Azimute Tech.",
-  enabled: false,
+  enabled: true,
   group: "grupo-azimute",
 };
 
@@ -431,6 +436,8 @@ const azimuteSan: Playbook = {
   cta: "Converse com a Azimute SAN sobre os desafios e necessidades de saneamento do seu município ou organização.",
   enabled: true,
   group: "grupo-azimute",
+  calendarUrl:
+    "https://drive.google.com/drive/folders/1aP9HBx3-HVWrSmeO_yUjhoF0tff3EPAL?usp=drive_link",
 };
 
 const aria: Playbook = {
@@ -502,7 +509,7 @@ const aria: Playbook = {
     { title: "Como a inteligência geoespacial apoia cidades inteligentes?" },
   ],
   cta: "Transforme imagens em inteligência. Conheça a Aria Imagem e Tecnologia.",
-  enabled: false,
+  enabled: true,
   group: "grupo-azimute",
 };
 

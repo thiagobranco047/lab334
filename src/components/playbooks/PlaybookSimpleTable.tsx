@@ -1,9 +1,30 @@
-import type { ReactNode } from "react";
+import Link from "next/link";
+
+export type PlaybookTableCell = string | { href?: string; label: string };
 
 type PlaybookSimpleTableProps = {
   headers: string[];
-  rows: ReactNode[][];
+  rows: PlaybookTableCell[][];
 };
+
+function TableCellContent({ cell }: { cell: PlaybookTableCell }) {
+  if (typeof cell === "string") {
+    return cell;
+  }
+
+  if (!cell.href) {
+    return <span className="font-medium">{cell.label}</span>;
+  }
+
+  return (
+    <Link
+      href={cell.href}
+      className="font-medium text-presentation-fg underline-offset-4 transition-colors hover:underline"
+    >
+      {cell.label}
+    </Link>
+  );
+}
 
 export default function PlaybookSimpleTable({ headers, rows }: PlaybookSimpleTableProps) {
   return (
@@ -32,7 +53,7 @@ export default function PlaybookSimpleTable({ headers, rows }: PlaybookSimpleTab
                   key={cellIndex}
                   className="px-4 py-3 align-top font-body text-sm font-light leading-relaxed text-presentation-fg"
                 >
-                  {cell}
+                  <TableCellContent cell={cell} />
                 </td>
               ))}
             </tr>

@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import type { Playbook } from "@/data/playbooks";
 import { grupoAzimuteContent as content } from "@/data/playbooks/content/grupo-azimute";
 
@@ -108,16 +106,9 @@ export default function GrupoAzimutePlaybookView({
             <PlaybookSimpleTable
               headers={["Empresa", "Papel no ecossistema", "Território principal"]}
               rows={content.companies.map((company) => [
-                company.playbookSlug ? (
-                  <Link
-                    href={`/playbooks/${company.playbookSlug}`}
-                    className="font-medium text-presentation-fg underline-offset-4 transition-colors hover:underline"
-                  >
-                    {company.name}
-                  </Link>
-                ) : (
-                  <span className="font-medium">{company.name}</span>
-                ),
+                company.playbookSlug
+                  ? { href: `/playbooks/${company.playbookSlug}`, label: company.name }
+                  : { label: company.name },
                 company.role,
                 company.territory,
               ])}

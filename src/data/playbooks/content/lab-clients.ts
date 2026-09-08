@@ -72,6 +72,8 @@ export const massterPlasticos = {
   ],
   enabled: true,
   cta: "Conheça as soluções Masster para infraestrutura elétrica. Fale com nosso time comercial.",
+  calendarUrl:
+    "https://drive.google.com/drive/folders/1u8TBLmh3AvYvC-DUGs4s21C49ZvLgVA8?usp=drive_link",
 };
 
 export const dutex = {
@@ -142,6 +144,8 @@ export const dutex = {
   ],
   enabled: true,
   cta: "Proteja sua operação industrial com soluções Dutex. Solicite uma consultoria técnica.",
+  calendarUrl:
+    "https://drive.google.com/drive/folders/1E9f3c8-6Ss-06Aw6tSxP-CVjOjSdi25j?usp=drive_link",
 };
 
 export const saraRapouso= {
@@ -211,6 +215,8 @@ export const saraRapouso= {
   ],
   enabled: true,
   cta: "Precisa de clareza técnica em um processo? Agende uma conversa com Sara Rapouso.",
+  calendarUrl:
+    "https://drive.google.com/drive/folders/1uPFWd7i9JUtJIKfw07MfgJGtPW46NShr?usp=drive_link",
 };
 
 export const bridgeAgency= {
@@ -558,6 +564,8 @@ export const joinsul= {
   ],
   enabled: true,
   cta: "Seja um instalador parceiro Joinsul. Acesse treinamentos e condições especiais.",
+  calendarUrl:
+    "https://drive.google.com/drive/folders/15j5WnYDpliiXJBTKXRTE9hZHhnh9h7HY?usp=drive_link",
 };
 
 export const gmex= {
@@ -762,4 +770,6 @@ export const antunesComercio= {
   ],
   enabled: true,
   cta: "Visite nosso showroom. Antunes Comércio — materiais com atendimento de excelência.",
+  calendarUrl:
+    "https://drive.google.com/drive/folders/1o5tR6x47ThnXyVbWxVWJ-yC9OSTJcBYE?usp=drive_link",
 };

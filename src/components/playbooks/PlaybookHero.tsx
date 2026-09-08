@@ -48,6 +48,17 @@ export default function PlaybookHero({ playbook }: PlaybookHeroProps) {
             </span>
           ))}
         </div>
+
+        {playbook.calendarUrl && (
+          <a
+            href={playbook.calendarUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center font-body text-xs font-medium uppercase tracking-[0.14em] text-presentation-fg transition-opacity hover:opacity-70"
+          >
+            Calendário editorial →
+          </a>
+        )}
       </div>
     </header>
   );

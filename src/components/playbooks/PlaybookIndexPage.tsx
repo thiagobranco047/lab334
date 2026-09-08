@@ -33,6 +33,14 @@ export default function PlaybookIndexPage() {
           <p className="mt-5 font-body text-base font-light leading-relaxed text-presentation-muted sm:text-lg">
             Acesse os playbooks estratégicos de cada marca em páginas independentes.
           </p>
+          <a
+            href="https://drive.google.com/drive/folders/1sJ-XCbuKC8u_7bTFjEgPU-e2vq2MMoeI?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex font-body text-xs font-medium uppercase tracking-[0.14em] text-presentation-fg transition-opacity hover:opacity-70"
+          >
+            Calendário editorial Lab. 334 →
+          </a>
         </div>
 
         <div className="presentations-grid">

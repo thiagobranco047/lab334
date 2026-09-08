@@ -20,6 +20,24 @@ npm run db:migrate
 
 Before production, apply to Preview, inspect the table and indexes, and run authorization integration tests. Confirm the target connection without printing credentials by checking only host/database metadata in the Neon dashboard.
 
+Validate the configured connection without printing its URL:
+
+```powershell
+npm run db:ping
+```
+
+The command returns only `database connection ok` or a generic failure. It never prints the connection string.
+
+Operational repository outcomes are intentionally distinct:
+
+| Outcome | Authorization behavior | Signal |
+| --- | --- | --- |
+| Successful query with zero rows | Deny restricted access | No infrastructure error |
+| `NOT_CONFIGURED` | Deny | Configuration signal |
+| `UNAVAILABLE` | Deny | Availability signal |
+| `QUERY_FAILED` | Deny | Query signal |
+| `INVALID_DATA` | Deny the complete result | Data-integrity signal |
+
 ## Recovery
 
 Applied migrations are immutable. Correct mistakes with a new forward migration. Before a destructive correction, create or confirm a Neon branch/restore point, rehearse the corrective migration in Preview, validate application authorization, then apply it to Production.

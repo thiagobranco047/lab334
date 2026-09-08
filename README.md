@@ -2,6 +2,8 @@ This repository contains the LAB 334 public site and the first Client OS web/BFF
 
 The Client OS uses Clerk for identity, sessions and Organization memberships while LAB domain IDs remain canonical. See [Client OS foundation](docs/client-os-foundation.md) for configuration, route boundaries and authorization invariants.
 
+Persistent Business Unit grants use explicit Drizzle migrations and a Neon-compatible server-only repository. See [grant storage operations](docs/grant-storage-operations.md) before configuring a database or applying migrations.
+
 ## Getting Started
 
 First, run the development server:

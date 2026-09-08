@@ -1,8 +1,4 @@
 import "server-only";
-import type { BusinessUnitGrant } from "@/domain/client-os/access";
+import { createDrizzleGrantRepository } from "./drizzle-grant-repository";
 
-// Persistent grants will be supplied by the future LAB Data Platform.
-// An empty repository is intentional: Business Units deny by default.
-export async function listBusinessUnitGrants(): Promise<readonly BusinessUnitGrant[]> {
-  return [];
-}
+export const businessUnitGrantRepository = createDrizzleGrantRepository();

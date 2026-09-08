@@ -2,9 +2,9 @@ import "server-only";
 import { auth } from "@clerk/nextjs/server";
 import { notFound, redirect } from "next/navigation";
 import type { CapabilityId } from "@/domain/client-os/access";
-import { authorizeOrganization, resolveAuthorizedCapabilities, type ServerIdentity } from "@/server/client-os/policy";
-import { authorizeBusinessUnit } from "@/server/client-os/policy";
-import { listBusinessUnitGrants } from "@/server/client-os/grants";
+import { authorizeOrganization, authorizeBusinessUnit, type ServerIdentity } from "@/server/client-os/policy";
+import { businessUnitGrantRepository } from "@/server/client-os/grants";
+import { resolveClientOsAuthorization } from "@/server/client-os/authorization-service";
 import type { BusinessUnitPermission } from "@/domain/client-os/access";
 import { getOrganizationMapping } from "@/server/client-os/organization-mapping";
 
@@ -24,9 +24,9 @@ export async function requireAuthenticatedUser() {
 export async function requireOrganizationAccess(organizationId: string) {
   const identity = await requireAuthenticatedUser();
   const mapping = getOrganizationMapping();
-  const decision = authorizeOrganization(identity, organizationId, mapping);
-  if (!decision.allowed) notFound();
-  return { ...decision, authorizedCapabilities: resolveAuthorizedCapabilities(identity, organizationId, mapping, await listBusinessUnitGrants()) };
+  const access = await resolveClientOsAuthorization(identity, organizationId, mapping, businessUnitGrantRepository);
+  if (!access.organizationAllowed) notFound();
+  return access;
 }
 
 export async function requireOrganizationCapability(organizationId: string, capability: CapabilityId) {
@@ -43,7 +43,10 @@ export async function listAuthorizedOrganizations() {
 
 export async function requireBusinessUnitAccess(organizationId: string, businessUnitId: string, permission: BusinessUnitPermission, capability?: CapabilityId) {
   const identity = await requireAuthenticatedUser();
-  const decision = authorizeBusinessUnit(identity, organizationId, businessUnitId, getOrganizationMapping(), await listBusinessUnitGrants(), permission, capability);
+  const mapping = getOrganizationMapping();
+  const access = await resolveClientOsAuthorization(identity, organizationId, mapping, businessUnitGrantRepository);
+  if (!access.organizationAllowed || !access.grantsResolved) notFound();
+  const decision = authorizeBusinessUnit(identity, organizationId, businessUnitId, mapping, access.grants, permission, capability);
   if (!decision.allowed) notFound();
   return decision;
 }

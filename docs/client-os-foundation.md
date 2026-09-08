@@ -35,7 +35,7 @@ authenticated user
 
 The active URL slug does not grant access. Clerk Organization membership does not imply access to every Business Unit. Internal LAB users follow the same policy. Missing mappings, permission, active membership or grants deny access.
 
-The current Business Unit grant repository intentionally returns no grants. This makes the first stage safe by default while the persistent source is not available. Session metadata is not used as a grant database. Navigation receives only capabilities already resolved on the server.
+Business Unit grants are loaded from PostgreSQL through a server-only Drizzle repository. A successful zero-row query means “no grants”; missing configuration, unavailable database, query failure, and invalid rows remain distinct operational errors. All four error classes deny grant-derived access and emit a structured server signal. Session metadata is not used as a grant database. Navigation receives only capabilities already resolved from complete, valid, active grants.
 
 ## Access modes and routes
 
@@ -49,4 +49,4 @@ Public routes must only use their existing public datasets. They do not call the
 
 ## Intentional limits
 
-This stage contains no fictional metrics, CRM, score, ingestion, integrations, persistent Business Unit-grant store or data platform. The next increment should define a versioned domain-contract package generated from `lab334-agents`, then connect a persistent authorization store that can resolve Business Unit grants and capabilities server-side.
+This stage contains no fictional metrics, CRM, score, ingestion, integrations, grant administration UI or data platform. Database provisioning remains an operator task. See [grant storage operations](grant-storage-operations.md) for environment, migration, testing, and recovery procedures.

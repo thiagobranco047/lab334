@@ -12,5 +12,6 @@ export function prefersPortuguese(acceptLanguage) {
 }
 
 export function setLocaleCookie(locale) {
+  if (typeof document === "undefined") return;
   document.cookie = `${LOCALE_COOKIE}=${locale}; path=/; max-age=31536000; SameSite=Lax`;
 }

@@ -4,6 +4,8 @@
 
 `lab334` is the web application and BFF for UI, Clerk authentication, server-side authorization, scope resolution and capability-aware navigation. `lab334-agents` remains the canonical source for the `Organization → Business Unit` domain contracts. Ingestion, history, metrics, jobs and agent runtime belong to a future LAB Data Platform.
 
+The application consumes `@lab334/contracts@0.1.2` from the checksummed generated archive in `vendor/contracts/`. This archive is not editable source. Update it only by running the canonical generator in `lab334-agents`, copying `.tgz` and `.sha256` byte-for-byte, running `npm install`, and then `npm run contracts:verify`.
+
 ## Clerk configuration
 
 Create the Clerk application, enable Organizations and create the custom Organization permission `org:client_os:read`. Assign that permission through explicit Clerk roles. Configure only the variable names documented in `.env.example`; real credentials must remain in the deployment environment.

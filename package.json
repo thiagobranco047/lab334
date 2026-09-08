@@ -10,9 +10,11 @@
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "contracts:verify": "node scripts/verify-contracts-package.mjs",
     "pdf:proposal": "node scripts/generate-proposal-pdf.mjs"
   },
   "dependencies": {
+    "@lab334/contracts": "file:vendor/contracts/lab334-contracts-0.1.2.tgz",
     "@clerk/nextjs": "^6.39.6",
     "@fancyapps/ui": "^6.1.6",
     "@gsap/react": "^2.1.2",

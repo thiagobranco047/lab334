@@ -99,8 +99,9 @@ export const grupoAzimuteContent = {
   companies: [
     {
       name: "Azimute Engenharia",
-      role: "Planejamento, projetos, gerenciamento, supervisão e soluções técnicas",
-      territory: "Engenharia e infraestrutura",
+      role: "Consultoria, projetos, regularização e supervisão de infraestrutura",
+      territory:
+        "Engenharia de transportes, infraestrutura, urbanismo, topografia de projeto e fiscalização de obras",
       playbookSlug: "azimute-engenharia",
     },
     {
@@ -111,8 +112,9 @@ export const grupoAzimuteContent = {
     },
     {
       name: "Azimute Tech",
-      role: "Investigação, inspeção e diagnóstico tecnológico",
-      territory: "Tecnologias aplicadas à infraestrutura",
+      role: "Engenharia, diagnóstico e gestão de infraestruturas subterrâneas",
+      territory:
+        "Métodos não destrutivos, televisionamento, georadar, cadastro GIS e relatórios com ART",
       playbookSlug: "azimute-tech",
     },
     {
@@ -140,6 +142,8 @@ export const grupoAzimuteContent = {
     "Cada desafio deve ser relacionado à especialidade correta",
     "O Grupo fortalece a integração; a execução pertence às empresas",
     "A comunicação precisa mostrar situações reais, contribuições e benefícios",
+    "A Engenharia usa o dado no projeto, na locação e na fiscalização; a captura da realidade pertence à Aria",
+    "GPR, televisionamento e inspeção de redes subterrâneas pertencem à Azimute Tech",
   ],
   currentPhase: {
     title: "Restante de 2026 — clareza e reconhecimento",
@@ -373,7 +377,7 @@ export const grupoAzimuteContent = {
     "Evitar frases grandiosas, abstratas ou enigmáticas",
     "Evitar títulos artificiais construídos com dois-pontos",
     'Não usar "soluções completas" ou "soluções integradas" sem explicar quais são',
-    "Priorizar verbos concretos: mapear, investigar, projetar, analisar, inspecionar, supervisionar",
+    "Priorizar verbos concretos: mapear, investigar, projetar, analisar, diagnosticar, supervisionar",
     "Utilizar dados, projetos e evidências quando estiverem disponíveis",
     "Terminar com CTA direto e afirmativo",
     "Adaptar hashtags ao assunto de cada publicação",
@@ -435,7 +439,7 @@ export const grupoAzimuteContent = {
       needsConfirmation: true,
     },
     {
-      title: "Da inspeção ao diagnóstico: o caminho da informação antes de uma intervenção.",
+      title: "Do dado de campo ao diagnóstico: o caminho da informação antes de uma intervenção.",
     },
     {
       title:

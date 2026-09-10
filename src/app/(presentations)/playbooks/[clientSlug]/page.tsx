@@ -7,10 +7,22 @@ import PlaybookLayout from "@/components/playbooks/PlaybookLayout";
 import PlaybookUnavailable from "@/components/playbooks/PlaybookUnavailable";
 import PlaybookView from "@/components/playbooks/PlaybookView";
 import { getAllPlaybooks, getPlaybookBySlug } from "@/data/playbooks";
+import { azimuteEngenhariaContent } from "@/data/playbooks/content/azimute-engenharia";
 import { azimuteImoveisContent } from "@/data/playbooks/content/azimute-imoveis";
 import { azimuteSanContent } from "@/data/playbooks/content/azimute-san";
-import { COMPANY_EDITORIAL_SECTIONS } from "@/data/playbooks/content/company-editorial";
+import { azimuteTechContent } from "@/data/playbooks/content/azimute-tech";
+import {
+  COMPANY_EDITORIAL_SECTIONS,
+  type CompanyEditorialContent,
+} from "@/data/playbooks/content/company-editorial";
 import { GRUPO_AZIMUTE_SECTIONS } from "@/data/playbooks/content/grupo-azimute";
+
+const COMPANY_EDITORIAL_CONTENT: Record<string, CompanyEditorialContent> = {
+  "azimute-engenharia": azimuteEngenhariaContent,
+  "azimute-imoveis": azimuteImoveisContent,
+  "azimute-san": azimuteSanContent,
+  "azimute-tech": azimuteTechContent,
+};
 
 type PlaybookPageProps = {
   params: { clientSlug: string };
@@ -60,18 +72,11 @@ export default function PlaybookPage({ params }: PlaybookPageProps) {
     );
   }
 
-  if (playbook.slug === "azimute-imoveis") {
+  const editorialContent = COMPANY_EDITORIAL_CONTENT[playbook.slug];
+  if (editorialContent) {
     return (
       <PlaybookLayout sections={COMPANY_EDITORIAL_SECTIONS}>
-        <CompanyEditorialPlaybookView playbook={playbook} content={azimuteImoveisContent} />
-      </PlaybookLayout>
-    );
-  }
-
-  if (playbook.slug === "azimute-san") {
-    return (
-      <PlaybookLayout sections={COMPANY_EDITORIAL_SECTIONS}>
-        <CompanyEditorialPlaybookView playbook={playbook} content={azimuteSanContent} />
+        <CompanyEditorialPlaybookView playbook={playbook} content={editorialContent} />
       </PlaybookLayout>
     );
   }

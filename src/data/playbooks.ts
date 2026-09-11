@@ -63,7 +63,7 @@ const grupoAzimutePlaybook: Playbook = {
     "O Grupo Azimute é a estrutura institucional que conecta empresas especializadas em engenharia, saneamento, tecnologia, captura da realidade e mercado imobiliário. Sua comunicação mostra como essas competências atuam separadamente ou se complementam diante de desafios reais.",
   status: "Planejamento Editorial",
   tags: ["Institucional", "Integração", "Infraestrutura", "Editorial"],
-  accentColor: "#2D5A7B",
+  accentColor: "#313131",
   positioning:
     "O Grupo Azimute é a estrutura institucional que conecta empresas especializadas em engenharia, saneamento, tecnologia, captura da realidade e mercado imobiliário. Sua comunicação mostra como essas competências atuam separadamente ou se complementam diante de desafios reais.",
   editorialObjective:
@@ -151,7 +151,7 @@ const azimuteEngenharia: Playbook = {
     "Fundada em 1987, a Azimute Engenharia é a empresa fundadora do Grupo Azimute. Atua com consultoria e projetos de infraestrutura, engenharia de transportes, topografia aplicada ao projeto, urbanismo, regularização, fiscalização e supervisão de obras para organizações públicas e privadas.",
   status: "Planejamento Editorial",
   tags: ["Engenharia", "Infraestrutura", "Transportes", "Supervisão"],
-  accentColor: "#3D6B4F",
+  accentColor: "#50A275",
   positioning:
     "Consultoria e projetos de engenharia de infraestrutura para desafios complexos, com precisão, responsabilidade e parceria estratégica.",
   editorialObjective:
@@ -225,7 +225,7 @@ const azimuteImoveis: Playbook = {
     "A Azimute Imóveis atua de forma consultiva na compra, venda, avaliação e desenvolvimento de oportunidades imobiliárias em Joinville e região, unindo conhecimento de mercado, atendimento próximo e segurança em cada decisão.",
   status: "Planejamento Editorial",
   tags: ["Imobiliário", "Consultoria", "Joinville", "Negociação"],
-  accentColor: "#8B6914",
+  accentColor: "#1E5285",
   positioning:
     "A Azimute Imóveis atua de forma consultiva na compra, venda, avaliação e desenvolvimento de oportunidades imobiliárias, unindo conhecimento de mercado, atendimento próximo e segurança em cada decisão.",
   editorialObjective:
@@ -303,7 +303,7 @@ const azimuteTech: Playbook = {
     "A Azimute Tech transforma o que está sob a superfície em dados técnicos confiáveis. Atua com georadar, televisionamento, cadastro e As-Built em GIS, testes de fumaça e corante e relatórios com ART para operação, obras, manutenção e conformidade.",
   status: "Planejamento Editorial",
   tags: ["Georadar", "Televisionamento", "Subterrâneo", "Diagnóstico", "NDT"],
-  accentColor: "#4A3D8F",
+  accentColor: "#E2243D",
   positioning: "Transformamos o que está sob a superfície em dados técnicos confiáveis.",
   editorialObjective:
     "Ampliar a percepção da marca de empresa que inspeciona para parceira de engenharia, diagnóstico e gestão subterrânea.",
@@ -375,7 +375,7 @@ const azimuteSan: Playbook = {
     "A Azimute SAN desenvolve consultoria, estudos, projetos e serviços especializados para abastecimento de água, esgotamento sanitário, limpeza urbana e manejo de resíduos sólidos, drenagem urbana e manejo de águas pluviais.",
   status: "Planejamento Editorial",
   tags: ["Saneamento", "Água", "Esgoto", "Resíduos", "Drenagem"],
-  accentColor: "#1B6B7A",
+  accentColor: "#0086C8",
   positioning:
     "A Azimute SAN desenvolve consultoria, estudos, projetos e serviços especializados para os sistemas de abastecimento de água, esgotamento sanitário, limpeza urbana e manejo de resíduos sólidos, drenagem urbana e manejo de águas pluviais.",
   editorialObjective:
@@ -452,7 +452,7 @@ const aria: Playbook = {
     "A Aria Imagem e Tecnologia atua com aerolevantamentos, drones, topografia georreferenciada, LiDAR, RTK, escaneamento 3D, modelagem, termografia aérea, inspeções, mapeamento de precisão e monitoramento inteligente.",
   status: "Planejamento Editorial",
   tags: ["Geoespacial", "Drones", "LiDAR", "3D", "Monitoramento"],
-  accentColor: "#6B3D5C",
+  accentColor: "#E25B15",
   positioning: "Inteligência geoespacial aplicada a projetos, obras e ativos.",
   editorialObjective:
     "Ser reconhecida como empresa de tecnologia geoespacial e captura da realidade, não apenas como empresa de drones.",

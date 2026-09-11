@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 
 import PresentationBrand from "@/components/presentations/PresentationBrand";
@@ -8,13 +7,11 @@ import SectionNav from "./SectionNav";
 
 type PlaybookLayoutProps = {
   children: ReactNode;
-  showBackLink?: boolean;
   sections?: readonly PlaybookSection[];
 };
 
 export default function PlaybookLayout({
   children,
-  showBackLink = true,
   sections = PLAYBOOK_SECTIONS,
 }: PlaybookLayoutProps) {
   return (
@@ -26,19 +23,7 @@ export default function PlaybookLayout({
 
       <header className="sticky top-0 z-20 border-b border-presentation-line bg-presentation-bg/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-presentation items-center justify-between px-5 py-5 sm:px-8 sm:py-6">
-          <div className="flex items-center gap-6">
-            <Link href="/playbooks">
-              <PresentationBrand />
-            </Link>
-            {showBackLink && (
-              <Link
-                href="/playbooks"
-                className="hidden font-body text-xs font-light uppercase tracking-[0.14em] text-presentation-muted transition-colors hover:text-presentation-fg sm:inline"
-              >
-                ← Playbooks
-              </Link>
-            )}
-          </div>
+          <PresentationBrand />
           <p className="font-display text-sm font-light tracking-[0.18em] text-presentation-muted">
             Editorial
           </p>

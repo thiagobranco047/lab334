@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import type { Playbook } from "@/data/playbooks";
 
 import PlaybookHero from "./PlaybookHero";
@@ -20,15 +18,8 @@ export default function PlaybookUnavailable({ playbook }: PlaybookUnavailablePro
             O planejamento editorial de {playbook.name} ainda não está disponível para consulta.
           </p>
           <p className="font-body text-sm font-light leading-relaxed text-presentation-muted">
-            Os conteúdos deste playbook permanecem em preparação. Volte à lista para acessar os
-            playbooks publicados.
+            Os conteúdos deste playbook permanecem em preparação.
           </p>
-          <Link
-            href="/playbooks"
-            className="inline-block font-body text-xs font-medium uppercase tracking-[0.14em] text-presentation-fg transition-opacity hover:opacity-70"
-          >
-            ← Voltar aos playbooks
-          </Link>
         </div>
       </SectionCard>
     </>

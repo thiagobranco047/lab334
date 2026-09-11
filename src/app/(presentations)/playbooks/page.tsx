@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-
-import PlaybookIndexPage from "@/components/playbooks/PlaybookIndexPage";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "Playbooks Editoriais — Lab. 334",
-  description: "Dashboard de planejamentos editoriais estratégicos por cliente.",
+  title: "Playbook não encontrado - Lab. 334",
+  robots: { index: false, follow: false },
 };
 
 export default function PlaybooksPage() {
-  return <PlaybookIndexPage />;
+  notFound();
 }

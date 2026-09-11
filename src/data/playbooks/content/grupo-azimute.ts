@@ -106,8 +106,9 @@ export const grupoAzimuteContent = {
     },
     {
       name: "Azimute SAN",
-      role: "Consultoria, estudos, projetos e serviços especializados",
-      territory: "Saneamento básico",
+      role: "Consultoria, estudos, projetos e apoio a concessões de saneamento",
+      territory:
+        "Água, esgoto, resíduos, drenagem, PPPs e controle de perdas",
       playbookSlug: "azimute-san",
     },
     {
@@ -119,14 +120,16 @@ export const grupoAzimuteContent = {
     },
     {
       name: "Aria",
-      role: "Captura, processamento e representação técnica da realidade",
-      territory: "Aerolevantamento, topografia, escaneamento e modelagem 3D",
+      role: "Inteligência visual e captura da realidade para decisão de engenharia",
+      territory:
+        "Aerolevantamento, topografia, escaneamento, modelagem 3D, inspeções aéreas e termografia",
       playbookSlug: "aria",
     },
     {
       name: "Azimute Imóveis",
-      role: "Consultoria e intermediação imobiliária",
-      territory: "Compra, venda, avaliação e desenvolvimento imobiliário",
+      role: "Consultoria, avaliação e intermediação imobiliária",
+      territory:
+        "Compra, venda, viabilidade, EIV e avaliação segundo a NBR 14653",
       playbookSlug: "azimute-imoveis",
     },
     {

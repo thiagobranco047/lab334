@@ -6,7 +6,7 @@ import {
 export const azimuteImoveisContent: CompanyEditorialContent = {
   sections: COMPANY_EDITORIAL_SECTIONS,
   overviewIntro:
-    "Este playbook orienta a comunicação da Azimute Imóveis, organizando seu posicionamento, seus públicos, seus territórios editoriais e os critérios para criação de pautas. A comunicação deve ajudar compradores, vendedores, proprietários e investidores a tomar decisões imobiliárias com mais segurança, clareza e conhecimento.",
+    "Este playbook orienta a comunicação da Azimute Imóveis. A empresa nasceu em 2011 da experiência da Azimute Engenharia e de uma atuação indireta de cerca de 15 anos no mercado imobiliário, para oferecer um serviço especializado em compra, venda, avaliação e desenvolvimento de oportunidades. A comunicação deve ajudar compradores, vendedores, proprietários e investidores a tomar decisões imobiliárias com mais segurança, clareza e conhecimento.",
   groupRule:
     "O Grupo Azimute articula e conecta. Os serviços são executados pelas empresas que o compõem e devem ser atribuídos nominalmente a elas.",
   companyRole:
@@ -20,10 +20,14 @@ export const azimuteImoveisContent: CompanyEditorialContent = {
     "Apoio à tomada de decisão",
     "Conhecimento de Joinville e região",
     "Capacidade de analisar imóveis e oportunidades",
-    "Integração com conhecimentos técnicos quando isso for verdadeiro e comprovável",
+    "Avaliação segundo critérios técnicos, inclusive NBR 14653 quando aplicável",
+    "Leitura de viabilidade, vizinhança e potencial de áreas",
+    "Integração com conhecimentos técnicos do Grupo quando isso for verdadeiro e comprovável",
   ],
   positioning:
     "A Azimute Imóveis atua de forma consultiva na compra, venda, avaliação e desenvolvimento de oportunidades imobiliárias, unindo conhecimento de mercado, atendimento próximo e segurança em cada decisão.",
+  positioningComplement:
+    "Soluções voltadas ao setor imobiliário em Joinville e região, com origem na experiência de engenharia do Grupo e foco em orientação especializada — não em execução técnica de obra.",
   currentPhase: {
     title: "Restante de 2026 - clareza, confiança e reconhecimento local",
     priorities: [
@@ -35,6 +39,7 @@ export const azimuteImoveisContent: CompanyEditorialContent = {
       "Tornar os serviços e diferenciais mais claros",
       "Construir confiança por meio de processos, critérios, equipe e evidências",
       "Distinguir orientação profissional de promessas comerciais",
+      "Deixar claro o que a Imóveis executa e o que articula com Engenharia, SAN ou Aria",
     ],
   },
   servicesIntro:
@@ -61,8 +66,24 @@ export const azimuteImoveisContent: CompanyEditorialContent = {
       description: "Leitura de potencial, restrições e adequação à necessidade do cliente.",
     },
     {
-      title: "Apoio em estudos de viabilidade",
-      description: "Quando aplicável ao contexto da oportunidade analisada.",
+      title: "Estudos de viabilidade técnica, econômica e ambiental",
+      description:
+        "Leitura de potencial, restrições, custos e enquadramento da área ou do empreendimento, quando confirmado para a pauta.",
+    },
+    {
+      title: "EIV - Estudo de Impacto de Vizinhança",
+      description:
+        "Análise do impacto da implantação de um uso ou empreendimento sobre o entorno, quando a Imóveis conduzir ou articular o estudo.",
+    },
+    {
+      title: "Avaliação de imóveis segundo a NBR 14653",
+      description:
+        "Determinação técnica de valor com base normativa, para áreas, imóveis e pareceres mercadológicos autorizados.",
+    },
+    {
+      title: "Avaliação de áreas para infraestrutura de saneamento",
+      description:
+        "Estudos de alternativas econômicas para traçado de obras lineares e localizadas de saneamento, quando a Imóveis participar da leitura territorial. A execução de saneamento pertence à Azimute SAN.",
     },
     {
       title: "Divulgação profissional de imóveis",
@@ -77,13 +98,17 @@ export const azimuteImoveisContent: CompanyEditorialContent = {
       description: "Quando confirmado para a pauta e alinhado ao escopo real da atuação.",
     },
   ],
+  servicesNote:
+    "A apresentação institucional descreve jornada completa até a entrega do empreendimento. Projetos de engenharia e arquitetura, licenciamentos ambientais e supervisão de obras devem ser atribuídos à empresa executora, em geral a Azimute Engenharia. A Imóveis comunica a decisão imobiliária e a articulação, não a execução técnica.",
   shouldNotSuggest: [
     "Locação ou administração de aluguéis",
     "Garantia de valorização",
     "Garantia de venda",
     "Garantia de aprovação",
     "Recomendação financeira sem base",
-    "Execução genérica de serviços de engenharia pela imobiliária",
+    "Execução genérica de serviços de engenharia ou arquitetura pela imobiliária",
+    "Licenciamento ambiental como serviço próprio da Imóveis",
+    "Supervisão de obras até a entrega como execução da Imóveis",
     "Atuação nacional se não houver evidência",
     "Uso de informações técnicas sem identificação da origem",
   ],
@@ -131,13 +156,19 @@ export const azimuteImoveisContent: CompanyEditorialContent = {
       audience: "Incorporadores e parceiros",
       need: "Identificar áreas e oportunidades de desenvolvimento",
       editorialResponse:
-        "Informações sobre mercado, terrenos, viabilidade e articulação técnica",
+        "Informações sobre mercado, terrenos, viabilidade, EIV e articulação técnica",
     },
     {
       audience: "Famílias em mudança",
       need: "Escolher localização e imóvel compatíveis com sua realidade",
       editorialResponse:
         "Orientação sobre necessidades, bairros, tipologias e processo de compra",
+    },
+    {
+      audience: "Operadores de saneamento e infraestrutura",
+      need: "Avaliar áreas e alternativas de traçado para obras de saneamento",
+      editorialResponse:
+        "Conteúdo sobre avaliação territorial, com SAN identificada quando o sistema for o tema",
     },
   ],
   belongingTitle: "Este conteúdo pertence à Azimute Imóveis?",
@@ -146,6 +177,7 @@ export const azimuteImoveisContent: CompanyEditorialContent = {
     "Explica etapas de uma negociação",
     "Apresenta um imóvel, terreno ou oportunidade",
     "Aborda avaliação, divulgação ou posicionamento de imóveis",
+    "Trata de EIV, viabilidade ou avaliação segundo NBR 14653",
     "Discute o mercado de Joinville e região",
     "Trata de investimento imobiliário com cautela e contexto",
     "Apresenta equipe, atendimento, processos ou resultados reais",
@@ -282,6 +314,20 @@ export const azimuteImoveisContent: CompanyEditorialContent = {
       formats: "Artigo, carrossel, case",
     },
     {
+      title: "O que o EIV revela",
+      objective: "Explicar o estudo de impacto de vizinhança na decisão do empreendimento",
+      pillar: "Investimento e desenvolvimento imobiliário",
+      audience: "Incorporadores, empresas e gestores públicos",
+      formats: "Artigo, carrossel, case",
+    },
+    {
+      title: "Avaliar segundo a norma",
+      objective: "Mostrar o papel da NBR 14653 na determinação técnica de valor",
+      pillar: "Processos, atendimento e resultados",
+      audience: "Vendedores, investidores e contratantes",
+      formats: "Carrossel, artigo, infográfico",
+    },
+    {
       title: "Da busca à conquista",
       objective: "Acompanhar a jornada do cliente com responsabilidade",
       pillar: "Processos, atendimento e resultados",
@@ -305,12 +351,20 @@ export const azimuteImoveisContent: CompanyEditorialContent = {
       publication: "Azimute Imóveis",
     },
     {
-      situation: "Empreendimento com participação técnica comprovada",
-      publication: "Imóveis + empresa participante",
-    },
-    {
       situation: "Integração entre oportunidade imobiliária e engenharia",
       publication: "Imóveis + Engenharia, se houver participação real",
+    },
+    {
+      situation: "EIV, viabilidade ou avaliação normativa de imóvel ou área",
+      publication: "Azimute Imóveis",
+    },
+    {
+      situation: "Avaliação de área para infraestrutura de saneamento",
+      publication: "Imóveis + SAN, se houver participação real",
+    },
+    {
+      situation: "Empreendimento com participação técnica comprovada",
+      publication: "Imóveis + empresa participante",
     },
     {
       situation: "Levantamento ou captura técnica aplicada ao imóvel",
@@ -455,6 +509,34 @@ export const azimuteImoveisContent: CompanyEditorialContent = {
       title:
         "Quais informações precisam ser conhecidas antes de analisar uma oportunidade de investimento?",
     },
+    {
+      title: "O que um EIV precisa esclarecer antes de implantar um empreendimento?",
+      needsReview: true,
+    },
+    {
+      title: "Como a NBR 14653 organiza a determinação técnica do valor de um imóvel?",
+      needsReview: true,
+    },
+    {
+      title:
+        "O que muda quando a avaliação de uma área serve a um traçado de saneamento?",
+      needsReview: true,
+    },
+    {
+      title:
+        "Como apresentar o estudo de viabilidade da Cidade das Águas sem reduzir o conteúdo ao nome do empreendimento?",
+      needsReview: true,
+    },
+    {
+      title:
+        "Como uma avaliação mercadológica de áreas em Tijucas informa a decisão de um operador de saneamento?",
+      needsReview: true,
+    },
+    {
+      title:
+        "O que o EIV da Escola Sesi Moinho precisa explicar sobre o impacto no entorno do antigo Moinho de Joinville?",
+      needsReview: true,
+    },
   ],
   ideasNote:
     "Banco editorial inicial - não são afirmações de cases realizados. Pautas sobre imóveis, preços, regiões ou resultados dependem de informações confirmadas.",
@@ -465,6 +547,8 @@ export const azimuteImoveisContent: CompanyEditorialContent = {
     "Avaliar bem é o primeiro passo para negociar com segurança.",
     "Conhecimento de mercado para decisões patrimoniais mais conscientes.",
     "Cada imóvel representa uma decisão que merece ser bem orientada.",
+    "Avaliação técnica e leitura de vizinhança para decisões patrimoniais mais seguras.",
+    "A Imóveis articula a decisão; a execução técnica pertence à empresa especializada.",
   ],
   primaryCta:
     "Fale com a Azimute Imóveis e encontre a orientação adequada para sua decisão imobiliária.",

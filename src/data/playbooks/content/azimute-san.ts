@@ -6,7 +6,7 @@ import {
 export const azimuteSanContent: CompanyEditorialContent = {
   sections: COMPANY_EDITORIAL_SECTIONS,
   overviewIntro:
-    "Este playbook orienta a comunicação da Azimute SAN, organizando seu posicionamento, seus públicos, suas áreas de atuação e os critérios para criação de conteúdos sobre saneamento básico. A comunicação deve traduzir conhecimento técnico em informações úteis para gestores, equipes públicas, prestadores de serviço e comunidade técnica.",
+    "Este playbook orienta a comunicação da Azimute SAN. A empresa foi constituída em 2020 para concentrar estudos, projetos e serviços especializados de saneamento básico e meio ambiente, com foco na universalização dos serviços. A comunicação deve traduzir conhecimento técnico em informações úteis para gestores, companhias, equipes públicas, indústrias, condomínios e a comunidade técnica.",
   groupRule:
     "O Grupo Azimute articula e conecta. Os serviços são executados pelas empresas que o compõem e devem ser atribuídos nominalmente a elas.",
   companyRole:
@@ -18,19 +18,22 @@ export const azimuteSanContent: CompanyEditorialContent = {
     "Apoio à tomada de decisão pública",
     "Importância dos estudos, projetos e serviços especializados",
     "Relação entre planejamento, operação, qualidade de vida e resiliência urbana",
+    "Apoio técnico a concessões e PPPs de água, esgoto e resíduos",
+    "Controle de perdas e pesquisa de vazamentos em companhias, indústrias e condomínios",
     "Experiência e método, sempre apoiados por informações reais",
   ],
   positioning:
     "A Azimute SAN desenvolve consultoria, estudos, projetos e serviços especializados para os sistemas de abastecimento de água, esgotamento sanitário, limpeza urbana e manejo de resíduos sólidos, drenagem urbana e manejo de águas pluviais.",
   positioningComplement:
-    "Conhecimento técnico aplicado ao planejamento e ao aprimoramento do saneamento básico.",
+    "Estudos e projetos para universalização do saneamento, com apoio a concessões e PPPs e atuação em controle de perdas. Sustentabilidade e meio ambiente aparecem como consequência do trabalho técnico, não como discurso genérico.",
   currentPhase: {
     title: "Restante de 2026 - clareza técnica e reconhecimento",
     priorities: [
       "Esclarecer as quatro áreas do saneamento básico",
       "Explicar o que a Azimute SAN faz em cada uma",
       "Relacionar problemas urbanos a estudos, planejamento e projetos",
-      "Fortalecer o reconhecimento entre gestores e equipes técnicas",
+      "Tornar visível o apoio a concessões, PPPs e ao controle de perdas",
+      "Fortalecer o reconhecimento entre gestores, companhias, indústrias e condomínios",
       "Mostrar processos, profissionais e experiência",
       "Diferenciar a empresa de uma prestadora genérica de serviços ambientais",
       "Preparar o calendário para incorporar cases e evidências reais",
@@ -69,12 +72,22 @@ export const azimuteSanContent: CompanyEditorialContent = {
       description:
         "Projetos de engenharia de saneamento, supervisão ou acompanhamento técnico e consultoria especializada, quando confirmados para a pauta.",
     },
+    {
+      title: "Consultoria para concessões e PPPs",
+      description:
+        "Apoio técnico a processos de concessão e parceria público-privada em água, esgoto e resíduos, quando confirmado no conteúdo.",
+    },
+    {
+      title: "Controle de perdas e pesquisa de vazamentos",
+      description:
+        "Diagnóstico e investigação de perdas em companhias de saneamento, indústrias e condomínios, sem prometer redução automática.",
+    },
   ],
   servicesNote:
-    "Sustentabilidade pode aparecer como consequência e princípio relacionado ao saneamento, mas não como área independente de atuação.",
+    "Sustentabilidade e meio ambiente podem aparecer como consequência do saneamento, não como área independente. Assessoria em normas e legislação ambiental entra apenas como apoio à conformidade dos sistemas de saneamento, nunca como licenciamento ambiental genérico.",
   shouldNotSuggest: [
     "Atuação ambiental genérica",
-    "Licenciamento ambiental",
+    "Licenciamento ambiental genérico",
     "Execução de obras sem confirmação",
     "Operação direta de sistemas sem evidência",
     "Garantia de redução de perdas",
@@ -119,6 +132,18 @@ export const azimuteSanContent: CompanyEditorialContent = {
         "Conteúdos sobre processos, dados, projetos e acompanhamento",
     },
     {
+      audience: "Indústrias e condomínios",
+      need: "Controlar perdas, vazamentos e conformidade das redes internas",
+      editorialResponse:
+        "Conteúdos sobre diagnóstico de perdas, pesquisa de vazamentos e decisão operacional",
+    },
+    {
+      audience: "Concessionárias, consórcios e estruturas de PPP",
+      need: "Estruturar, operar ou aprimorar concessões de água, esgoto e resíduos",
+      editorialResponse:
+        "Conteúdos sobre apoio técnico a concessões, regulação e planejamento da universalização",
+    },
+    {
       audience: "Empresas de infraestrutura",
       need: "Integrar informações e projetos de saneamento",
       editorialResponse:
@@ -148,6 +173,7 @@ export const azimuteSanContent: CompanyEditorialContent = {
     "Trata de um dos quatro componentes do saneamento",
     "Explica uma situação técnica ou problema urbano",
     "Apresenta planejamento, estudo, consultoria ou projeto",
+    "Aborda concessões, PPPs ou controle de perdas com base confirmada",
     "Orienta gestores ou equipes técnicas",
     "Mostra processo, equipe, metodologia ou resultado confirmado",
     "Traduz legislação ou política pública relacionada ao saneamento",
@@ -287,6 +313,22 @@ export const azimuteSanContent: CompanyEditorialContent = {
       formats: "Artigo, carrossel, estático",
     },
     {
+      title: "Concessão com lastro técnico",
+      objective: "Explicar o apoio a concessões e PPPs sem reduzir o tema a slogan",
+      pillar: "Políticas públicas, regulação e futuro do saneamento",
+      audience: "Gestores, concessionárias e consórcios",
+      areas: "Água, esgoto e resíduos",
+      formats: "Artigo, carrossel, case",
+    },
+    {
+      title: "Perdas além da procura",
+      objective: "Distinguir diagnóstico de perdas de caça a vazamentos",
+      pillar: "Desafios do saneamento e decisões técnicas",
+      audience: "Companhias, indústrias e condomínios",
+      areas: "Abastecimento de água",
+      formats: "Carrossel, artigo, case",
+    },
+    {
       title: "Por dentro de um projeto",
       objective: "Abrir etapas, entregas e aprendizados",
       pillar: "Projetos, processos e resultados",
@@ -333,6 +375,10 @@ export const azimuteSanContent: CompanyEditorialContent = {
     {
       situation: "Uso comprovado de levantamento ou captura territorial",
       publication: "SAN + Aria",
+    },
+    {
+      situation: "Avaliação de área para infraestrutura de saneamento",
+      publication: "SAN + Imóveis, se houver participação real",
     },
     {
       situation: "História ou cultura do ecossistema",
@@ -513,6 +559,19 @@ export const azimuteSanContent: CompanyEditorialContent = {
       title: "Quais informações ajudam a priorizar investimentos municipais?",
       needsReview: true,
     },
+    {
+      title: "O que muda quando o município estrutura uma concessão ou PPP de saneamento?",
+      needsReview: true,
+    },
+    {
+      title: "Como o controle de perdas se aplica a indústrias e condomínios, não só a companhias?",
+      needsReview: true,
+    },
+    {
+      title:
+        "Como apresentar a atuação com companhias de saneamento sem transformar nomes em prova automática?",
+      needsReview: true,
+    },
   ],
   ideasNote:
     "Banco editorial inicial - não são afirmações de cases realizados. Pautas regulatórias e técnicas dependem de revisão e atualização antes da publicação.",
@@ -523,6 +582,8 @@ export const azimuteSanContent: CompanyEditorialContent = {
     "Dados, estudos e projetos orientam o futuro dos serviços.",
     "Saneamento básico começa com diagnóstico e planejamento.",
     "Conhecimento técnico aplicado aos desafios reais das cidades.",
+    "Concessões e PPPs precisam de lastro técnico, não só de modelo jurídico.",
+    "Controlar perdas começa por conhecer o sistema, não por prometer redução.",
   ],
   primaryCta:
     "Converse com a Azimute SAN sobre os desafios e necessidades de saneamento do seu município ou organização.",

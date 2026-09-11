@@ -7,6 +7,7 @@ import PlaybookLayout from "@/components/playbooks/PlaybookLayout";
 import PlaybookUnavailable from "@/components/playbooks/PlaybookUnavailable";
 import PlaybookView from "@/components/playbooks/PlaybookView";
 import { getAllPlaybooks, getPlaybookBySlug } from "@/data/playbooks";
+import { ariaContent } from "@/data/playbooks/content/aria";
 import { azimuteEngenhariaContent } from "@/data/playbooks/content/azimute-engenharia";
 import { azimuteImoveisContent } from "@/data/playbooks/content/azimute-imoveis";
 import { azimuteSanContent } from "@/data/playbooks/content/azimute-san";
@@ -18,6 +19,7 @@ import {
 import { GRUPO_AZIMUTE_SECTIONS } from "@/data/playbooks/content/grupo-azimute";
 
 const COMPANY_EDITORIAL_CONTENT: Record<string, CompanyEditorialContent> = {
+  aria: ariaContent,
   "azimute-engenharia": azimuteEngenhariaContent,
   "azimute-imoveis": azimuteImoveisContent,
   "azimute-san": azimuteSanContent,

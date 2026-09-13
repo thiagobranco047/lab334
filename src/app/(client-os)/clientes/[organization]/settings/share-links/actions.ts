@@ -33,5 +33,5 @@ export async function loadShareLinkAdministration(organizationId: string) {
   const access = await requireShareLinkManagementScopes(organizationId);
   const playbooks = shareLinkService.eligiblePlaybooks(organizationId, access.businessUnitIds);
   const links = await shareLinkService.listShareLinks(organizationId, access.businessUnitIds);
-  return { playbooks, links: links.links.map((link) => ({ ...link, expiresAt: link.expiresAt?.toISOString() ?? null, createdAt: link.createdAt.toISOString(), revokedAt: link.revokedAt?.toISOString() ?? null })) };
+  return { playbooks, links: links.links.map((link) => ({ id: link.id, businessUnitId: link.businessUnitId, resourceId: link.resourceId, status: link.status, expiresAt: link.expiresAt?.toISOString() ?? null, createdAt: link.createdAt.toISOString() })) };
 }

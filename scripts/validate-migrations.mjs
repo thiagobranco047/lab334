@@ -11,6 +11,21 @@ for (const [index, tag] of tags.entries()) {
   const expectedPrefix = String(index).padStart(4, "0");
   if (!tag.startsWith(`${expectedPrefix}_`) || sqlFiles[index] !== `${tag}.sql`) throw new Error(`Invalid migration ordering at ${tag}`);
   const sql = await readFile(path.join(root, sqlFiles[index]), "utf8");
-  if (!sql.trim() || !sql.includes("business_unit_grants")) throw new Error(`Invalid migration content: ${sqlFiles[index]}`);
+  if (!sql.trim()) throw new Error(`Invalid migration content: ${sqlFiles[index]}`);
+}
+
+const shareLinkMigration = await readFile(path.join(root, "0002_orange_blazing_skull.sql"), "utf8");
+for (const fragment of [
+  'CREATE TYPE "public"."share_link_resource_type"',
+  'CREATE TYPE "public"."share_link_status"',
+  'CREATE TABLE "share_links"',
+  'CONSTRAINT "share_links_token_hash_unique" UNIQUE("token_hash")',
+  'CONSTRAINT "share_links_token_hash_format"',
+  'CONSTRAINT "share_links_revocation_audit"',
+]) {
+  if (!shareLinkMigration.includes(fragment)) throw new Error(`Share link migration is missing: ${fragment}`);
+}
+if (/UNIQUE\s*\(\s*"organization_id"/i.test(shareLinkMigration) || /share_links_resource_unique/i.test(shareLinkMigration)) {
+  throw new Error("Share link migration must allow multiple links for the same resource");
 }
 console.log(`${sqlFiles.length} migration(s) validated`);

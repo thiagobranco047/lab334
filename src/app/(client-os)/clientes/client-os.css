@@ -6,5 +6,11 @@
 .client-os-main { padding:40px; max-width:1100px; }
 .client-os-card { background:#fff; border:1px solid #ddd8cd; border-radius:16px; padding:24px; margin-top:20px; }
 .client-os-list a { display:block; padding:16px; color:inherit; }
+.share-link-form { display:grid; gap:14px; max-width:520px; margin-top:20px; }
+.share-link-form label { display:grid; gap:6px; }
+.share-link-form select, .share-link-form button, .share-link-once button, .share-link-list button { padding:10px 12px; border:1px solid #c8c3b8; border-radius:8px; background:#fff; }
+.share-link-once { display:flex; gap:12px; align-items:center; margin-top:18px; overflow-wrap:anywhere; }
+.share-link-list { display:grid; gap:10px; margin-top:16px; }
+.share-link-list > div { display:grid; grid-template-columns:1fr auto; gap:6px 16px; padding:14px; border:1px solid #e2ded5; border-radius:10px; }
 .client-os-live { min-height:calc(100vh - 145px); background:#101310; color:#f1f3ec; padding:32px; border-radius:18px; overflow:hidden; aspect-ratio:16/9; max-height:calc(100vh - 145px); }
 @media (max-width: 760px) { .client-os-layout { grid-template-columns:1fr; } .client-os-nav { border-right:0; } }

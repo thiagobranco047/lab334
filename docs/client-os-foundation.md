@@ -65,7 +65,7 @@ Implement `share_link` before any definitive migration of playbooks or editorial
 
 A share token must be opaque and revocable; a resource slug is never an authorization credential. The persistence contract must be ready to support optional expiration in a later increment. Resolving a valid token may authorize only the explicitly linked resource and must not establish a Client OS session, reveal Organization or Business Unit data outside that resource, grant navigation capabilities, or provide access to `/clientes/*`.
 
-The transition from current public URLs to private resources with controlled sharing requires explicit approval. Until functional equivalence, revocation, isolation, and compatibility have been validated, the existing public routes remain unchanged.
+The transition from current public URLs to private resources with controlled sharing requires explicit approval. Until functional equivalence, revocation, isolation, and compatibility have been validated, the existing public routes remain unchanged. Share-link lifecycle and operations are documented in [share link operations](share-links-operations.md).
 
 ## Intentional limits
 

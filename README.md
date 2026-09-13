@@ -4,6 +4,8 @@ The Client OS uses Clerk for identity, sessions and Organization memberships whi
 
 Persistent Business Unit grants use explicit Drizzle migrations and a Neon-compatible server-only repository. See [grant storage operations](docs/grant-storage-operations.md) before configuring a database or applying migrations.
 
+Revocable share URLs use one-time raw token delivery and persisted hashes. See [share link operations](docs/share-links-operations.md) for lifecycle, isolation and recovery behavior.
+
 ## Getting Started
 
 First, run the development server:

@@ -20,7 +20,7 @@ function isPresentationRoute(pathname) {
 }
 
 function isStandaloneAppRoute(pathname) {
-  return pathname?.startsWith("/clientes") || pathname?.startsWith("/entrar");
+  return pathname?.startsWith("/clientes") || pathname?.startsWith("/entrar") || pathname?.startsWith("/share/");
 }
 
 export default function SiteShell({ children }) {

@@ -5,12 +5,15 @@ import { LOCALE_COOKIE, prefersPortuguese } from "./lib/locale";
 
 const isPrivateClientOs = (pathname: string) => pathname === "/clientes" || pathname.startsWith("/clientes/");
 const isAuthRoute = (pathname: string) => pathname === "/entrar" || pathname.startsWith("/entrar/");
+const isShareRoute = (pathname: string) => pathname.startsWith("/share/");
 const isPublicMaterial = (pathname: string) =>
   ["/propostas", "/apresentacoes", "/playbooks"].some((route) => pathname === route || pathname.startsWith(`${route}/`));
 const withoutLocale = (pathname: string) => pathname.replace(/^\/pt-BR/, "") || "/";
 
 function handlePublicRequest(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (isShareRoute(pathname)) return NextResponse.next();
 
   if (["/propostas", "/apresentacoes", "/playbooks"].some((route) => pathname.startsWith(`/pt-BR${route}`))) {
     return NextResponse.redirect(new URL(withoutLocale(pathname), request.url));

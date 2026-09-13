@@ -50,3 +50,21 @@ export async function requireBusinessUnitAccess(organizationId: string, business
   if (!decision.allowed) notFound();
   return decision;
 }
+
+export async function requireShareLinkManagementScopes(organizationId: string) {
+  const identity = await requireAuthenticatedUser();
+  const mapping = getOrganizationMapping();
+  const access = await resolveClientOsAuthorization(identity, organizationId, mapping, businessUnitGrantRepository);
+  if (!access.organizationAllowed || !access.grantsResolved || !identity.userId) notFound();
+  const businessUnitIds = access.grants
+    .filter((grant) => grant.userId === identity.userId && grant.organizationId === organizationId && grant.permissions.includes("execute") && grant.capabilities.includes("share_links.manage"))
+    .map((grant) => grant.businessUnitId);
+  if (!businessUnitIds.length) notFound();
+  return { userId: identity.userId, organizationId, businessUnitIds: [...new Set(businessUnitIds)].sort() };
+}
+
+export async function requireShareLinkManagement(organizationId: string, businessUnitId: string) {
+  const access = await requireShareLinkManagementScopes(organizationId);
+  if (!access.businessUnitIds.includes(businessUnitId)) notFound();
+  return access;
+}

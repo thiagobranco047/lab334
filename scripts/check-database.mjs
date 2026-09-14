@@ -1,10 +1,17 @@
 import { neon } from "@neondatabase/serverless";
+import { requireDatabaseUrl } from "./database-environment.mjs";
 
-const connectionString = process.env.DATABASE_URL?.trim();
-if (!connectionString) {
-  console.error("DATABASE_URL is not configured");
+const variableName = process.argv[2];
+let connectionString;
+
+try {
+  connectionString = requireDatabaseUrl(process.env, variableName);
+} catch (error) {
+  console.error(error instanceof Error ? error.message : "database configuration is invalid");
   process.exitCode = 1;
-} else {
+}
+
+if (connectionString) {
   try {
     const sql = neon(connectionString);
     await sql`select 1 as connection_ok`;

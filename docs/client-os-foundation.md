@@ -37,6 +37,18 @@ The active URL slug does not grant access. Clerk Organization membership does no
 
 Business Unit grants are loaded from PostgreSQL through a server-only Drizzle repository. A successful zero-row query means “no grants”; missing configuration, unavailable database, query failure, and invalid rows remain distinct operational errors. All four error classes deny grant-derived access and emit a structured server signal. Session metadata is not used as a grant database. Navigation receives only capabilities already resolved from complete, valid, active grants.
 
+## Neon connection boundaries
+
+The validated Preview target is Neon project `lab334-client-os`, branch `preview`, database `neondb`, in AWS South America East 1 (São Paulo). The database name is infrastructure configuration and does not replace any LAB Organization or Business Unit identifier.
+
+Use separate server-only connections:
+
+- `DATABASE_URL`: pooled Neon connection for application runtime and `npm run db:ping`.
+- `DATABASE_MIGRATION_URL`: direct Neon connection for explicit migrations, `npm run db:migrate`, and `npm run db:migration:ping`.
+- `TEST_DATABASE_URL`: optional isolated test database connection; it never falls back to either Preview connection.
+
+Enter real values directly into `.env.local` for local operation and into the Vercel environment settings for the intended deployment scope. Never commit them, print them in command output, or send them through chat. The migration wrapper rejects missing or malformed `DATABASE_MIGRATION_URL` before Drizzle starts and never falls back to `DATABASE_URL` or the offline validation placeholder. `npm run db:check` validates versioned migration files without connecting to Neon. Migrations are reviewed and invoked manually; build, startup, and deploy do not execute them.
+
 ## Access modes and routes
 
 Canonical modes are `public`, `authenticated`, `restricted`, and the future `share_link`.

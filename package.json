@@ -13,9 +13,9 @@
     "contracts:verify": "node scripts/verify-contracts-package.mjs",
     "db:generate": "drizzle-kit generate",
     "db:check": "drizzle-kit check && node scripts/validate-migrations.mjs",
-    "db:migrate": "node scripts/run-database-migrations.mjs",
-    "db:ping": "node scripts/check-database.mjs DATABASE_URL",
-    "db:migration:ping": "node scripts/check-database.mjs DATABASE_MIGRATION_URL",
+    "db:migrate": "node --env-file-if-exists=.env.local scripts/run-database-migrations.mjs",
+    "db:ping": "node --env-file-if-exists=.env.local scripts/check-database.mjs DATABASE_URL",
+    "db:migration:ping": "node --env-file-if-exists=.env.local scripts/check-database.mjs DATABASE_MIGRATION_URL",
     "pdf:proposal": "node scripts/generate-proposal-pdf.mjs"
   },
   "dependencies": {

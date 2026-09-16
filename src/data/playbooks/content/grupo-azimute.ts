@@ -149,7 +149,7 @@ export const grupoAzimuteContent = {
     "GPR, televisionamento e inspeção de redes subterrâneas pertencem à Azimute Tech",
   ],
   currentPhase: {
-    title: "Restante de 2026 — clareza e reconhecimento",
+    title: "Restante de 2026 - clareza e reconhecimento",
     priorities: [
       "Explicar quais empresas formam o Grupo",
       "Mostrar o que cada uma faz",
@@ -470,7 +470,7 @@ export const grupoAzimuteContent = {
     },
   ] satisfies GrupoContentIdea[],
   ideasNote:
-    "Banco inicial de pautas — não são afirmações de cases já realizados. Quando a pauta exigir confirmação técnica ou comprovação, o desenvolvimento depende de informações fornecidas pelas empresas.",
+    "Banco inicial de pautas - não são afirmações de cases já realizados. Quando a pauta exigir confirmação técnica ou comprovação, o desenvolvimento depende de informações fornecidas pelas empresas.",
   keyMessages: [
     "Empresas especializadas, competências que se complementam.",
     "Cada desafio exige a especialidade certa.",

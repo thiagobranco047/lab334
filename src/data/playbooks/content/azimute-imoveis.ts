@@ -27,7 +27,7 @@ export const azimuteImoveisContent: CompanyEditorialContent = {
   positioning:
     "A Azimute Imóveis atua de forma consultiva na compra, venda, avaliação e desenvolvimento de oportunidades imobiliárias, unindo conhecimento de mercado, atendimento próximo e segurança em cada decisão.",
   positioningComplement:
-    "Soluções voltadas ao setor imobiliário em Joinville e região, com origem na experiência de engenharia do Grupo e foco em orientação especializada — não em execução técnica de obra.",
+    "Soluções voltadas ao setor imobiliário em Joinville e região, com origem na experiência de engenharia do Grupo e foco em orientação especializada - não em execução técnica de obra.",
   currentPhase: {
     title: "Restante de 2026 - clareza, confiança e reconhecimento local",
     priorities: [

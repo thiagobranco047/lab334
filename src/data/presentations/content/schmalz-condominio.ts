@@ -18,7 +18,7 @@ export const schmalzCondominio: Presentation = {
     {
       type: "text",
       title: "Por que estruturar um empreendimento?",
-      body: "Um empreendimento imobiliário não precisa apenas de um logotipo. Ele precisa de uma linguagem que funcione em todas as direções — com investidores, imobiliárias, corretores, clientes e parceiros.",
+      body: "Um empreendimento imobiliário não precisa apenas de um logotipo. Ele precisa de uma linguagem que funcione em todas as direções - com investidores, imobiliárias, corretores, clientes e parceiros.",
       bullets: [
         "Investidores precisam de segurança e posicionamento",
         "Imobiliárias precisam de materiais prontos para usar",
@@ -32,7 +32,7 @@ export const schmalzCondominio: Presentation = {
     {
       type: "text",
       title: "Nossa proposta",
-      body: "Cada material desta proposta foi pensado para cumprir uma função específica durante o ciclo de vida do Schmalz Condomínio — do lançamento à entrega das chaves.",
+      body: "Cada material desta proposta foi pensado para cumprir uma função específica durante o ciclo de vida do Schmalz Condomínio - do lançamento à entrega das chaves.",
       bullets: [
         "Ativos desenvolvidos sob medida para o empreendimento",
         "Cada item pode ser contratado individualmente",
@@ -183,7 +183,7 @@ export const schmalzCondominio: Presentation = {
       title: "Vamos construir um empreendimento preparado para vender.",
       body: "Mais do que produzir peças gráficas, nosso objetivo é desenvolver uma comunicação sólida que fortaleça o posicionamento do Schmalz Condomínio durante todo o seu ciclo de comercialização.",
       highlight:
-        "Cada ativo entregue passa a integrar a estrutura permanente do empreendimento — fortalecendo sua imagem junto a investidores, parceiros e clientes.",
+        "Cada ativo entregue passa a integrar a estrutura permanente do empreendimento - fortalecendo sua imagem junto a investidores, parceiros e clientes.",
     },
   ],
 };

@@ -16,7 +16,7 @@ export const translations = {
     // Services page
     services: {
       title: "Services",
-      intro: "Integrated 360° marketing solutions — from brand strategy to performance, content and web.",
+      intro: "Integrated 360° marketing solutions - from brand strategy to performance, content and web.",
       strategy: {
         title: "Strategy & Branding",
         items: [
@@ -61,7 +61,7 @@ export const translations = {
         label: "Ready to grow your brand with a full 360° approach?",
         action: "Start a project",
         email: "contato@lab334.com.br",
-        subject: "Project inquiry — Lab 334"
+        subject: "Project inquiry - Lab 334"
       }
     },
     // Studio page
@@ -99,7 +99,7 @@ export const translations = {
     // Services page
     services: {
       title: "Serviços",
-      intro: "Soluções integradas de marketing 360° — da estratégia de marca à performance, conteúdo e web.",
+      intro: "Soluções integradas de marketing 360° - da estratégia de marca à performance, conteúdo e web.",
       strategy: {
         title: "Estratégia e Branding",
         items: [
@@ -144,7 +144,7 @@ export const translations = {
         label: "Pronto para crescer com uma abordagem 360°?",
         action: "Iniciar um projeto",
         email: "contato@lab334.com.br",
-        subject: "Consulta de projeto — Lab 334"
+        subject: "Consulta de projeto - Lab 334"
       }
     },
     // Studio page

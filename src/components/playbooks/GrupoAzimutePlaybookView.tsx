@@ -160,7 +160,7 @@ export default function GrupoAzimutePlaybookView({
         >
           <div className="space-y-4">
             <p className="font-body text-sm font-light leading-relaxed text-presentation-muted">
-              Referências editoriais para orientar pautas — não exclusividades comerciais.
+              Referências editoriais para orientar pautas - não exclusividades comerciais.
             </p>
             <PlaybookSimpleTable
               headers={["Público", "Necessidades principais", "Empresas relacionadas"]}
@@ -298,7 +298,7 @@ export default function GrupoAzimutePlaybookView({
         <SectionCard id="tipos-e-formatos" title="Tipos e formatos de conteúdo" accentColor={accent}>
           <div className="space-y-4">
             <p className="font-body text-sm font-light leading-relaxed text-presentation-muted">
-              Formato serve à função estratégica — não substitui o pilar editorial.
+              Formato serve à função estratégica - não substitui o pilar editorial.
             </p>
             <PlaybookSimpleTable
               headers={["Formato", "Função estratégica"]}

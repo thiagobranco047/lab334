@@ -6,7 +6,7 @@ import {
 export const ariaContent: CompanyEditorialContent = {
   sections: COMPANY_EDITORIAL_SECTIONS,
   overviewIntro:
-    "Este playbook orienta a comunicação da Aria Imagem e Tecnologia. A empresa foi constituída em 2020 para entregar inteligência visual a projetos, obras e ativos: captura a realidade do terreno e transforma imagens, nuvens de pontos e modelos em informação útil para engenheiros planejarem, executarem e documentarem. A comunicação deve mostrar o dado, o método e o uso — não o drone pelo drone.",
+    "Este playbook orienta a comunicação da Aria Imagem e Tecnologia. A empresa foi constituída em 2020 para entregar inteligência visual a projetos, obras e ativos: captura a realidade do terreno e transforma imagens, nuvens de pontos e modelos em informação útil para engenheiros planejarem, executarem e documentarem. A comunicação deve mostrar o dado, o método e o uso - não o drone pelo drone.",
   groupRule:
     "O Grupo Azimute articula e conecta. Os serviços são executados pelas empresas que o compõem e devem ser atribuídos nominalmente a elas.",
   companyRole:
@@ -330,7 +330,7 @@ export const ariaContent: CompanyEditorialContent = {
     },
   ],
   toneAttributes:
-    "Técnico, visual, preciso, claro, confiável e orientado ao uso do dado — inovador sem virar espetáculo.",
+    "Técnico, visual, preciso, claro, confiável e orientado ao uso do dado - inovador sem virar espetáculo.",
   toneRules: [
     "Começar pelo terreno, pelo ativo ou pela decisão que precisa de base",
     "Nomear o método e o entregável",
@@ -398,7 +398,7 @@ export const ariaContent: CompanyEditorialContent = {
       title: "Quando o escaneamento 3D é o método certo para documentar o existente?",
     },
     {
-      title: "O que a termografia revela — e o que ela não substitui — em um parque solar?",
+      title: "O que a termografia revela - e o que ela não substitui - em um parque solar?",
       needsReview: true,
     },
     {
@@ -426,7 +426,7 @@ export const ariaContent: CompanyEditorialContent = {
       needsReview: true,
     },
     {
-      title: "Por que a Aria captura e a Engenharia projeta — e o que quebra quando os papéis se misturam?",
+      title: "Por que a Aria captura e a Engenharia projeta - e o que quebra quando os papéis se misturam?",
     },
   ],
   ideasNote:
@@ -436,7 +436,7 @@ export const ariaContent: CompanyEditorialContent = {
     "A Aria captura; a Engenharia usa o dado no projeto.",
     "Aerolevantamento, modelo 3D, inspeção aérea e termografia a serviço da decisão.",
     "Imagem vira inteligência quando entrega o que o engenheiro consegue usar.",
-    "Captura da realidade com método, entregável e uso — não com o drone pelo drone.",
+    "Captura da realidade com método, entregável e uso - não com o drone pelo drone.",
   ],
   primaryCta:
     "Converse com a Aria sobre o terreno, o ativo ou a inspeção que precisa ser documentada.",

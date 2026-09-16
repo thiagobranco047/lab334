@@ -32,7 +32,7 @@ export const joinsul: Presentation = {
     {
       type: "text",
       title: "Referência conceitual",
-      body: "A organização das informações, a apresentação de linhas e produtos, a navegação e a hierarquia de conteúdo têm como referência conceitual o website aceadobrasil.com.br. A referência vale como inspiração de estrutura e fluxo — o website Joinsul terá identidade visual e interface próprias.",
+      body: "A organização das informações, a apresentação de linhas e produtos, a navegação e a hierarquia de conteúdo têm como referência conceitual o website aceadobrasil.com.br. A referência vale como inspiração de estrutura e fluxo - o website Joinsul terá identidade visual e interface próprias.",
       highlight:
         "Inspiração de arquitetura e navegação. Identidade e interface exclusivas para a Joinsul.",
     },
@@ -214,7 +214,7 @@ export const joinsul: Presentation = {
     {
       type: "cta",
       title: "Um website moderno para apresentar a Joinsul e gerar contato comercial.",
-      body: "O novo website concentra o investimento em marca, linhas, produtos, informação técnica e contato comercial — com uma estrutura objetiva, rápida, responsiva e visualmente consistente.",
+      body: "O novo website concentra o investimento em marca, linhas, produtos, informação técnica e contato comercial - com uma estrutura objetiva, rápida, responsiva e visualmente consistente.",
       highlight: "Vamos construir essa próxima etapa juntos.",
     },
   ],

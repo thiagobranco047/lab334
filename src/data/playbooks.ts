@@ -481,7 +481,7 @@ const aria: Playbook = {
     { label: "Evidências visuais e cases" },
   ],
   toneOfVoice:
-    "Técnico, visual, preciso, claro, confiável e orientado ao uso do dado — inovador sem virar espetáculo.",
+    "Técnico, visual, preciso, claro, confiável e orientado ao uso do dado - inovador sem virar espetáculo.",
   recurringThemes: [
     "O que o terreno já sabe",
     "Do voo ao modelo",
@@ -509,14 +509,14 @@ const aria: Playbook = {
     { text: "Inteligência visual para decidir com a realidade do terreno e do ativo." },
     { text: "A Aria captura; a Engenharia usa o dado no projeto." },
     { text: "Aerolevantamento, modelo 3D, inspeção aérea e termografia a serviço da decisão." },
-    { text: "Captura da realidade com método, entregável e uso — não com o drone pelo drone." },
+    { text: "Captura da realidade com método, entregável e uso - não com o drone pelo drone." },
   ],
   contentIdeas: [
     { title: "O que precisa ser capturado antes de um projeto de engenharia avançar?" },
     { title: "Como aerolevantamento e projeto de engenharia trabalham sobre a mesma base de dados?" },
-    { title: "O que a termografia revela — e o que ela não substitui — em um parque solar?" },
+    { title: "O que a termografia revela - e o que ela não substitui - em um parque solar?" },
     { title: "Quando o escaneamento 3D é o método certo para documentar o existente?" },
-    { title: "Por que a Aria captura e a Engenharia projeta — e o que quebra quando os papéis se misturam?" },
+    { title: "Por que a Aria captura e a Engenharia projeta - e o que quebra quando os papéis se misturam?" },
   ],
   cta: "Converse com a Aria sobre o terreno, o ativo ou a inspeção que precisa ser documentada.",
   enabled: true,

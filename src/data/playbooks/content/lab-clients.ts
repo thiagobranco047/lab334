@@ -285,7 +285,7 @@ export const bridgeAgency= {
     { title: "Case study: SEO growth for a US e-commerce." },
     { title: "How AI automation saves American businesses time." },
     { title: "Branding that resonates in the US market." },
-    { title: "Q1–Q4 calendar: case studies + webinars trimestrais." },
+    { title: "Q1-Q4 calendar: case studies + webinars trimestrais." },
     { title: "Roadmap 2026: autoridade SEO + AEO para agências digitais." },
   ],
   enabled: true,
@@ -769,7 +769,7 @@ export const antunesComercio= {
     { title: "Roadmap editorial: SEO local + engajamento no showroom." },
   ],
   enabled: true,
-  cta: "Visite nosso showroom. Antunes Comércio — materiais com atendimento de excelência.",
+  cta: "Visite nosso showroom. Antunes Comércio - materiais com atendimento de excelência.",
   calendarUrl:
     "https://drive.google.com/drive/folders/1o5tR6x47ThnXyVbWxVWJ-yC9OSTJcBYE?usp=drive_link",
 };

@@ -23,7 +23,7 @@ export default function PresentationPrintView({
                 Versão para impressão
               </p>
               <h1 className="mt-1 font-display text-lg font-light tracking-lab text-presentation-fg">
-                {presentation.client} — {presentation.title}
+                {presentation.client} - {presentation.title}
               </h1>
             </div>
             <button

@@ -5,8 +5,8 @@ const essentialScopeBullets = [
   "Planejamento estratégico: planejamento mensal, calendário editorial, reunião de alinhamento e organização das pautas.",
   "Comunicação e redes sociais: produção contínua de conteúdo, desenvolvimento de pautas, pesquisa de referências, copywriting, direção criativa, criação de artes, adaptação para Instagram, Facebook, LinkedIn e Google Meu Negócio, publicação e monitoramento.",
   "Conteúdo audiovisual: edição básica de vídeos para redes sociais, adequação para diferentes formatos, legendas quando necessário e pequenos cortes. Não inclui motion graphics avançado, VFX, modelagem 3D ou produções audiovisuais especiais.",
-  "YouTube (parcial): suporte pontual de publicação e ajustes básicos — sem gestão completa do canal.",
-  "SEO e AEO (parcial): recomendações e ajustes pontuais — sem gestão contínua.",
+  "YouTube (parcial): suporte pontual de publicação e ajustes básicos - sem gestão completa do canal.",
+  "SEO e AEO (parcial): recomendações e ajustes pontuais - sem gestão contínua.",
   "Suporte criativo e atendimento: convites, certificados, comunicados, materiais institucionais, peças promocionais, apresentações simples, adaptações de campanhas, atendimento recorrente, organização das demandas e acompanhamento das ações do mês. Não inclui branding, identidade visual, catálogos ou projetos gráficos complexos.",
 ];
 
@@ -181,7 +181,7 @@ export const grupoAzimute20260824: Presentation = {
     {
       type: "text",
       title: "Programa Essencial",
-      body: "Azimute Tech e Azimute SAN compartilham o escopo essencial completo (com YouTube, SEO, AEO e edição de vídeos parciais). Azimute Imóveis e Aria operam em versão enxuta, sem esses itens — o diferencial editorial permanece em todas.",
+      body: "Azimute Tech e Azimute SAN compartilham o escopo essencial completo (com YouTube, SEO, AEO e edição de vídeos parciais). Azimute Imóveis e Aria operam em versão enxuta, sem esses itens - o diferencial editorial permanece em todas.",
       bullets: [
         "Base comum: planejamento, redes sociais, suporte criativo e atendimento",
         "Tech e SAN: YouTube, SEO, AEO e edição de vídeos inclusos parcialmente",
@@ -202,7 +202,7 @@ export const grupoAzimute20260824: Presentation = {
       type: "package",
       eyebrow: "Programa Essencial",
       title: "Azimute Imóveis",
-      body: "Presença digital contínua voltada ao mercado imobiliário, com apoio a campanhas comerciais. Escopo enxuto do Programa Essencial — o diferencial é a linha editorial.",
+      body: "Presença digital contínua voltada ao mercado imobiliário, com apoio a campanhas comerciais. Escopo enxuto do Programa Essencial - o diferencial é a linha editorial.",
       bullets: [
         "Planejamento mensal e calendário editorial",
         "Produção contínua de conteúdo imobiliário",
@@ -216,7 +216,7 @@ export const grupoAzimute20260824: Presentation = {
       type: "package",
       eyebrow: "Programa Essencial",
       title: "Azimute Tech",
-      body: "Presença digital contínua com conteúdo técnico adequado ao segmento de tecnologia. Opera com o escopo essencial completo — o diferencial é a linha editorial.",
+      body: "Presença digital contínua com conteúdo técnico adequado ao segmento de tecnologia. Opera com o escopo essencial completo - o diferencial é a linha editorial.",
       bullets: [
         "Planejamento mensal e calendário editorial",
         "Produção contínua de conteúdo técnico",
@@ -231,7 +231,7 @@ export const grupoAzimute20260824: Presentation = {
       type: "package",
       eyebrow: "Programa Essencial",
       title: "Azimute SAN",
-      body: "Presença digital contínua com conteúdo técnico sobre saneamento e materiais institucionais. Opera com o escopo essencial completo — o diferencial é a linha editorial.",
+      body: "Presença digital contínua com conteúdo técnico sobre saneamento e materiais institucionais. Opera com o escopo essencial completo - o diferencial é a linha editorial.",
       bullets: [
         "Planejamento mensal e calendário editorial",
         "Conteúdo técnico sobre saneamento",
@@ -246,7 +246,7 @@ export const grupoAzimute20260824: Presentation = {
       type: "package",
       eyebrow: "Programa Essencial",
       title: "Aria",
-      body: "Presença digital contínua com conteúdo técnico sobre captura da realidade, topografia, Laser Scanner, LiDAR, BIM e drones. Escopo enxuto do Programa Essencial — o diferencial é a linha editorial.",
+      body: "Presença digital contínua com conteúdo técnico sobre captura da realidade, topografia, Laser Scanner, LiDAR, BIM e drones. Escopo enxuto do Programa Essencial - o diferencial é a linha editorial.",
       bullets: [
         "Planejamento mensal e calendário editorial",
         "Conteúdo técnico sobre captura da realidade",

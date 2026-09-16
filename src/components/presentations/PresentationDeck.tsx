@@ -51,7 +51,7 @@ export default function PresentationDeck({ presentation }: PresentationDeckProps
   });
 
   useEffect(() => {
-    document.title = `${presentation.client} — Lab. 334`;
+    document.title = `${presentation.client} - Lab. 334`;
   }, [presentation.client]);
 
   useEffect(() => {
@@ -152,7 +152,7 @@ export default function PresentationDeck({ presentation }: PresentationDeckProps
 
       <footer className="pointer-events-none fixed bottom-5 left-5 z-40 hidden sm:block">
         <p className="font-display text-sm font-light uppercase tracking-[0.18em] text-presentation-muted">
-          {categoryLabel} — {presentation.client}
+          {categoryLabel} - {presentation.client}
         </p>
       </footer>
     </div>

@@ -40,7 +40,7 @@ export const azimuteTechContent: CompanyEditorialContent = {
     "Cada serviço deve ser comunicado pelo problema que resolve e pelo dado que entrega. Método, equipamento e imagem só entram quando explicam a decisão do cliente.",
   serviceAreas: [
     {
-      title: "Georadar — GPR",
+      title: "Georadar - GPR",
       description:
         "Investigação do subsolo sem escavações exploratórias. Localiza redes e estruturas, identifica interferências, apoia fundações, perfuração direcional, obras e expansões, e reduz riscos na execução.",
     },

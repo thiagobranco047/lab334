@@ -4,6 +4,7 @@ import { azimuteTech } from "./content/azimute-tech";
 import { grupoAzimuteVersions } from "./content/grupo-azimute/versions";
 import { joinsul } from "./content/joinsul";
 import { schmalzCondominio } from "./content/schmalz-condominio";
+import { schmalzEssencial2026 } from "./content/schmalz-essencial-2026";
 import type { Presentation, PresentationCategory } from "./types";
 
 export type {
@@ -27,6 +28,7 @@ export const presentations: Record<string, Presentation> = {
     grupoAzimuteVersions.map((presentation) => [presentation.slug, presentation])
   ),
   [schmalzCondominio.slug]: schmalzCondominio,
+  [schmalzEssencial2026.slug]: schmalzEssencial2026,
   [joinsul.slug]: joinsul,
 };
 

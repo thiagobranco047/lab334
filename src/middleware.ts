@@ -10,8 +10,19 @@ const isPublicMaterial = (pathname: string) =>
   ["/propostas", "/apresentacoes", "/playbooks"].some((route) => pathname === route || pathname.startsWith(`${route}/`));
 const withoutLocale = (pathname: string) => pathname.replace(/^\/pt-BR/, "") || "/";
 
+/** English has no URL prefix in this app; /en/* is a common mistake and is not a real route. */
+function withoutEnglishPrefix(pathname: string) {
+  if (pathname === "/en") return "/";
+  if (pathname.startsWith("/en/")) return pathname.slice(3) || "/";
+  return pathname;
+}
+
 function handlePublicRequest(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (pathname === "/en" || pathname.startsWith("/en/")) {
+    return NextResponse.redirect(new URL(withoutEnglishPrefix(pathname), request.url));
+  }
 
   if (isShareRoute(pathname)) return NextResponse.next();
 

@@ -1,3 +1,4 @@
+import { balantec15102026 } from "./content/balantec-15102026";
 import { azimuteEngenharia } from "./content/azimute-engenharia";
 import { azimuteSan } from "./content/azimute-san";
 import { azimuteTech } from "./content/azimute-tech";
@@ -21,6 +22,7 @@ export {
 } from "./content/grupo-azimute/versions";
 
 export const presentations: Record<string, Presentation> = {
+  [balantec15102026.slug]: balantec15102026,
   [azimuteEngenharia.slug]: azimuteEngenharia,
   [azimuteSan.slug]: azimuteSan,
   [azimuteTech.slug]: azimuteTech,
